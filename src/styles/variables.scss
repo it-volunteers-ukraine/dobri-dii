@@ -1,0 +1,29 @@
+// Colors
+
+$text-color: #001922;
+$white-color: #fffafa;
+$orange-color: #f97c00;
+$blue-color: #2b7196;
+$light-blue-color: #e2f0e7;
+$secondary-blue: #5aafbd;
+$light-purple-color: #e4e0fe;
+$yellow-color: #fef4db;
+$background-color: #fffafa;
+
+// Breakpoints
+
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1920px;
+
+// Other
+
+$container-border-radius: 12px;
+$section-gradient: linear-gradient(
+  180deg,
+  rgba(174, 254, 226, 0) 0%,
+  #fef3e5 0.01%,
+  #e2f0e7 100%
+);
+// Gradient for Header/Footer
+$gradient: linear-gradient(270deg, #e2f0e7 9.46%, #fef3e5 94.57%);
