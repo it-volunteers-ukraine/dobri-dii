@@ -67,7 +67,7 @@ function wp_it_volunteers_scripts() {
 }
 /** add fonts */
 function add_google_fonts() {
-  wp_enqueue_style( 'Montserrat-400', 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap' );
+  wp_enqueue_style( 'Montserrat-400', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap' );
   wp_enqueue_style( 'Montserrat-500', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap' );
   wp_enqueue_style( 'Montserrat-600', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap' );
   wp_enqueue_style( 'Montserrat-700', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap' );
