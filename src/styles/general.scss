@@ -1,14 +1,11 @@
 body {
   margin: 0;
   font-style: normal;
+  color: $color-primary;
 }
 
 body,
-button,
-input,
-select,
-optgroup,
-textarea {
+button {
   font-family: "Montserrat", sans-serif;
 }
 
