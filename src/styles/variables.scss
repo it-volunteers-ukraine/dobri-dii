@@ -20,12 +20,12 @@ $desktop: 1380px;
 // Other
 
 $border-radius-container: 12px;
+$cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 $gradient-section: linear-gradient(
   180deg,
   rgba(174, 254, 226, 0) 0%,
   #fef3e5 0.01%,
   #e2f0e7 100%
 );
-
 // Gradient for Header/Footer
 $gradient: linear-gradient(270deg, #e2f0e7 9.46%, #fef3e5 94.57%);
