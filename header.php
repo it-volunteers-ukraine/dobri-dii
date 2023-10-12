@@ -24,7 +24,11 @@
                             echo get_custom_logo();
                         }
                     ?>                     
-                    <div class="menu__content">IT VOLUNTEERS</div>
+                    <div class="menu__content">
+                        <svg class="header-networks__icon" width="24px" height="24px">
+                           <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#instagram"></use>
+                        </svg>
+                    </a>IT VOLUNTEERS</div>
                     <nav class="menu__body"> 
                         <div class=" menu__container">
                             <?php wp_nav_menu( [
