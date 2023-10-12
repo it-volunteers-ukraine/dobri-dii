@@ -63,7 +63,7 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
 
-      if (is_singular() && locate_template('template-parts/donate-section.php')) {
+    if (is_singular() && locate_template('template-parts/donate-section.php')) {
     wp_enqueue_style( 'donate-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/donate-section.css', array('main') );
     wp_enqueue_script( 'donate-section-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/donate-section.js', array(), false, true );
     }

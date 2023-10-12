@@ -1,0 +1,117 @@
+@import "../variables.scss";
+.donate-section {
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 112px;
+    margin-bottom: 112px;
+  }
+}
+
+.donate-section__img {
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 83px;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 24px;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 28px;
+  }
+}
+
+.donate-section__img img {
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    width: 344px;
+    height: 232px;
+    object-fit: contain;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 522px;
+    height: 267px;
+  }
+}
+
+.donate-section__help {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 16px;
+  width: 234px;
+  background-color: $color-light;
+  border-radius: 12px;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+    3px 1px 7px 0px rgba(0, 0, 0, 0.1), 10px 6px 12px 0px rgba(0, 0, 0, 0.09),
+    24px 12px 16px 0px rgba(0, 0, 0, 0.05),
+    42px 22px 19px 0px rgba(0, 0, 0, 0.01), 66px 34px 21px 0px rgba(0, 0, 0, 0);
+
+  @media screen and (min-width: $tablet) and (max-width: 1379px) {
+    display: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 12px;
+    width: 295px;
+  }
+}
+
+.donate-section__help img {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 5px 9px;
+  background-color: $color-yellow-bright;
+  border-radius: 8px;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.donate-section__help span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+.donate-section__title {
+  text-align: start;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.donate-section__text {
+  color: $color-primary;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.donate-section__link {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
