@@ -1,5 +1,6 @@
 <section class="donate-section container">
     <div class="donate-section__img">
+        <img src="<?php the_field( 'img','option'); ?>" alt="Волонтер в роботі">
         <div class="donate-section__help">
             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon_hands.svg" alt="Потиснення рук">
           <span><?php the_field( 'info','option' ); ?></span>
