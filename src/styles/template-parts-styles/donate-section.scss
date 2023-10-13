@@ -4,6 +4,9 @@
   margin-bottom: 60px;
 
   @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     margin-top: 80px;
     margin-bottom: 80px;
   }
@@ -28,12 +31,35 @@
   }
 }
 
+.donate-section__img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 272px;
+  height: 212px;
+  background-color: $color-grey;
+  border-radius: $border-radius-container;
+  z-index: -1;
+
+  @media screen and (min-width: $tablet) {
+    width: 230px;
+    height: 256px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 12px;
+    width: 378px;
+    height: 296px;
+  }
+}
+
 .donate-section__img img {
   width: 100%;
+  height: 191px;
+  object-fit: cover;
   @media screen and (min-width: $tablet) {
     width: 344px;
     height: 232px;
-    object-fit: contain;
   }
 
   @media screen and (min-width: $desktop) {
@@ -52,6 +78,7 @@
   gap: 24px;
   padding: 8px 16px;
   width: 234px;
+  height: 48px;
   background-color: $color-light;
   border-radius: 12px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
@@ -64,8 +91,11 @@
   }
 
   @media screen and (min-width: $desktop) {
+    left: 8px;
+    top: 52px;
+    width: 290px;
+    height: 64px;
     padding: 12px;
-    width: 295px;
   }
 }
 
@@ -88,12 +118,26 @@
   line-height: 1.33;
 }
 
+.donate-section__description {
+  @media screen and (min-width: $tablet) {
+    max-width: 344px;
+  }
+}
+
 .donate-section__title {
-  text-align: start;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
   margin-bottom: 16px;
 
   @media screen and (min-width: $tablet) {
+    font-size: 24px;
     margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+    line-height: 1.38;
   }
 }
 
