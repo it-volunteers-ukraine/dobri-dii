@@ -3,8 +3,8 @@ if ( ! function_exists('wp_it_volunteers_setup')) {
   function wp_it_volunteers_setup() {
     add_theme_support( 'custom-logo', 
       array(
-        'height'      => 64,
-        'width'       => 64,
+        'height'      => 70,
+        'width'       => 225,
         'flex-width'  => true,
         'flex-height' => true,        
       )
