@@ -1,11 +1,4 @@
-
 .footer {
-
-  //general styles
-  a {
-    color: inherit
-  }
-
   .title {
     display: none;
     @media screen and (min-width: $tablet) {
@@ -35,6 +28,7 @@
     margin-right: 8px;
     width: 24px;
     height: 24px;
+    transition: 0.1s;
   }
 
   .social-link-text {
@@ -46,6 +40,9 @@
   .footer-top {
     padding: 24px 0 32px;
     background: $gradient;
+    @media screen and (min-width: $desktop) {
+      padding: 50px 0 18px;
+    }
   }
 
   .footer-top-wrapper {
@@ -101,7 +98,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    ul li {
+    li {
       margin-bottom: 24px;
       margin-right: 35px;
       font-size: 15px;
@@ -135,7 +132,7 @@
       @media screen and (min-width: $tablet) {
         flex-direction: row;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
       }
     }
 
@@ -171,6 +168,9 @@
   .footer-bottom {
     padding: 32px 0 40px;
     background: $gradient;
+    @media screen and (min-width: $desktop) {
+      padding-top: 50px;
+    }
   }
 
   .copyright {
@@ -180,7 +180,6 @@
     @media screen and (min-width: $desktop) {
       font-size: 15px;
     }
-
   }
 
 }
