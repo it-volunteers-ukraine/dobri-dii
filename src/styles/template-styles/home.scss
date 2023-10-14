@@ -1,3 +1,64 @@
-.home {
-    color: pink;
+@import "../variables.scss";
+
+// About
+
+.about__title {
+  margin-bottom: 8px;
+}
+
+.about__title--blue {
+  color: $color-accent;
+  margin-bottom: 16px;
+}
+
+.about-gallery {
+  position: relative;
+  display: flex;
+  padding: 6px 16px;
+}
+
+.about-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 295px;
+  height: 295px;
+  border-radius: 50%;
+
+  background-image: radial-gradient(#ffe7c1 4px, transparent 4px);
+  background-size: 28px 28px;
+  z-index: -1;
+}
+
+.about-gallery__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.svg-1 {
+  width: 138px;
+  height: 89px;
+  margin-left: 27px;
+  margin-bottom: 12px;
+}
+
+.svg-2 {
+  width: 178px;
+  height: 170px;
+}
+
+.svg-3 {
+  width: 129px;
+  height: 100px;
+  margin-top: 43px;
+  margin-right: 5px;
+  margin-bottom: 24px;
+}
+
+.svg-4 {
+  width: 123px;
+  height: 123px;
+  margin-left: 10px;
 }
