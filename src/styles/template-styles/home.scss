@@ -1,8 +1,8 @@
 @import "../variables.scss";
 
-// About
+// Info
 
-.about {
+.info {
   position: relative;
   margin-bottom: 40px;
 
@@ -19,7 +19,7 @@
   }
 }
 
-.about__title {
+.info__title {
   margin-bottom: 8px;
 
   @media screen and (min-width: $desktop) {
@@ -27,7 +27,7 @@
   }
 }
 
-.about__title--blue {
+.info__title--blue {
   color: $color-accent;
   margin-bottom: 336px;
 
@@ -40,13 +40,13 @@
   }
 }
 
-.about__text {
+.info_text {
   @media screen and (min-width: $desktop) {
     margin-bottom: 40px;
   }
 }
 
-.about__link {
+.info__link {
   display: none;
 
   @media screen and (min-width: $desktop) {
@@ -54,7 +54,7 @@
   }
 }
 
-.about-gallery {
+.info-gallery {
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 120px;
@@ -62,7 +62,7 @@
   }
 }
 
-.about-gallery__container {
+.info-gallery__container {
   position: relative;
   display: flex;
   padding: 6px 16px;
@@ -72,7 +72,7 @@
   }
 }
 
-.about-gallery__container::after {
+.info-gallery__container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@
   }
 }
 
-.about-gallery__column {
+.info-gallery__column {
   display: flex;
   flex-direction: column;
 }
@@ -150,4 +150,96 @@
     margin-left: 15px;
     margin-bottom: 7px;
   }
+}
+
+// About
+
+.about {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 206px;
+    margin-bottom: 112px;
+  }
+}
+
+.about__img {
+  display: none;
+  width: 376px;
+  height: 376px;
+  padding-top: 45px;
+  background-image: url(../../../assets/images/fon-square.png);
+
+  @media screen and (min-width: $desktop) {
+    position: relative;
+    display: block;
+    z-index: -1;
+  }
+}
+
+.about__img::after {
+  content: "";
+  position: absolute;
+  left: 88px;
+  bottom: 0;
+  width: 341px;
+  height: 297px;
+  border-radius: $border-radius-container;
+  background-color: $color-grey;
+  z-index: -1;
+}
+.about__img::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  bottom: -2px;
+  width: 241px;
+  height: 4px;
+  background-color: #7d7d7d;
+  z-index: 1;
+}
+
+.about__wrapp {
+  @media screen and (min-width: $tablet) {
+    max-width: 584px;
+  }
+}
+
+.about__title {
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__text {
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .button--transparent {
+  width: 144px;
 }

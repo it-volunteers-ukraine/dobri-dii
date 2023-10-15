@@ -46,3 +46,36 @@
     background-color: $color-secondary-blue;
   }
 }
+
+.button--arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  color: $color-accent;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+
+  &:hover,
+  &:focus {
+    color: $color-orange;
+    fill: $color-orange;
+  }
+}
+
+.arrow-up {
+  display: block;
+  .button--arrow:hover &,
+  .button--arrow:focus & {
+    display: none;
+  }
+}
+
+.arrow-right {
+  display: none;
+  .button--arrow:hover &,
+  .button--arrow:focus & {
+    display: block;
+  }
+}
