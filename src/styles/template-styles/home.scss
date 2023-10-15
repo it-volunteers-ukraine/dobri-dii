@@ -2,22 +2,77 @@
 
 // About
 
+.about {
+  position: relative;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    gap: 26px;
+    margin-bottom: 51px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 133px;
+    padding-right: 64px;
+  }
+}
+
 .about__title {
   margin-bottom: 8px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 16px;
+  }
 }
 
 .about__title--blue {
   color: $color-accent;
-  margin-bottom: 16px;
+  margin-bottom: 336px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__text {
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__link {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
 }
 
 .about-gallery {
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 120px;
+    left: 0;
+  }
+}
+
+.about-gallery__container {
   position: relative;
   display: flex;
   padding: 6px 16px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0;
+  }
 }
 
-.about-gallery::after {
+.about-gallery__container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -30,9 +85,16 @@
   background-image: radial-gradient(#ffe7c1 4px, transparent 4px);
   background-size: 28px 28px;
   z-index: -1;
+
+  @media screen and (min-width: $desktop) {
+    width: 464px;
+    height: 464px;
+    background-image: radial-gradient(#ffe7c1 7px, transparent 7px);
+    background-size: 44px 44px;
+  }
 }
 
-.about-gallery__container {
+.about-gallery__column {
   display: flex;
   flex-direction: column;
 }
@@ -42,11 +104,23 @@
   height: 89px;
   margin-left: 27px;
   margin-bottom: 12px;
+  @media screen and (min-width: $desktop) {
+    width: 217px;
+    height: 139px;
+    margin-top: 10px;
+    margin-left: 43px;
+    margin-bottom: 20px;
+  }
 }
 
 .svg-2 {
   width: 178px;
   height: 170px;
+
+  @media screen and (min-width: $desktop) {
+    width: 280px;
+    height: 267px;
+  }
 }
 
 .svg-3 {
@@ -55,10 +129,25 @@
   margin-top: 43px;
   margin-right: 5px;
   margin-bottom: 24px;
+
+  @media screen and (min-width: $desktop) {
+    width: 203px;
+    height: 157px;
+    margin-top: 68px;
+    margin-right: 5px;
+    margin-bottom: 38px;
+  }
 }
 
 .svg-4 {
   width: 123px;
   height: 123px;
   margin-left: 10px;
+
+  @media screen and (min-width: $desktop) {
+    width: 193px;
+    height: 194px;
+    margin-left: 15px;
+    margin-bottom: 7px;
+  }
 }
