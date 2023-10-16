@@ -8,8 +8,7 @@
 						echo get_custom_logo();
 					}
 				?>
-                <p class="address">Україна, 62560, Харківська обл., Чугуївський район, смт Старий Салтів, вул. Перемоги,
-                    буд. 6</p>
+                <p class="address"><?php the_field( 'address_footer', 17 ); ?></p>
             </div>
 
             <div class="menu">
@@ -32,30 +31,30 @@
                 <p class="title">Контакти</p>
                 <ul class="contacts-list">
                     <li>
-                        <a class="social-link" href="tel:+380 66 535 69 00" target="_blank"
+                        <a class="social-link" href="tel:<?php the_field( 'telephone_1', 17 ); ?>" target="_blank"
                            aria-label="Зв'язатись за допомогою телефону 1">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#phone"></use>
                             </svg>
-                            <span class="social-link-text">+380 96 702 17 80</span>
+                            <span class="social-link-text"><?php the_field( 'telephone_1_display', 17 ); ?></span>
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="tel:+380 96 702 17 80" target="_blank"
+                        <a class="social-link" href="tel:<?php the_field( 'telephone_2', 17 ); ?>" target="_blank"
                            aria-label="Зв'язатись за допомогою телефону 2">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#phone"></use>
                             </svg>
-                            <span class="social-link-text">+380 96 702 17 80</span>
+                            <span class="social-link-text"><?php the_field( 'telephone_2_display', 17 ); ?></span>
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="mailto:dobridiigo@gmail.com" target="_blank"
+                        <a class="social-link" href="mailto:<?php the_field( 'email', 17 ); ?>" target="_blank"
                            aria-label="Зв'язатись за допомогою електронної пошти">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#mail"></use>
                             </svg>
-                            <span class="social-link-text">dobridiigo@gmail.com</span>
+                            <span class="social-link-text"><?php the_field( 'email', 17 ); ?></span>
                         </a>
                     </li>
                 </ul>
@@ -65,8 +64,9 @@
                 <p class="title">Соцмережі</p>
                 <ul class="socials-list">
                     <li>
-                        <a class="social-link" href="https://www.instagram.com/" target="_blank"
-                           aria-label="Зв'язатись за допомогою електронної пошти">
+                        <a class="social-link" href="<?php the_field( 'instagram', 17 ); ?>"
+                           target="_blank"
+                           aria-label="Перейти на сторінку в Інстаграм">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#instagram"></use>
                             </svg>
@@ -74,8 +74,8 @@
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="https://www.facebook.com/" target="_blank"
-                           aria-label="Зв'язатись за допомогою електронної пошти">
+                        <a class="social-link" href="<?php the_field( 'facebook', 17 ); ?>" target="_blank"
+                           aria-label="Перейти на сторінку в Фейсбук">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#facebook"></use>
                             </svg>
@@ -83,8 +83,8 @@
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="https://telegram.org/" target="_blank"
-                           aria-label="Зв'язатись за допомогою електронної пошти">
+                        <a class="social-link" href="<?php the_field( 'telegram', 17 ); ?>" target="_blank"
+                           aria-label="Зв'язатись за допомогою мессенджера Телеграм">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#telegram"></use>
                             </svg>
