@@ -1,3 +1,362 @@
-.home {
-    color: pink;
+@import "../variables.scss";
+
+// Info
+
+.info {
+  position: relative;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    gap: 26px;
+    margin-bottom: 51px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 133px;
+    padding-right: 64px;
+  }
+}
+
+.info__title {
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 16px;
+  }
+}
+
+.info__title--blue {
+  color: $color-accent;
+  margin-bottom: 336px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.info__text {
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.info__link {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.info-gallery {
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 120px;
+    left: 0;
+  }
+}
+
+.info-gallery__container {
+  position: relative;
+  display: flex;
+  padding: 6px 16px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0;
+  }
+}
+
+.info-gallery__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 295px;
+  height: 295px;
+  border-radius: 50%;
+
+  background-image: radial-gradient(#ffe7c1 4px, transparent 4px);
+  background-size: 28px 28px;
+  z-index: -1;
+
+  @media screen and (min-width: $desktop) {
+    width: 464px;
+    height: 464px;
+    background-image: radial-gradient(#ffe7c1 7px, transparent 7px);
+    background-size: 44px 44px;
+  }
+}
+
+.info-gallery__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.svg-1 {
+  width: 138px;
+  height: 89px;
+  margin-left: 27px;
+  margin-bottom: 12px;
+  @media screen and (min-width: $desktop) {
+    width: 217px;
+    height: 139px;
+    margin-top: 10px;
+    margin-left: 43px;
+    margin-bottom: 20px;
+  }
+}
+
+.svg-2 {
+  width: 178px;
+  height: 170px;
+
+  @media screen and (min-width: $desktop) {
+    width: 280px;
+    height: 267px;
+  }
+}
+
+.svg-3 {
+  width: 129px;
+  height: 100px;
+  margin-top: 43px;
+  margin-right: 5px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $desktop) {
+    width: 203px;
+    height: 157px;
+    margin-top: 68px;
+    margin-right: 5px;
+    margin-bottom: 38px;
+  }
+}
+
+.svg-4 {
+  width: 123px;
+  height: 123px;
+  margin-left: 10px;
+
+  @media screen and (min-width: $desktop) {
+    width: 193px;
+    height: 194px;
+    margin-left: 15px;
+    margin-bottom: 7px;
+  }
+}
+
+// About
+
+.about {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 206px;
+    margin-bottom: 112px;
+  }
+}
+
+.about__img {
+  display: none;
+  width: 376px;
+  height: 376px;
+  padding-top: 45px;
+  background-image: url(../../../assets/images/fon-square.png);
+
+  @media screen and (min-width: $desktop) {
+    position: relative;
+    display: block;
+    z-index: -1;
+  }
+}
+
+.about__img::after {
+  content: "";
+  position: absolute;
+  left: 88px;
+  bottom: 0;
+  width: 341px;
+  height: 297px;
+  border-radius: $border-radius-container;
+  background-color: $color-grey;
+  z-index: -1;
+}
+
+.about__img::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  bottom: -2px;
+  width: 241px;
+  height: 4px;
+  background-color: #7d7d7d;
+  z-index: 1;
+}
+
+.about__info {
+  position: absolute;
+  top: 111px;
+  left: 50%;
+  transform: translate(50%);
+  width: 208px;
+  padding: 16px 12px;
+  border-radius: $border-radius-container;
+  background-color: $color-light;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+    3px 1px 7px 0px rgba(0, 0, 0, 0.1), 10px 6px 12px 0px rgba(0, 0, 0, 0.09),
+    24px 12px 16px 0px rgba(0, 0, 0, 0.05),
+    42px 22px 19px 0px rgba(0, 0, 0, 0.01), 66px 34px 21px 0px rgba(0, 0, 0, 0);
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  z-index: 2;
+}
+
+.about__wrapp {
+  @media screen and (min-width: $tablet) {
+    max-width: 584px;
+  }
+}
+
+.about__title {
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__text {
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .button--transparent {
+  width: 144px;
+}
+
+// Results
+
+.results {
+  margin-bottom: 36px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 112px;
+  }
+}
+
+.results__title {
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.results__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 40px;
+  margin-bottom: 24px;
+}
+
+.results__item {
+  text-align: center;
+  max-width: 160px;
+
+  @media screen and (min-width: $desktop) {
+    max-width: 236px;
+  }
+}
+
+.results__item div {
+  margin: 0 auto;
+  padding: 18px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: $color-yellow;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 24px;
+  }
+}
+
+.results__item div.results__icon2 {
+  background-color: $color-light-blue;
+}
+
+.results__item div.results__icon3 {
+  background-color: $color-light-purple;
+}
+
+.results__item span {
+  display: block;
+  color: $color-primary;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1.27;
+  }
+}
+
+.results__item p {
+  color: $color-primary;
+  font-weight: 500;
+}
+
+.results__info {
+  color: $color-secondary;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
 }

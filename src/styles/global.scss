@@ -84,3 +84,21 @@
     font-weight: 400;
   }
 }
+
+.subtitle {
+  margin-bottom: 8px;
+  color: $color-orange;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    text-align: start;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 24px;
+  }
+}
+
