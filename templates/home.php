@@ -1,12 +1,11 @@
 <?php
-/*
-Template Name: home
-*/
-get_header();
+	/*
+	Template Name: home
+	*/
+	get_header();
 ?>
 <main class="container">
 <h1 class="visually-hidden">ГО Добрі Дії</h1>
-
 <section class="info">
     <div>
         <h2 class="title-main info__title"><?php the_field( 'title'); ?></h2>
