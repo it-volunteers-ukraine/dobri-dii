@@ -67,6 +67,7 @@ get_header();
 <section class="about">
 <div class="about__img" >
 <img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
+<span class="about__info"> <?php the_field( 'info_about'); ?></span>
 </div>
 
     <div class="about__wrapp" >
@@ -84,6 +85,20 @@ get_header();
          </div>
     </div>
 
+</section>
+
+<section>
+    <h2  class="title-main">Ми - це наші результати</h2>
+
+    <ul>
+        <li>
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon1.svg" alt="Пісочний годинник">
+            </div>
+            <span>14</span>
+            <p>Років беззупинної діяльності ГО  “Добрі дії”</p>
+        </li>
+    </ul>
 </section>
 
 </main>
