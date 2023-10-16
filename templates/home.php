@@ -87,18 +87,41 @@ get_header();
 
 </section>
 
-<section>
-    <h2  class="title-main">Ми - це наші результати</h2>
+<section class="results">
+    <h2  class="title-main results__title"><?php the_field( 'title_results'); ?></h2>
 
-    <ul>
-        <li>
+    <ul class="results__list" >
+        <li class="results__item">
             <div>
              <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon1.svg" alt="Пісочний годинник">
             </div>
-            <span>14</span>
-            <p>Років беззупинної діяльності ГО  “Добрі дії”</p>
+            <span><?php the_field( 'index_1'); ?></span>
+            <p class="text-secondary"><?php the_field( 'description_1'); ?></p>
+        </li>
+        <li class="results__item">
+            <div class="results__icon2">
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon2.svg" alt="Лист паперу">
+            </div>
+            <span><?php the_field( 'index_2'); ?></span>
+            <p class="text-secondary"><?php the_field( 'description_2'); ?></p>
+        </li>
+        <li class="results__item">
+            <div class="results__icon3">
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon3.svg" alt="Сердечко">
+            </div>
+            <span><?php the_field( 'index_3'); ?></span>
+            <p class="text-secondary"><?php the_field( 'description_3'); ?></p>
+        </li>
+        <li class="results__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon4.svg" alt="Грошовий  знак">
+            </div>
+            <span><?php the_field( 'index_4'); ?></span>
+            <p class="text-secondary"><?php the_field( 'description_4'); ?></p>
         </li>
     </ul>
+
+    <span class="results__info"><?php the_field( 'index_info'); ?></span>
 </section>
 
 </main>
