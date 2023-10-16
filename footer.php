@@ -74,21 +74,21 @@
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="<?php the_field( 'facebook', 17 ); ?>" target="_blank"
-                           aria-label="Перейти на сторінку в Фейсбук">
-                            <svg class="social-link-icon">
-                                <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#facebook"></use>
-                            </svg>
-                            <span class="social-link-text">Facebook</span>
-                        </a>
-                    </li>
-                    <li>
                         <a class="social-link" href="<?php the_field( 'telegram', 17 ); ?>" target="_blank"
                            aria-label="Зв'язатись за допомогою мессенджера Телеграм">
                             <svg class="social-link-icon">
                                 <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#telegram"></use>
                             </svg>
                             <span class="social-link-text">Telegram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-link" href="<?php the_field( 'facebook', 17 ); ?>" target="_blank"
+                           aria-label="Перейти на сторінку в Фейсбук">
+                            <svg class="social-link-icon">
+                                <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#facebook"></use>
+                            </svg>
+                            <span class="social-link-text">Facebook</span>
                         </a>
                     </li>
                 </ul>

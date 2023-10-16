@@ -4,10 +4,8 @@
 	*/
 	get_header();
 ?>
+    <h2>home page</h2>
 
-    <main>
-        <h2>home page</h2>
-    </main>
 
 
 <?php get_footer(); ?>
