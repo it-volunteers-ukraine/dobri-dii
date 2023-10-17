@@ -4,9 +4,9 @@
 	*/
 	get_header();
 ?>
-<main class="container">
+<main >
 <h1 class="visually-hidden">ГО Добрі Дії</h1>
-<section class="home-info">
+<section class="home-info container">
     <div>
         <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>
         <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
@@ -24,7 +24,7 @@
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image1" transform="matrix(0.00104167 0 0 0.00162308 0 -0.53877)"/>
                 </pattern>
-                <image id="image1" width="1280" height="1280" xlink:href="<?php the_field( 'img_1'); ?>"/>
+                <image id="image1" width="960" height="1280" xlink:href="<?php the_field( 'img_1'); ?>"/>
                 </defs>
                 </svg>
 
@@ -34,7 +34,7 @@
                 <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image2" transform="matrix(0.00104167 0 0 0.00109457 0 -0.200524)"/>
                 </pattern>
-                <image id="image2" width="1280" height="1280" xlink:href="<?php the_field( 'img_2'); ?>"/>
+                <image id="image2" width="960" height="1280" xlink:href="<?php the_field( 'img_2'); ?>"/>
                 </defs>
                 </svg>
         </div>
@@ -46,7 +46,7 @@
                 <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image3" transform="matrix(0.00104167 0 0 0.00135024 0 -0.364152)"/>
                 </pattern>
-                <image id="image3" width="1280" height="1280" xlink:href="<?php the_field( 'img_3'); ?>"/>
+                <image id="image3" width="960" height="1280" xlink:href="<?php the_field( 'img_3'); ?>"/>
                 </defs>
                 </svg>
 
@@ -56,14 +56,14 @@
                 <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image4" transform="matrix(0.00138889 0 0 0.00138315 0 -0.163913)"/>
                 </pattern>
-                <image id="image4" width="1280" height="960" xlink:href="<?php the_field( 'img_4'); ?>"/>
+                <image id="image4" width="720" height="960" xlink:href="<?php the_field( 'img_4'); ?>"/>
                 </defs>
                 </svg>
         </div>
     </div>
     </div>
 </section>
-<section class="about">
+<section class="about container">
 <div class="about__img" >
 <img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
 <span class="about__info"> <?php the_field( 'info_about'); ?></span>
@@ -74,7 +74,7 @@
         <h2 class="title-main info__title about__title"><?php the_field( 'title_about'); ?></h2>
         <p class="text-main about__text"><?php the_field( 'text_about'); ?></p>
         <div class="about__buttons">
-            <a class="button--arrow" href="">Читати більше
+            <a class="button--arrow" href="<?php echo get_permalink( 7 ); ?>">Читати більше
                 <svg width="24px" height="24px">
                      <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                      <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
@@ -86,7 +86,7 @@
 
 </section>
 
-<section class="results">
+<section class="results container">
     <h2  class="title-main results__title"><?php the_field( 'title_results'); ?></h2>
 
     <ul class="results__list" >
@@ -121,6 +121,65 @@
     </ul>
 
     <span class="results__info"><?php the_field( 'index_info'); ?></span>
+</section>
+<section class="projects">
+    <div class="projects__container container">
+        <div class="projects__head" >
+            <h2 class="title-main">Наші проєкти</h2>
+
+            <!-- <a class="button--arrow" href="<?php echo get_permalink(9); ?>#reports">Усі проєкти -->
+            <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>">Усі проєкти
+                    <svg width="24px" height="24px">
+                    <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                    <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+         </div>
+
+        <div class="swiper swiperProjects">
+         <ul  class="projects__list swiper-wrapper">
+
+          <?php
+            global $post;
+
+            $myposts = get_posts([ 
+       'post_type' => 'projects',  
+       'posts_per_page' => -1,   
+
+            ]);
+
+            if( $myposts ){
+              foreach( $myposts as $post ){
+                setup_postdata( $post );
+                ?>
+            <li  class="projects__item swiper-slide">
+                <div class="projects__img">
+                    <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+                </div>
+                <div class="projects__info">
+                    <span class="projects__date"><?php the_field('date'); ?></span>
+                    <h3 class="title-secondary "><?php the_title(); ?></h3>
+                    <p class="text-secondary projects__text"><?php the_field('text'); ?></p>
+                    <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше 
+                        <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </div>
+             </li>
+            <?php 
+            }
+            } 
+            wp_reset_postdata(); 
+            ?>
+   
+         </ul>
+
+          <div class="swiper-pagination"></div>
+       </div>
+
+ </div>
 </section>
 
 </main>
