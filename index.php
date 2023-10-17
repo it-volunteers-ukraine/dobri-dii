@@ -19,6 +19,4 @@
             <a href="mailto:it.volunteers.ukraine@gmail.com" >it.volunteers.ukraine@gmail.com</a>
         </div>
     </main>
-    	<?php get_template_part( 'template-parts/donate-section' ); ?>
-
 <?php get_footer(); ?>   
