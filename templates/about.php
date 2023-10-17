@@ -1,11 +1,32 @@
 <?php
-/*
-Template Name: about
-*/
-get_header();
+	/*
+	Template Name: about
+	*/
+	get_header();
 ?>
-<h2>about page</h2>
+
+<main class="about">
+
+    <!--    Hero section -->
+    <section class="container">
+        <h2 class="title-main">
+			<?php the_field( 'hero_title' ); ?>
+        </h2>
+        <div class="hero-wrapper">
+            <div class="hero-image-block">
+                <div class="hero-image-wrapper">
+                    <img src="<?php the_field( 'hero_image' ); ?>" alt="<?php the_field( 'hero_image_alt' ); ?>">
+                </div>
+            </div>
+
+            <div class="hero-description">
+                <p class="text-main"><?php the_field( 'hero_text' ); ?></p>
+            </div>
+        </div>
+    </section>
 
 
+</main>
 
 <?php get_footer(); ?>
+

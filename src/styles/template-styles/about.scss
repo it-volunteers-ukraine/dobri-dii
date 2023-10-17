@@ -1,3 +1,86 @@
+@import "../variables.scss";
+
 .about {
-    color: red
+
+  .title-main {
+    margin-bottom: 24px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // Hero section
+  .hero-wrapper {
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  .hero-image-block {
+    margin-bottom: 54px;
+    width: 100%;
+    height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @media screen and (min-width: $tablet) {
+      width: 504px;
+      height: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 674px;
+      height: 606px;
+      margin-right: -107px;
+      margin-bottom: -60px;
+      margin-top: -84px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-image: url(../../images/about-hero-bg.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .hero-image-wrapper {
+    width: 234px;
+    height: 234px;
+    position: relative;
+    @media screen and (min-width: $tablet) {
+      width: 344px;
+      height: 325px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 461px;
+      height: 436px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .hero-description {
+    @media screen and (min-width: $tablet) {
+      max-width: 590px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 560px;
+    }
+  }
+
 }
