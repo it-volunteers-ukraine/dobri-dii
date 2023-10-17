@@ -6,18 +6,18 @@
 ?>
 <main class="container">
 <h1 class="visually-hidden">ГО Добрі Дії</h1>
-<section class="info">
+<section class="home-info">
     <div>
-        <h2 class="title-main info__title"><?php the_field( 'title'); ?></h2>
-        <h2 class="title-main info__title--blue"><?php the_field( 'title-eng'); ?></h2>
-        <p class="text-main info__text"><?php the_field( 'text'); ?></p>
-        <a class="button button--blue info__link " href="#"><?php the_field( 'button-text','option' ); ?></a>
+        <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>
+        <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
+        <p class="text-main home-info__text"><?php the_field( 'text'); ?></p>
+        <a class="button button--blue home-info__link " href="#"><?php the_field( 'button-text','option' ); ?></a>
 
     </div>
 
-    <div class="info-gallery">
-    <div class="info-gallery__container">
-       <div  class="info-gallery__column">
+    <div class="home-info-gallery">
+    <div class="home-info-gallery__container">
+       <div  class="home-info-gallery__column">
                 <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139" height="90" viewBox="0 0 139 90" fill="none">
                 <path d="M0.406625 50.0024C-0.23074 34.1943 4.23082 18.9941 30.3628 6.83387C56.4948 -5.32638 97.9236 0.145714 116.407 18.994C131.038 33.9131 140.627 54.8664 138.078 67.0266C135.528 79.1868 119.913 95.299 97.605 86.4828C75.2971 77.6667 79.44 74.9308 52.6706 81.0109C25.9012 87.0909 1.04399 65.8106 0.406625 50.0024Z" fill="url(#pattern0)"/>
                 <defs>
@@ -39,7 +39,7 @@
                 </svg>
         </div>
        
-        <div class="info-gallery__column">
+        <div class="home-info-gallery__column">
                 <svg class="svg-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="101" viewBox="0 0 130 101" fill="none">
                 <path d="M14.6602 71.4195C7.5704 65.8347 -2.50451 59.8776 0.853793 49.825C4.2121 39.7723 9.43613 39.7723 20.2573 31.5813C36.0886 19.5979 46.111 -12.2815 72.8708 5.51886C82.9457 12.2206 80.3337 17.4331 91.9012 15.9438C103.469 14.4546 122.126 11.8483 127.35 27.8581C132.574 43.8678 129.216 55.4098 110.558 61.7392C91.9012 68.0686 97.4983 73.6534 95.6326 87.4293C93.7669 101.205 76.2291 100.833 65.0347 99.3435C53.8404 97.8542 30.3322 102.694 23.6156 95.248C16.899 87.8016 21.7499 77.0043 14.6602 71.4195Z" fill="url(#pattern2)"/>
                 <defs>

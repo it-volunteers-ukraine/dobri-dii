@@ -2,7 +2,7 @@
 
 // Info
 
-.info {
+.home-info {
   position: relative;
   margin-bottom: 40px;
 
@@ -19,7 +19,7 @@
   }
 }
 
-.info__title {
+.home-info__title {
   margin-bottom: 8px;
 
   @media screen and (min-width: $desktop) {
@@ -27,7 +27,7 @@
   }
 }
 
-.info__title--blue {
+.home-info__title--blue {
   color: $color-accent;
   margin-bottom: 336px;
 
@@ -40,13 +40,13 @@
   }
 }
 
-.info__text {
+.home-info__text {
   @media screen and (min-width: $desktop) {
     margin-bottom: 40px;
   }
 }
 
-.info__link {
+.home-info__link {
   display: none;
 
   @media screen and (min-width: $desktop) {
@@ -54,7 +54,7 @@
   }
 }
 
-.info-gallery {
+.home-info-gallery {
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 120px;
@@ -62,7 +62,7 @@
   }
 }
 
-.info-gallery__container {
+.home-info-gallery__container {
   position: relative;
   display: flex;
   padding: 6px 16px;
@@ -72,7 +72,7 @@
   }
 }
 
-.info-gallery__container::after {
+.home-info-gallery__container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@
   }
 }
 
-.info-gallery__column {
+.home-info-gallery__column {
   display: flex;
   flex-direction: column;
 }
