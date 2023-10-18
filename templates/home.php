@@ -72,7 +72,7 @@
 
     <div class="about__wrapp" >
         <h3 class="subtitle">Про нас</h3>
-        <h2 class="title-main info__title about__title"><?php the_field( 'title_about'); ?></h2>
+        <h2 class="title-main about__title"><?php the_field( 'title_about'); ?></h2>
         <p class="text-main about__text"><?php the_field( 'text_about'); ?></p>
         <div class="about__buttons">
             <a class="button--arrow" href="<?php echo get_permalink( 7 ); ?>">Читати більше

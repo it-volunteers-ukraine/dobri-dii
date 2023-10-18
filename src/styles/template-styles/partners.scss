@@ -1,0 +1,69 @@
+@import "../variables.scss";
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media screen and (min-width: $tablet) {
+    gap: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 64px;
+  }
+}
+
+.partners__subtitle {
+  @media screen and (min-width: $tablet) {
+    text-align: center;
+  }
+}
+
+.partners__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  @media screen and (min-width: $tablet) {
+    gap: 8px;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 24px;
+    row-gap: 40px;
+  }
+}
+
+.partners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98px;
+  height: 136px;
+
+  @media screen and (min-width: $tablet) {
+    width: 170px;
+    height: 148px;
+  }
+}
+
+.partners__name {
+  color: #1e1e1e;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+}
+
+.partners__text {
+  max-width: 253px;
+  @media screen and (min-width: $tablet) {
+    max-width: 348px;
+  }
+}
+
+.partners__text p {
+  margin-bottom: 0;
+}

@@ -104,6 +104,15 @@
   height: 89px;
   margin-left: 27px;
   margin-bottom: 12px;
+
+  @media screen and (min-width: $tablet) {
+    width: 152px;
+    height: 97px;
+    margin-left: 30px;
+    margin-bottom: 14px;
+    margin-top: 7px;
+  }
+
   @media screen and (min-width: $desktop) {
     width: 217px;
     height: 139px;
@@ -116,6 +125,11 @@
 .svg-2 {
   width: 178px;
   height: 170px;
+
+  @media screen and (min-width: $tablet) {
+    width: 196px;
+    height: 186px;
+  }
 
   @media screen and (min-width: $desktop) {
     width: 280px;
@@ -130,6 +144,14 @@
   margin-right: 5px;
   margin-bottom: 24px;
 
+  @media screen and (min-width: $tablet) {
+    width: 142px;
+    height: 110px;
+    margin-top: 47px;
+    margin-right: 12px;
+    margin-bottom: 27px;
+  }
+
   @media screen and (min-width: $desktop) {
     width: 203px;
     height: 157px;
@@ -143,6 +165,13 @@
   width: 123px;
   height: 123px;
   margin-left: 10px;
+
+  @media screen and (min-width: $tablet) {
+    width: 135px;
+    height: 136px;
+    margin-left: 11px;
+    margin-bottom: 6px;
+  }
 
   @media screen and (min-width: $desktop) {
     width: 193px;

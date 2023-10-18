@@ -5,30 +5,56 @@ Template Name: partners
 get_header();
 ?>
 
-<main>
+<main class="container">
     <h1 class="visually-hidden">Партнери ГО "Добрі Дії"</h1>
-    <h2>partners</h2>
 
-	<?php if ( have_rows( 'gallery' ) ): ?>
-                    <div class="gallery__container lightBox">
-						<?php while ( have_rows( 'gallery' ) ): the_row(); ?>
+    <section class="partners">
+      <h2  class="title-main partners__title"><?php the_field('title'); ?></h2>
+      <h3 class="subtitle partners__subtitle"><?php the_field('subtitle'); ?></h3>
+
+	  <?php if ( have_rows( 'partners' ) ): ?>
+            <div class="partners__container">
+			<?php while ( have_rows( 'partners' ) ): the_row(); ?>
 							<?php
-							$image = get_sub_field( 'gallery-img' );
-							$alt   = get_sub_field( 'gallery-alt' );
+							$logo = get_sub_field( 'logo' );
+							$name   = get_sub_field( 'name' );
+							$link   = get_sub_field( 'link' );
 							?>
 
-                            <a class="gallery__link gallery__item" href="<?php echo $image['url']; ?>">
-                                <img class="gallery__image" src="<?php echo $image['url']; ?>" alt="<?php echo $alt; ?>"
-                                     data-source="<?php echo $image['url']; ?>" loading="lazy"/>
+                    <div class="partners__item">
+                    <?php
+                        if ($link && $logo) {
+                            ?>
+                            <a  href="<?php echo $link; ?>" target="_blanc">
+                                <img  src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
                             </a>
+                            <?php
+                        } elseif (!$link && $logo) {
+                            ?>
+                            <img  src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                                    <?php
+                        } else {
+                            ?>
+                            <p class="partners__name"><?php echo $name; ?></p>
+                            <?php
+                        }?>
+                       </div>
+                        <?php
+                     endwhile; ?>
 
-						<?php endwhile; ?>
+                     <div class="partners__text"> 
+                        <p class="subtitle partners__text" ><?php the_field('text'); ?></p>
+                     </div>
 
                     </div>
-				<?php endif; ?>
+		<?php endif; ?>
 
+</section>
+  
 
 </main>
+
+<?php get_template_part( 'template-parts/donate-section' ); ?>
 
 
 
