@@ -20,7 +20,8 @@
             </div>
 
             <div class="hero-description">
-                <p class="text-main"><?php the_field( 'hero_text' ); ?></p>
+                <div class="text-main text-expandable"><?php the_field( 'hero_text' ); ?></div>
+                <button class="show-more-button" onclick=expandText(this)>Розгорнути</button>
             </div>
         </div>
     </section>

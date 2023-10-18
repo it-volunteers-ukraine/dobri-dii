@@ -4,6 +4,12 @@
 
   .title-main {
     margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 240px;
+    @media screen and (min-width: $tablet) {
+      max-width: unset;
+    }
     @media screen and (min-width: $desktop) {
       margin-bottom: 40px;
     }
@@ -11,7 +17,13 @@
 
   // Hero section
   .hero-wrapper {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 80px;
+    }
     @media screen and (min-width: $desktop) {
+      margin-bottom: 112px;
       display: flex;
       flex-direction: row-reverse;
     }
@@ -36,7 +48,7 @@
       height: 606px;
       margin-right: -107px;
       margin-bottom: -60px;
-      margin-top: -84px;
+      margin-top: -70px;
     }
 
     &:after {
@@ -56,7 +68,6 @@
   .hero-image-wrapper {
     width: 234px;
     height: 234px;
-    position: relative;
     @media screen and (min-width: $tablet) {
       width: 344px;
       height: 325px;
@@ -80,6 +91,42 @@
     }
     @media screen and (min-width: $desktop) {
       max-width: 560px;
+    }
+  }
+
+  .text-expandable {
+    @media screen and (max-width: $desktop) {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 7;
+    }
+
+    &.expanded {
+      display: block;
+      overflow: unset;
+      -webkit-box-orient: unset;
+      -webkit-line-clamp: unset;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .show-more-button {
+    display: block;
+    padding: 0;
+    margin-top: 18px;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    background-color: transparent;
+    border: 0;
+    color: $color-accent;
+    @media screen and (min-width: $desktop) {
+      display: none;
     }
   }
 

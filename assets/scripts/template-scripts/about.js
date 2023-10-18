@@ -1,1 +1,1 @@
-console.log("about");
+function expandText(e){e.previousElementSibling.classList.add("expanded"),e.style.display="none"}
