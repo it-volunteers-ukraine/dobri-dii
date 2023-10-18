@@ -31,3 +31,8 @@ $gradient-section: linear-gradient(
 );
 // Gradient for Header/Footer
 $gradient: linear-gradient(270deg, #e2f0e7 9.46%, #fef3e5 94.57%);
+$gradient-image: linear-gradient(
+  0deg,
+  rgba(0, 0, 0, 0.2) 0%,
+  rgba(0, 0, 0, 0.2) 100%
+);

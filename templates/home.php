@@ -63,11 +63,12 @@
     </div>
     </div>
 </section>
+
 <section class="about container">
-<div class="about__img" >
-<img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
-<span class="about__info"> <?php the_field( 'info_about'); ?></span>
-</div>
+ <div class="about__img" >
+    <img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
+    <span class="about__info"> <?php the_field( 'info_about'); ?></span>
+ </div>
 
     <div class="about__wrapp" >
         <h3 class="subtitle">Про нас</h3>
@@ -122,13 +123,14 @@
 
     <span class="results__info"><?php the_field( 'index_info'); ?></span>
 </section>
+
 <section class="projects">
     <div class="projects__container container">
         <div class="projects__head" >
-            <h2 class="title-main">Наші проєкти</h2>
+            <h2 class="title-main"><?php the_field('title_projects'); ?></h2>
 
             <!-- <a class="button--arrow" href="<?php echo get_permalink(9); ?>#reports">Усі проєкти -->
-            <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>">Усі проєкти
+            <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>"><?php the_field('button_projects'); ?>
                     <svg width="24px" height="24px">
                     <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                     <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
@@ -144,7 +146,7 @@
 
             $myposts = get_posts([ 
        'post_type' => 'projects',  
-       'posts_per_page' => -1,   
+       'posts_per_page' => 3,   
 
             ]);
 
@@ -158,7 +160,7 @@
                 </div>
                 <div class="projects__info">
                     <span class="projects__date"><?php the_field('date'); ?></span>
-                    <h3 class="title-secondary "><?php the_title(); ?></h3>
+                    <h3 class="title-secondary projects__title"><?php the_title(); ?></h3>
                     <p class="text-secondary projects__text"><?php the_field('text'); ?></p>
                     <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше 
                         <svg width="24px" height="24px">
@@ -182,8 +184,165 @@
  </div>
 </section>
 
-</main>
+<section class="work container">
+    <h3 class="subtitle work__subtitle">НАПРЯМКИ</h3>
+    <h2  class="title-main work__title"><?php the_field( 'title_work'); ?></h2>
 
+    <ul class="work__list" >
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon5.svg" alt="Пісочний годинник">
+            </div>
+            <span><?php the_field( 'work_1'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_1'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon6.svg" alt="Лист паперу">
+            </div>
+            <span><?php the_field( 'work_2'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_2'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon7.svg" alt="Сердечко">
+            </div>
+            <span><?php the_field( 'work_3'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_3'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon8.svg" alt="Грошовий  знак">
+            </div>
+            <span><?php the_field( 'work_4'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_4'); ?></p>
+        </li>
+    </ul>
+
+</section>
+
+<section class="news container">
+        <div class="news__head" >
+            <h2 class="title-main"><?php the_field('title_news'); ?></h2>
+            <a class="button--arrow" href="<?php echo get_permalink( 11 ); ?>"><?php the_field('button_news'); ?>
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+         </div>
+
+        <div class="swiper swiperNews">
+         <ul  class="news__list swiper-wrapper">
+
+          <?php
+            global $post;
+
+            $myposts = get_posts([ 
+       'post_type' => 'news',  
+       'posts_per_page' => 3,   
+
+            ]);
+
+            if( $myposts ){
+              foreach( $myposts as $post ){
+                setup_postdata( $post );
+                ?>
+            <li  class="news__item swiper-slide">
+                <div class="news__img">
+                    <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+                </div>
+                <div class="news__info">
+                    <span class="news__date"><?php the_field('date'); ?></span>
+                    <h3 class="title-secondary news__title"><?php the_title(); ?></h3>
+                    <p class="text-secondary news__text"><?php the_field('text'); ?></p>
+                    <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше 
+                        <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </div>
+             </li>
+            <?php 
+            }
+            } 
+            wp_reset_postdata(); 
+            ?>
+ 
+         </ul>
+
+          <div class="swiper-pagination"></div>
+       </div>
+
+</section>
+
+<section class="partners container">
+
+        <div class="partners__head" >
+            <h2 class="title-main"><?php the_field('title_partners'); ?></h2>
+            <a class="button--arrow" href="<?php echo get_permalink( 13 ); ?>"><?php the_field('button_partners'); ?>
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+        </div>
+
+      
+        <div class="swiper swiperPartners">
+            <div class="partners__list swiper-wrapper">
+
+            <?php
+            $other_page_id = 13;
+            $repeater_fields = get_field('partners', $other_page_id);
+
+            if ($repeater_fields) {
+                $count = 0;
+
+                foreach ($repeater_fields as $repeater_field) {
+                    $logo = $repeater_field['logo'];
+                    $name = $repeater_field['name'];
+                    $link = $repeater_field['link'];
+
+                    if ($count < 6) { ?>
+                    <div class="partners__item swiper-slide">
+                    <?php
+                        if ($link && $logo) {
+                            ?>
+                            <a class="" href="<?php echo $link; ?>">
+                                <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                            </a>
+                            <?php
+                        } elseif (!$link && $logo) {
+                            ?>
+                            <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                                    <?php
+                        } else {
+                            ?>
+                            <p class="partners__name"><?php echo $name; ?></p>
+                            <?php
+                        }?>
+                        </div>
+                        <?php
+                        $count++;  
+                    } else {
+                        break;  
+                    }
+                }
+            } else {
+                echo 'Партнерів не знайдено';
+            }
+            ?>
+
+
+         </div>
+
+        </div>
+        
+</section>
+
+</main>
 <?php get_template_part( 'template-parts/donate-section' ); ?>
 
 <?php get_footer(); ?>
