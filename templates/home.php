@@ -4,27 +4,27 @@
 	*/
 	get_header();
 ?>
-<main class="container">
+<main >
 <h1 class="visually-hidden">ГО Добрі Дії</h1>
-<section class="info">
+<section class="home-info container">
     <div>
-        <h2 class="title-main info__title"><?php the_field( 'title'); ?></h2>
-        <h2 class="title-main info__title--blue"><?php the_field( 'title-eng'); ?></h2>
-        <p class="text-main info__text"><?php the_field( 'text'); ?></p>
-        <a class="button button--blue info__link " href="#"><?php the_field( 'button-text','option' ); ?></a>
+        <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>
+        <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
+        <p class="text-main home-info__text"><?php the_field( 'text'); ?></p>
+        <a class="button button--blue home-info__link " href="#"><?php the_field( 'button-text','option' ); ?></a>
 
     </div>
 
-    <div class="info-gallery">
-    <div class="info-gallery__container">
-       <div  class="info-gallery__column">
+    <div class="home-info-gallery">
+    <div class="home-info-gallery__container">
+       <div  class="home-info-gallery__column">
                 <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139" height="90" viewBox="0 0 139 90" fill="none">
                 <path d="M0.406625 50.0024C-0.23074 34.1943 4.23082 18.9941 30.3628 6.83387C56.4948 -5.32638 97.9236 0.145714 116.407 18.994C131.038 33.9131 140.627 54.8664 138.078 67.0266C135.528 79.1868 119.913 95.299 97.605 86.4828C75.2971 77.6667 79.44 74.9308 52.6706 81.0109C25.9012 87.0909 1.04399 65.8106 0.406625 50.0024Z" fill="url(#pattern0)"/>
                 <defs>
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image1" transform="matrix(0.00104167 0 0 0.00162308 0 -0.53877)"/>
                 </pattern>
-                <image id="image1" width="1280" height="1280" xlink:href="<?php the_field( 'img_1'); ?>"/>
+                <image id="image1" width="960" height="1280" xlink:href="<?php the_field( 'img_1'); ?>"/>
                 </defs>
                 </svg>
 
@@ -34,19 +34,19 @@
                 <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image2" transform="matrix(0.00104167 0 0 0.00109457 0 -0.200524)"/>
                 </pattern>
-                <image id="image2" width="1280" height="1280" xlink:href="<?php the_field( 'img_2'); ?>"/>
+                <image id="image2" width="960" height="1280" xlink:href="<?php the_field( 'img_2'); ?>"/>
                 </defs>
                 </svg>
         </div>
        
-        <div class="info-gallery__column">
+        <div class="home-info-gallery__column">
                 <svg class="svg-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="101" viewBox="0 0 130 101" fill="none">
                 <path d="M14.6602 71.4195C7.5704 65.8347 -2.50451 59.8776 0.853793 49.825C4.2121 39.7723 9.43613 39.7723 20.2573 31.5813C36.0886 19.5979 46.111 -12.2815 72.8708 5.51886C82.9457 12.2206 80.3337 17.4331 91.9012 15.9438C103.469 14.4546 122.126 11.8483 127.35 27.8581C132.574 43.8678 129.216 55.4098 110.558 61.7392C91.9012 68.0686 97.4983 73.6534 95.6326 87.4293C93.7669 101.205 76.2291 100.833 65.0347 99.3435C53.8404 97.8542 30.3322 102.694 23.6156 95.248C16.899 87.8016 21.7499 77.0043 14.6602 71.4195Z" fill="url(#pattern2)"/>
                 <defs>
                 <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image3" transform="matrix(0.00104167 0 0 0.00135024 0 -0.364152)"/>
                 </pattern>
-                <image id="image3" width="1280" height="1280" xlink:href="<?php the_field( 'img_3'); ?>"/>
+                <image id="image3" width="960" height="1280" xlink:href="<?php the_field( 'img_3'); ?>"/>
                 </defs>
                 </svg>
 
@@ -56,25 +56,26 @@
                 <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use xlink:href="#image4" transform="matrix(0.00138889 0 0 0.00138315 0 -0.163913)"/>
                 </pattern>
-                <image id="image4" width="1280" height="960" xlink:href="<?php the_field( 'img_4'); ?>"/>
+                <image id="image4" width="720" height="960" xlink:href="<?php the_field( 'img_4'); ?>"/>
                 </defs>
                 </svg>
         </div>
     </div>
     </div>
 </section>
-<section class="about">
-<div class="about__img" >
-<img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
-<span class="about__info"> <?php the_field( 'info_about'); ?></span>
-</div>
+
+<section class="about container">
+ <div class="about__img" >
+    <img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
+    <span class="about__info"> <?php the_field( 'info_about'); ?></span>
+ </div>
 
     <div class="about__wrapp" >
         <h3 class="subtitle">Про нас</h3>
         <h2 class="title-main info__title about__title"><?php the_field( 'title_about'); ?></h2>
         <p class="text-main about__text"><?php the_field( 'text_about'); ?></p>
         <div class="about__buttons">
-            <a class="button--arrow" href="">Читати більше
+            <a class="button--arrow" href="<?php echo get_permalink( 7 ); ?>">Читати більше
                 <svg width="24px" height="24px">
                      <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                      <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
@@ -86,7 +87,7 @@
 
 </section>
 
-<section class="results">
+<section class="results container">
     <h2  class="title-main results__title"><?php the_field( 'title_results'); ?></h2>
 
     <ul class="results__list" >
@@ -123,8 +124,225 @@
     <span class="results__info"><?php the_field( 'index_info'); ?></span>
 </section>
 
-</main>
+<section class="projects">
+    <div class="projects__container container">
+        <div class="projects__head" >
+            <h2 class="title-main"><?php the_field('title_projects'); ?></h2>
 
+            <!-- <a class="button--arrow" href="<?php echo get_permalink(9); ?>#reports">Усі проєкти -->
+            <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>"><?php the_field('button_projects'); ?>
+                    <svg width="24px" height="24px">
+                    <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                    <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+         </div>
+
+        <div class="swiper swiperProjects">
+         <ul  class="projects__list swiper-wrapper">
+
+          <?php
+            global $post;
+
+            $myposts = get_posts([ 
+       'post_type' => 'projects',  
+       'posts_per_page' => 3,   
+
+            ]);
+
+            if( $myposts ){
+              foreach( $myposts as $post ){
+                setup_postdata( $post );
+                ?>
+            <li  class="projects__item swiper-slide">
+                <div class="projects__img">
+                    <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+                </div>
+                <div class="projects__info">
+                    <span class="projects__date"><?php the_field('date'); ?></span>
+                    <h3 class="title-secondary projects__title"><?php the_title(); ?></h3>
+                    <p class="text-secondary projects__text"><?php the_field('text'); ?></p>
+                    <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше 
+                        <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </div>
+             </li>
+            <?php 
+            }
+            } 
+            wp_reset_postdata(); 
+            ?>
+   
+         </ul>
+
+          <div class="swiper-pagination"></div>
+       </div>
+
+ </div>
+</section>
+
+<section class="work container">
+    <h3 class="subtitle work__subtitle">НАПРЯМКИ</h3>
+    <h2  class="title-main work__title"><?php the_field( 'title_work'); ?></h2>
+
+    <ul class="work__list" >
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon5.svg" alt="Пісочний годинник">
+            </div>
+            <span><?php the_field( 'work_1'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_1'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon6.svg" alt="Лист паперу">
+            </div>
+            <span><?php the_field( 'work_2'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_2'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon7.svg" alt="Сердечко">
+            </div>
+            <span><?php the_field( 'work_3'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_3'); ?></p>
+        </li>
+        <li class="work__item">
+            <div>
+             <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon8.svg" alt="Грошовий  знак">
+            </div>
+            <span><?php the_field( 'work_4'); ?></span>
+            <p class="text-secondary"><?php the_field( 'info_4'); ?></p>
+        </li>
+    </ul>
+
+</section>
+
+<section class="news container">
+        <div class="news__head" >
+            <h2 class="title-main"><?php the_field('title_news'); ?></h2>
+            <a class="button--arrow" href="<?php echo get_permalink( 11 ); ?>"><?php the_field('button_news'); ?>
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+         </div>
+
+        <div class="swiper swiperNews">
+         <ul  class="news__list swiper-wrapper">
+
+          <?php
+            global $post;
+
+            $myposts = get_posts([ 
+       'post_type' => 'news',  
+       'posts_per_page' => 3,   
+
+            ]);
+
+            if( $myposts ){
+              foreach( $myposts as $post ){
+                setup_postdata( $post );
+                ?>
+            <li  class="news__item swiper-slide">
+                <div class="news__img">
+                    <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+                </div>
+                <div class="news__info">
+                    <span class="news__date"><?php the_field('date'); ?></span>
+                    <h3 class="title-secondary news__title"><?php the_title(); ?></h3>
+                    <p class="text-secondary news__text"><?php the_field('text'); ?></p>
+                    <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше 
+                        <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </div>
+             </li>
+            <?php 
+            }
+            } 
+            wp_reset_postdata(); 
+            ?>
+ 
+         </ul>
+
+          <div class="swiper-pagination"></div>
+       </div>
+
+</section>
+
+<section class="partners container">
+
+        <div class="partners__head" >
+            <h2 class="title-main"><?php the_field('title_partners'); ?></h2>
+            <a class="button--arrow" href="<?php echo get_permalink( 13 ); ?>"><?php the_field('button_partners'); ?>
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+            </a>
+        </div>
+
+      
+        <div class="swiper swiperPartners">
+            <div class="partners__list swiper-wrapper">
+
+            <?php
+            $other_page_id = 13;
+            $repeater_fields = get_field('partners', $other_page_id);
+
+            if ($repeater_fields) {
+                $count = 0;
+
+                foreach ($repeater_fields as $repeater_field) {
+                    $logo = $repeater_field['logo'];
+                    $name = $repeater_field['name'];
+                    $link = $repeater_field['link'];
+
+                    if ($count < 6) { ?>
+                    <div class="partners__item swiper-slide">
+                    <?php
+                        if ($link && $logo) {
+                            ?>
+                            <a class="" href="<?php echo $link; ?>">
+                                <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                            </a>
+                            <?php
+                        } elseif (!$link && $logo) {
+                            ?>
+                            <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                                    <?php
+                        } else {
+                            ?>
+                            <p class="partners__name"><?php echo $name; ?></p>
+                            <?php
+                        }?>
+                        </div>
+                        <?php
+                        $count++;  
+                    } else {
+                        break;  
+                    }
+                }
+            } else {
+                echo 'Партнерів не знайдено';
+            }
+            ?>
+
+
+         </div>
+
+        </div>
+        
+</section>
+
+</main>
 <?php get_template_part( 'template-parts/donate-section' ); ?>
 
 <?php get_footer(); ?>

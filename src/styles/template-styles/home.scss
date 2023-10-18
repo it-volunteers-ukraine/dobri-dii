@@ -1,8 +1,8 @@
 @import "../variables.scss";
 
-// Info
+// Info section
 
-.info {
+.home-info {
   position: relative;
   margin-bottom: 40px;
 
@@ -19,7 +19,7 @@
   }
 }
 
-.info__title {
+.home-info__title {
   margin-bottom: 8px;
 
   @media screen and (min-width: $desktop) {
@@ -27,7 +27,7 @@
   }
 }
 
-.info__title--blue {
+.home-info__title--blue {
   color: $color-accent;
   margin-bottom: 336px;
 
@@ -40,13 +40,13 @@
   }
 }
 
-.info__text {
+.home-info__text {
   @media screen and (min-width: $desktop) {
     margin-bottom: 40px;
   }
 }
 
-.info__link {
+.home-info__link {
   display: none;
 
   @media screen and (min-width: $desktop) {
@@ -54,7 +54,7 @@
   }
 }
 
-.info-gallery {
+.home-info-gallery {
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 120px;
@@ -62,7 +62,7 @@
   }
 }
 
-.info-gallery__container {
+.home-info-gallery__container {
   position: relative;
   display: flex;
   padding: 6px 16px;
@@ -72,7 +72,7 @@
   }
 }
 
-.info-gallery__container::after {
+.home-info-gallery__container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -94,7 +94,7 @@
   }
 }
 
-.info-gallery__column {
+.home-info-gallery__column {
   display: flex;
   flex-direction: column;
 }
@@ -152,7 +152,7 @@
   }
 }
 
-// About
+// About section
 
 .about {
   margin-bottom: 60px;
@@ -265,7 +265,7 @@
   width: 144px;
 }
 
-// Results
+// Results section
 
 .results {
   margin-bottom: 36px;
@@ -359,4 +359,422 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.33;
+}
+
+// Projects section
+
+.projects {
+  padding: 24px 0 64px;
+  margin-bottom: 60px;
+  background: $gradient-section;
+
+  @media screen and (min-width: $tablet) {
+    padding: 32px 0;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 40px 0;
+    margin-bottom: 112px;
+  }
+}
+
+.projects__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.projects__list {
+  display: flex;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 26px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.projects__item {
+  padding: 16px;
+  background-color: $color-light;
+  border-radius: $border-radius-container;
+
+  @media screen and (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+.projects__img {
+  position: relative;
+  width: 311px;
+  height: 184px;
+  border-radius: $border-radius-container;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    width: 312px;
+    height: 224px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 364px;
+    height: 258px;
+  }
+}
+
+.projects__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $gradient-image;
+}
+
+.projects__img img {
+  object-fit: cover;
+}
+
+.projects__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+  align-items: center;
+  @media screen and (min-width: $desktop) {
+    padding: 24px;
+  }
+}
+
+.projects__date {
+  padding: 3px 8px;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+  align-items: center;
+  border-radius: 8px;
+  background: $color-grey;
+}
+
+.projects__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  height: 48px;
+
+  @media screen and (min-width: $tablet) {
+    height: 56px;
+  }
+}
+
+.projects__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  white-space: normal;
+  height: 124px;
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border: 1px solid $color-secondary;
+  background-color: transparent;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-secondary;
+}
+
+// Work section
+
+.work {
+  margin-bottom: 36px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 112px;
+  }
+}
+
+.work__subtitle {
+  @media screen and (min-width: $desktop) {
+    text-align: center;
+  }
+}
+
+.title-main.work__title {
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+    text-align: start;
+  }
+
+  @media screen and (min-width: $desktop) {
+    text-align: center;
+  }
+}
+
+.work__list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 32px;
+  }
+}
+
+.work__item {
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 320px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 236px;
+  }
+}
+
+.work__item div {
+  margin: 0 auto;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: $color-yellow;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 24px;
+  }
+}
+
+.work__item span {
+  display: block;
+  color: $color-primary;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1.27;
+  }
+}
+
+.work__item p {
+  color: $color-primary;
+  font-weight: 500;
+}
+
+// News section
+
+.news {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 32px 0;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 40px 0;
+    margin-bottom: 112px;
+  }
+}
+
+.news__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.news__list {
+  display: flex;
+}
+
+.news__item {
+  background-color: $color-light;
+  border-radius: $border-radius-container;
+}
+
+.news__img {
+  position: relative;
+  width: 343px;
+  height: 258px;
+  border-radius: $border-radius-container;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    width: 344px;
+    height: 224px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 364px;
+    height: 258px;
+  }
+}
+
+.news__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $gradient-image;
+}
+
+.news__img img {
+  object-fit: cover;
+}
+
+.news__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+  align-items: center;
+  @media screen and (min-width: $desktop) {
+    padding: 24px;
+  }
+}
+
+.news__date {
+  padding: 3px 8px;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+  align-items: center;
+  border-radius: 8px;
+  background: $color-grey;
+}
+
+.news__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  height: 48px;
+
+  @media screen and (min-width: $tablet) {
+    height: 56px;
+  }
+}
+
+.news__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  white-space: normal;
+  height: 124px;
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border: 1px solid $color-secondary;
+  background-color: transparent;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-secondary;
+}
+
+// Partners section
+
+.partners__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.partners__list {
+  display: flex;
+}
+
+.partners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 94px;
+
+  @media screen and (min-width: $tablet) {
+    width: 170px;
+    height: 148px;
+  }
+}
+
+.partners__item img {
+  object-fit: contain;
+}
+
+.partners__name {
+  color: #1e1e1e;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.71;
 }
