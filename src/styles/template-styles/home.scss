@@ -612,12 +612,10 @@
   margin-bottom: 60px;
 
   @media screen and (min-width: $tablet) {
-    padding: 32px 0;
     margin-bottom: 80px;
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 40px 0;
     margin-bottom: 112px;
   }
 }

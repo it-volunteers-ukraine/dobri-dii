@@ -81,7 +81,7 @@
                      <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
                 </svg>
             </a>
-            <a class="button button--transparent" href="">Звіти</a>
+            <a class="button button--transparent" href="<?php echo get_permalink( 7 ); ?>#reports">Звіти</a>
          </div>
     </div>
 
@@ -129,7 +129,6 @@
         <div class="projects__head" >
             <h2 class="title-main"><?php the_field('title_projects'); ?></h2>
 
-            <!-- <a class="button--arrow" href="<?php echo get_permalink(9); ?>#reports">Усі проєкти -->
             <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>"><?php the_field('button_projects'); ?>
                     <svg width="24px" height="24px">
                     <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
@@ -224,7 +223,7 @@
 <section class="news container">
         <div class="news__head" >
             <h2 class="title-main"><?php the_field('title_news'); ?></h2>
-            <a class="button--arrow" href="<?php echo get_permalink( 11 ); ?>"><?php the_field('button_news'); ?>
+            <a class="button--arrow" href="<?php echo get_permalink( 11 ); ?>" ><?php the_field('button_news'); ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                         <use class="arrow-right" href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right"></use>
@@ -310,13 +309,13 @@
                     <?php
                         if ($link && $logo) {
                             ?>
-                            <a class="" href="<?php echo $link; ?>">
-                                <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                            <a  href="<?php echo $link; ?>" target="_blanc">
+                                <img  src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
                             </a>
                             <?php
                         } elseif (!$link && $logo) {
                             ?>
-                            <img class="" src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                            <img  src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
                                     <?php
                         } else {
                             ?>
