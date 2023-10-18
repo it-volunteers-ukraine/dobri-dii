@@ -43,7 +43,7 @@ get_header();
                      endwhile; ?>
 
                      <div class="partners__text"> 
-                        <p class="subtitle partners__text" ><?php the_field('text'); ?></p>
+                        <p class="subtitle" ><?php the_field('text'); ?></p>
                      </div>
 
                     </div>

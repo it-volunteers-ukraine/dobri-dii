@@ -29,6 +29,7 @@
 
   @media screen and (min-width: $tablet) {
     gap: 8px;
+    row-gap: 18px;
   }
   @media screen and (min-width: $desktop) {
     gap: 24px;
@@ -66,4 +67,9 @@
 
 .partners__text p {
   margin-bottom: 0;
+  text-transform: lowercase;
+
+  @media screen and (min-width: $tablet) {
+    text-transform: uppercase;
+  }
 }
