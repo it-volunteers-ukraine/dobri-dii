@@ -26,6 +26,37 @@
         </div>
     </section>
 
+    <!-- Facebook stories section -->
+    <section class="stories">
+        <div class="background"></div>
+        <div class="container">
+            <h2 class="title-main">
+				<?php the_field( 'gallery_title' ); ?>
+            </h2>
+
+            <div class="gallery-desktop">
+				<?php get_template_part( 'template-parts/facebook-story-cards' ); ?>
+            </div>
+
+            <div class="gallery-mobile">
+                <div class="swiper swiperStories">
+                    <div class="swiper-wrapper">
+						<?php get_template_part( 'template-parts/facebook-story-cards' ); ?>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <p class="stories-text"><?php the_field( 'gallery_text' ); ?></p>
+            <a class="stories-button" href="<?php the_field( 'facebook', 17 ); ?>">
+                <svg width="24px" height="24px">
+                    <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#facebook"></use>
+                </svg>
+                <span>Facebook</span>
+            </a>
+        </div>
+    </section>
+
 
 </main>
 

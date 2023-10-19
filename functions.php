@@ -73,8 +73,11 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'donate-section-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/donate-section.js', array(), false, true );
     }
 
- 
+  if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
+    wp_enqueue_style( 'facebook-story-cards-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/facebook-story-cards.css', array('main') );
+    }
 }
+
 /** add fonts */
 function add_google_fonts() {
   wp_enqueue_style( 'Montserrat-400', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap' );

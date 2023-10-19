@@ -1,1 +1,1 @@
-function expandText(e){e.previousElementSibling.classList.add("expanded"),e.style.display="none"}
+function expandText(e){e.previousElementSibling.classList.add("expanded"),e.style.display="none"}const swiperStories=new Swiper(".swiperStories",{spaceBetween:32,pagination:{el:".swiper-pagination",clickable:!0,renderBullet:function(e,n){return'<span class="'+n+'"></span>'}}});

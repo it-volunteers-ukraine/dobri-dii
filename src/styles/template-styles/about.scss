@@ -81,7 +81,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: $border-radius-container;
     }
   }
 
@@ -125,9 +125,115 @@
     background-color: transparent;
     border: 0;
     color: $color-accent;
+    cursor: pointer;
     @media screen and (min-width: $desktop) {
       display: none;
     }
+  }
+
+  //  Facebook stories section
+  .stories {
+    padding: 24px 0;
+    position: relative;
+
+    @media screen and (min-width: $tablet) {
+      padding: 32px 0;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 40px 0;
+    }
+
+    .background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -2;
+      background: $gradient;
+      @media screen and (min-width: $desktop) {
+        background: $gradient-section;
+      }
+    }
+
+    .title-main {
+      max-width: 280px;
+      @media screen and (min-width: $tablet) {
+        max-width: unset;
+      }
+    }
+  }
+
+  .gallery-desktop {
+    margin-bottom: 40px;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .gallery-mobile {
+    margin-bottom: 40px;
+    display: block;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 30px;
+      display: flex;
+    }
+
+    .swiper-slide {
+      min-height: 500px;
+    }
+
+    .swiper-pagination {
+      position: relative;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      border: 1px solid $color-secondary;
+      background-color: transparent;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $color-secondary;
+    }
+  }
+
+  .stories-text {
+    max-width: 190px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto 16px;
+    @media screen and (min-width: $tablet) {
+      max-width: unset;
+      font-weight: 400;
+      font-size: 15px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .stories-button {
+    padding: 12px 32px;
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: $color-light;
+    border-radius: $border-radius-container;
+    font-size: 15px;
   }
 
 }
