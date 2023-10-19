@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    gap: 16px;
     margin-top: 80px;
     margin-bottom: 80px;
   }
@@ -14,6 +15,7 @@
   @media screen and (min-width: $desktop) {
     margin-top: 112px;
     margin-bottom: 112px;
+    gap: 240px;
   }
 }
 
@@ -121,9 +123,6 @@
 .donate-section__description {
   @media screen and (min-width: $tablet) {
     max-width: 344px;
-  }
-  @media screen and (min-width: $tablet) {
-    margin-right: 240px;
   }
 }
 
