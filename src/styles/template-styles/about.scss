@@ -1,3 +1,335 @@
+@import "../variables.scss";
+
 .about {
-    color: red
+
+  .title-main {
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 240px;
+    @media screen and (min-width: $tablet) {
+      max-width: unset;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // Hero section
+  .hero-wrapper {
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 80px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 112px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  .hero-image-block {
+    margin-bottom: 54px;
+    width: 100%;
+    height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @media screen and (min-width: $tablet) {
+      width: 504px;
+      height: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 674px;
+      height: 606px;
+      margin-right: -107px;
+      margin-bottom: -60px;
+      margin-top: -70px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-image: url(../../images/about-hero-bg.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .hero-image-wrapper {
+    width: 234px;
+    height: 234px;
+    @media screen and (min-width: $tablet) {
+      width: 344px;
+      height: 325px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 461px;
+      height: 436px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $border-radius-container;
+    }
+  }
+
+  .hero-description {
+    @media screen and (min-width: $tablet) {
+      max-width: 590px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 560px;
+    }
+  }
+
+  .text-expandable {
+    @media screen and (max-width: $desktop) {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 7;
+    }
+
+    &.expanded {
+      display: block;
+      overflow: unset;
+      -webkit-box-orient: unset;
+      -webkit-line-clamp: unset;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .show-more-button {
+    display: block;
+    padding: 0;
+    margin-top: 18px;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    background-color: transparent;
+    border: 0;
+    color: $color-accent;
+    cursor: pointer;
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  //  Facebook stories section
+  .stories {
+    padding: 24px 0;
+    position: relative;
+
+    @media screen and (min-width: $tablet) {
+      padding: 32px 0;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 40px 0;
+    }
+
+    .background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -2;
+      background: $gradient;
+      @media screen and (min-width: $desktop) {
+        background: $gradient-section;
+      }
+    }
+
+    .title-main {
+      max-width: 280px;
+      @media screen and (min-width: $tablet) {
+        max-width: unset;
+      }
+    }
+  }
+
+  .gallery-desktop {
+    margin-bottom: 40px;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .gallery-mobile {
+    margin-bottom: 40px;
+    display: block;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 30px;
+      display: flex;
+    }
+
+    .swiper-slide {
+      min-height: 500px;
+    }
+
+    .swiper-pagination {
+      position: relative;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      border: 1px solid $color-secondary;
+      background-color: transparent;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $color-secondary;
+    }
+  }
+
+  .stories-text {
+    max-width: 190px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto 16px;
+    @media screen and (min-width: $tablet) {
+      max-width: unset;
+      font-weight: 400;
+      font-size: 15px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .stories-button {
+    padding: 12px 32px;
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: $color-light;
+    border-radius: $border-radius-container;
+    font-size: 15px;
+  }
+
+  // Team section
+  .team {
+    padding: 60px 0;
+    @media screen and (min-width: $tablet) {
+      padding: 80px 0;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 112px 0;
+    }
+
+    .text-main {
+      @media screen and (min-width: $tablet) {
+        max-width: 560px;
+      }
+    }
+
+    .title-main {
+      margin-left: unset;
+      text-align: left;
+    }
+
+  }
+
+  .team-list {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+
+  .team-card-column {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      &:first-child {
+        width: 50%;
+
+        .team-card {
+          margin-left: auto;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 0 8px;
+    }
+  }
+
+  .team-card {
+    margin-bottom: 40px;
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      width: 234px;
+    }
+
+    span {
+      text-align: center;
+    }
+  }
+
+  .team-card-img-wrapper {
+    margin-bottom: 16px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+  }
+
+  .team-card-line {
+    margin-bottom: 8px;
+  }
+
 }
