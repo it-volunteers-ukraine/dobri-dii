@@ -1,9 +1,10 @@
 @import "../variables.scss";
 
-ul {
+.template__posts {
   display: flex;
 }
-.template__list li {
+
+.template__posts li {
   background-color: $color-light;
   border-radius: $border-radius-container;
 
@@ -78,5 +79,5 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   white-space: normal;
-  height: 124px;
+  height: 120px;
 }

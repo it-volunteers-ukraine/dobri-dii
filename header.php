@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
     <title>It-volunteers</title>
 </head>
-<body>  
+
+<body>
     <div class="wrapper">
         <header class="header">
+
+
+
+
             <div class="header__content _container">
                 <div class="header__menu menu">
                     <div class="menu__icon icon-menu menu__round">
@@ -18,18 +24,20 @@
                         <span></span>
                     </div>
                 </div>
-                <div class="menu__nav">  
+                <div class="menu__nav">
                     <?php 
                         if ( has_custom_logo() ) {
                             echo get_custom_logo();
                         }
-                    ?>                     
+                    ?>
                     <div class="menu__content">
                         <svg class="header-networks__icon" width="24px" height="24px">
-                           <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#instagram"></use>
+                            <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#instagram">
+                            </use>
                         </svg>
-                    </a>IT VOLUNTEERS</div>
-                    <nav class="menu__body"> 
+                        </a>IT VOLUNTEERS
+                    </div>
+                    <nav class="menu__body">
                         <div class=" menu__container">
                             <?php wp_nav_menu( [
                                 'theme_location'       => 'header',                          
@@ -39,11 +47,10 @@
                                 'echo'                 => true,                            
                                 'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',  
                                 ] ); 
-                            ?>   
-                        </div>                          
-                    </nav> 
-                    <div class="burger-menu__overlay"></div> 
-                </div>                
-            </div>                      
-        </header>  
-	
+                            ?>
+                        </div>
+                    </nav>
+                    <div class="burger-menu__overlay"></div>
+                </div>
+            </div>
+        </header>

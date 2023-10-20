@@ -1,4 +1,4 @@
-    <ul class="<?php print $args['class']; ?> swiper-wrapper">
+    <ul class="<?php print $args['class']; ?> template__list swiper-wrapper">
 
         <?php
             global $post;
