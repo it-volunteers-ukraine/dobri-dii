@@ -76,6 +76,10 @@ function wp_it_volunteers_scripts() {
     if (is_singular() && locate_template('template-parts/content-list.php')) {
     wp_enqueue_style( 'content-list-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-list.css', array('main') );
     }
+    
+    if (is_singular() && locate_template('template-parts/content-posts.php')) {
+    wp_enqueue_style( 'content-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-posts.css', array('main') );
+    }
 
   if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
     wp_enqueue_style( 'facebook-story-cards-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/facebook-story-cards.css', array('main') );

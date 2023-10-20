@@ -431,7 +431,7 @@
   }
 }
 
-.projects__list li {
+.projects__list.template__list li {
   padding: 16px;
 
   @media screen and (min-width: $desktop) {
