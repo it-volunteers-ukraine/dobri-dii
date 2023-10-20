@@ -57,6 +57,44 @@
         </div>
     </section>
 
+    <!--    Team section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="title-main">
+				<?php the_field( 'team_title' ); ?>
+            </h2>
+            <p class="text-main">
+				<?php the_field( 'team_text' ); ?>
+            </p>
+
+            <div class="team-list">
+				<?php if ( have_rows( 'team_card' ) ): ?>
+					<?php while ( have_rows( 'team_card' ) ): the_row(); ?>
+                        <div class="team-card-column">
+                            <div class="team-card">
+                                <div class="team-card-img-wrapper">
+                                    <img src="<?php the_sub_field( 'team_card_image' ); ?>"
+                                         alt="<?php the_sub_field( 'gallery_card_image_alt' ); ?>">
+                                </div>
+                                <span class="text-main">
+		                        <?php the_sub_field( 'team_card_surname' ); ?>
+                            </span>
+                                <span class="text-main">
+		                        <?php the_sub_field( 'team_card_name' ); ?>
+                            </span>
+                                <img class="team-card-line"
+                                     src="<?php bloginfo( 'template_url' ); ?>/assets/images/about-team-card-line.svg"
+                                     alt="#">
+                                <span class="text-secondary">
+		                        <?php the_sub_field( 'team_card_position' ); ?>
+                            </span>
+                            </div>
+                        </div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+            </div>
+        </div>
+    </section>
 
 </main>
 
