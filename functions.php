@@ -1,15 +1,15 @@
 <?php
 if ( ! function_exists('wp_it_volunteers_setup')) {
   function wp_it_volunteers_setup() {
-    add_theme_support( 'custom-logo', 
+    add_theme_support( 'custom-logo',
       array(
         'height'      => 70,
         'width'       => 225,
         'flex-width'  => true,
-        'flex-height' => true,        
+        'flex-height' => true,
       )
     );
-    add_theme_support( 'title-tag' );    
+    add_theme_support( 'title-tag' );
   }
   add_action( 'after_setup_theme', 'wp_it_volunteers_setup' );
 }
@@ -52,7 +52,7 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_style( 'partners-style', get_template_directory_uri() . '/assets/styles/template-styles/partners.css', array('main') );
     wp_enqueue_script( 'partners-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/partners.js', array(), false, true );
   }
-  
+
   if ( is_page_template('templates/gallery.php') ) {
     wp_enqueue_style( 'gallery-style', get_template_directory_uri() . '/assets/styles/template-styles/gallery.css', array('main') );
     wp_enqueue_script( 'gallery-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/gallery.js', array(), false, true );
@@ -62,7 +62,7 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_style( 'contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main') );
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
-  
+
   if ( is_page_template('templates/donate.php') ) {
     wp_enqueue_style( 'donate-style', get_template_directory_uri() . '/assets/styles/template-styles/donate.css', array('main') );
     wp_enqueue_script( 'donate-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/donate.js', array(), false, true );
@@ -71,6 +71,10 @@ function wp_it_volunteers_scripts() {
     if (is_singular() && locate_template('template-parts/donate-section.php')) {
     wp_enqueue_style( 'donate-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/donate-section.css', array('main') );
     wp_enqueue_script( 'donate-section-scripts', get_template_directory_uri() . '/assets/scripts/template-parts-scripts/donate-section.js', array(), false, true );
+    }
+
+    if (is_singular() && locate_template('template-parts/content-list.php')) {
+    wp_enqueue_style( 'content-list-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-list.css', array('main') );
     }
 
   if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
@@ -85,7 +89,7 @@ function add_google_fonts() {
   wp_enqueue_style( 'Montserrat-600', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap' );
   wp_enqueue_style( 'Montserrat-700', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap' );
 }
- 
+
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 /** Register menus */
