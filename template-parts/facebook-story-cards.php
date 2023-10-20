@@ -1,8 +1,10 @@
 <?php if ( have_rows( 'gallery_card', 7 ) ): ?>
 	<?php while ( have_rows( 'gallery_card' ) ): the_row(); ?>
         <article class="swiper-slide stories-card">
-            <img class="stories-card-img" src="<?php the_sub_field( 'gallery_card_image' ); ?>"
-                 alt="<?php the_sub_field( 'gallery_card_image_alt' ); ?>">
+            <div class="stories-card-img">
+                <img src="<?php the_sub_field( 'gallery_card_image' ); ?>"
+                     alt="<?php the_sub_field( 'gallery_card_image_alt' ); ?>">
+            </div>
             <div class="stories-card-info">
                 <div class="stories-card-text text-secondary">
 					<?php the_sub_field( 'gallery_card_text' ); ?>

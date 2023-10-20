@@ -48,7 +48,8 @@
             </div>
 
             <p class="stories-text"><?php the_field( 'gallery_text' ); ?></p>
-            <a class="stories-button" href="<?php the_field( 'facebook', 17 ); ?>">
+            <a class="stories-button" href="<?php the_field( 'facebook', 17 ); ?>" target="_blank"
+               aria-label="Перейти на сторінку в Фейсбук">
                 <svg width="24px" height="24px">
                     <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#facebook"></use>
                 </svg>
@@ -74,7 +75,7 @@
                             <div class="team-card">
                                 <div class="team-card-img-wrapper">
                                     <img src="<?php the_sub_field( 'team_card_image' ); ?>"
-                                         alt="<?php the_sub_field( 'gallery_card_image_alt' ); ?>">
+                                         alt="<?php the_sub_field( 'team_card_surname' ); ?> <?php the_sub_field( 'team_card_name' ); ?>">
                                 </div>
                                 <span class="text-main">
 		                        <?php the_sub_field( 'team_card_surname' ); ?>
@@ -96,6 +97,8 @@
         </div>
     </section>
 
+
+	<?php get_template_part( 'template-parts/donate-section' ); ?>
 </main>
 
 <?php get_footer(); ?>
