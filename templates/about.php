@@ -8,10 +8,11 @@
 <main class="about">
 
     <!--    Hero section -->
-    <section class="container">
+    <section class="container" id="aboutStory">
         <h2 class="title-main">
 			<?php the_field( 'hero_title' ); ?>
         </h2>
+
         <div class="hero-wrapper">
             <div class="hero-image-block">
                 <div class="hero-image-wrapper">
@@ -59,7 +60,7 @@
     </section>
 
     <!--    Team section -->
-    <section class="team">
+    <section class="team" id="aboutTeam">
         <div class="container">
             <h2 class="title-main">
 				<?php the_field( 'team_title' ); ?>
@@ -97,6 +98,75 @@
         </div>
     </section>
 
+    <!--    Documents section -->
+    <section class="documents" id="aboutDocuments">
+        <div class="container">
+            <h2 class="title-main">
+				<?php the_field( 'documents_title' ); ?>
+            </h2>
+
+            <div class="documents-wrapper">
+                <p class="text-main">
+					<?php the_field( 'documents_text' ); ?>
+                </p>
+                <div class="documents-list">
+					<?php if ( have_rows( 'documents' ) ): ?>
+						<?php while ( have_rows( 'documents' ) ): the_row(); ?>
+
+                            <a class="documents-card" href="<?php the_sub_field( 'documents_file' ); ?> "
+                               target="_blank">
+                                <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon-document-green.svg"
+                                     alt="Документ">
+                                <span><?php the_sub_field( 'documents_title' ); ?></span>
+                            </a>
+						<?php endwhile; ?>
+					<?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--    Reports section -->
+    <section class="reports" id="aboutReports">
+        <div class="container">
+            <h2 class="title-main">
+				<?php the_field( 'reports_title' ); ?>
+            </h2>
+
+            <div class="carousel-container">
+                <div class="swiper swiperReports">
+                    <div class="swiper-wrapper">
+						<?php if ( have_rows( 'reports' ) ): ?>
+							<?php while ( have_rows( 'reports' ) ): the_row(); ?>
+                                <div class="swiper-slide">
+                                    <a class="documents-card swiper-slide"
+                                       href="<?php the_sub_field( 'reports_file' ); ?> "
+                                       target="_blank">
+                                        <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon-document-violet.svg"
+                                             alt="Документ">
+                                        <span><?php the_sub_field( 'reports_title' ); ?></span>
+                                    </a>
+                                </div>
+							<?php endwhile; ?>
+						<?php endif; ?>
+                    </div>
+                </div>
+                <div class="button-next">
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up"
+                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-right"></use>
+                    </svg>
+                </div>
+                <div class="button-prev">
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up"
+                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-left"></use>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 	<?php get_template_part( 'template-parts/donate-section' ); ?>
 </main>
