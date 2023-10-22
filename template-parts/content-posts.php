@@ -1,4 +1,4 @@
-<ul class="<?php print $args['class']; ?> template__posts">
+<ul class="template__posts">
     <?php
             global $post;
             $myposts = get_posts([ 
@@ -12,13 +12,13 @@
                 setup_postdata( $post );
                 ?>
     <li>
-        <div class=" img">
+        <div class="post__img">
             <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
         </div>
-        <div class="info">
-            <span class="date"><?php the_field('date'); ?></span>
-            <h3 class="title-secondary title"><?php the_title(); ?></h3>
-            <p class="text-secondary text"><?php the_field('text'); ?></p>
+        <div class="post__info">
+            <span class="post__date"><?php the_field('date'); ?></span>
+            <h3 class="title-secondary post__title"><?php the_title(); ?></h3>
+            <p class="text-secondary post__text"><?php the_field('text'); ?></p>
             <a class="<?php print $args['classButton']; ?>" href="<?php the_permalink(); ?>">
                 <?php print $args['text']; ?>
                 <svg width="24px" height="24px">

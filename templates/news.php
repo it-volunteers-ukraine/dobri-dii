@@ -10,13 +10,20 @@ get_header();
     <h1 class=" title-main news__title"><?php the_title();?></h1>
 
 
-    <?php       $params = [
-                'type'  => 'news',
-                'class' => 'news__list',
-                'classButton' => 'button--arrow',
-                'text'  => 'Читати більше',
-            ];
-            get_template_part('template-parts/content', 'posts', $params); ?>
+
+    <?php
+if (have_posts()) {
+    // Виводимо пости типу "news"
+    $params = [
+        'type'  => 'news',
+        'classButton' => 'button--arrow',
+        'text'  => 'Читати більше',
+    ];
+    get_template_part('template-parts/content', 'posts', $params);
+} else {
+    echo 'Новини не знайдено';
+}
+?>
 
     <div class="pagination">
         <?php

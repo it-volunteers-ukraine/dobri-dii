@@ -27,7 +27,10 @@ function wp_it_volunteers_scripts() {
 
   wp_enqueue_script( 'wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true );
   wp_enqueue_script( 'swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), false, true );
+  wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), false, true );
+  wp_localize_script('jquery', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
 
+  
   if ( is_page_template('templates/home.php') ) {
     wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main') );
     wp_enqueue_script( 'home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true );
@@ -132,3 +135,59 @@ if( function_exists('acf_add_options_page') ) {
       'parent_slug'   => 'theme-general-settings',
   ));
 }
+
+
+/** Load more function */
+
+function load_more_projects() {
+    $page = $_POST['page'];
+    $posts_per_page = $_POST['posts_per_page'];
+
+    $args = array(
+        'post_type' => 'projects',
+        'posts_per_page' => $posts_per_page,
+        'paged' => $page,
+    );
+
+    $project_query = new WP_Query($args);
+
+    if ($project_query->have_posts()) {
+        while ($project_query->have_posts()) {
+            $project_query->the_post(); ?>
+<li class="projects__item">
+    <div class="projects__img">
+        <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+    </div>
+    <div class="projects__info">
+        <span class="projects__date"><?php the_field('date'); ?></span>
+        <h3 class="title-secondary projects__title"><?php the_title(); ?></h3>
+        <p class="text-secondary projects__text"><?php the_field('text'); ?></p>
+        <a class="button button--transparent" href="<?php the_permalink(); ?>">
+            Детальніше про проєкт
+        </a>
+    </div>
+</li>
+<?php }
+}
+
+wp_reset_postdata();
+die();
+}
+
+add_action('wp_ajax_load_more_projects', 'load_more_projects');
+add_action('wp_ajax_nopriv_load_more_projects', 'load_more_projects');
+
+
+function get_total_pages() {
+    $post_type = $_POST['postType'];
+    $posts_per_page = $_POST['postsPerPage'];
+
+    $total_pages = ceil(wp_count_posts($post_type)->publish / $posts_per_page);
+
+    echo $total_pages;
+
+    wp_die();
+}
+
+add_action('wp_ajax_get_total_pages', 'get_total_pages');
+add_action('wp_ajax_nopriv_get_total_pages', 'get_total_pages');
