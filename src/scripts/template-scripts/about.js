@@ -8,8 +8,20 @@ const swiperStories = new Swiper(".swiperStories", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '"></span>';
-        },
     },
+});
+
+const swiperReports = new Swiper(".swiperReports", {
+    spaceBetween: 40,
+    slidesPerView: 2,
+    breakpoints: {
+        768: {
+            slidesPerView: 4,
+        }
+    },
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+    },
+
 });
