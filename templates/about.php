@@ -8,7 +8,7 @@
 <main class="about">
 
     <!--    Hero section -->
-    <section class="container">
+    <section class="container" id="aboutStory">
         <h2 class="title-main">
 			<?php the_field( 'hero_title' ); ?>
         </h2>
@@ -60,7 +60,7 @@
     </section>
 
     <!--    Team section -->
-    <section class="team">
+    <section class="team" id="aboutTeam">
         <div class="container">
             <h2 class="title-main">
 				<?php the_field( 'team_title' ); ?>
@@ -99,7 +99,7 @@
     </section>
 
     <!--    Documents section -->
-    <section class="documents">
+    <section class="documents" id="aboutDocuments">
         <div class="container">
             <h2 class="title-main">
 				<?php the_field( 'documents_title' ); ?>
@@ -127,7 +127,7 @@
     </section>
 
     <!--    Reports section -->
-    <section class="reports">
+    <section class="reports" id="aboutReports">
         <div class="container">
             <h2 class="title-main">
 				<?php the_field( 'reports_title' ); ?>
