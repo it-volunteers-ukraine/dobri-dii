@@ -1,40 +1,28 @@
-<ul class="template__posts">
-    <?php
-            global $post;
-            $myposts = get_posts([ 
-            'post_type' => $args['type'],  
-            'posts_per_page' => 4,   
-            'paged' => get_query_var('paged') ? get_query_var('paged') : 1 ,
-           ]);
+<?php
+$type = get_query_var('type');
+$classButton = get_query_var('classButton');
+$text = get_query_var('text');
+?>
 
-            if( $myposts ){
-              foreach( $myposts as $post ){
-                setup_postdata( $post );
-                ?>
-    <li>
-        <div class="post__img">
-            <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
-        </div>
-        <div class="post__info">
-            <span class="post__date"><?php the_field('date'); ?></span>
-            <h3 class="title-secondary post__title"><?php the_title(); ?></h3>
-            <p class="text-secondary post__text"><?php the_field('text'); ?></p>
-            <a class="<?php print $args['classButton']; ?>" href="<?php the_permalink(); ?>">
-                <?php print $args['text']; ?>
-                <svg width="24px" height="24px">
-                    <use class="arrow-up"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
-                    </use>
-                    <use class="arrow-right"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
-                    </use>
-                </svg>
-            </a>
-        </div>
-    </li>
-    <?php 
-            }
-            } 
-            wp_reset_postdata(); 
-            ?>
-</ul>
+
+<li class=" <?php print $type; ?>__item">
+    <div class="<?php print $type; ?>__img">
+        <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
+    </div>
+    <div class="<?php print $type; ?>__info">
+        <span class="<?php print $type; ?>__date"><?php the_field('date'); ?></span>
+        <h3 class="title-secondary <?php print $type; ?>__title"><?php the_title(); ?></h3>
+        <p class="text-secondary <?php print $type; ?>__text"><?php the_field('text'); ?></p>
+        <a class="<?php print $classButton; ?>" href="<?php the_permalink(); ?>">
+            <?php print $text; ?>
+            <svg width="24px" height="24px">
+                <use class="arrow-up"
+                    href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
+                </use>
+                <use class="arrow-right"
+                    href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                </use>
+            </svg>
+        </a>
+    </div>
+</li>

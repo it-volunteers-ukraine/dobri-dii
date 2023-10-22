@@ -80,11 +80,7 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_style( 'content-list-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-list.css', array('main') );
     }
     
-    if (is_singular() && locate_template('template-parts/content-posts.php')) {
-    wp_enqueue_style( 'content-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-posts.css', array('main') );
-    }
-
-  if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
+    if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
     wp_enqueue_style( 'facebook-story-cards-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/facebook-story-cards.css', array('main') );
     }
  }
@@ -136,7 +132,6 @@ if( function_exists('acf_add_options_page') ) {
   ));
 }
 
-
 /** Load more function */
 
 function load_more_projects() {
@@ -154,10 +149,14 @@ function load_more_projects() {
     if ($project_query->have_posts()) {
         while ($project_query->have_posts()) {
             $project_query->the_post(); 
-get_template_part('template-parts/content', 'project');
-}
-}
 
+          set_query_var('type', 'projects' );
+          set_query_var('classButton', 'button button--transparent' ); 
+          set_query_var('text', 'Детальніше про проєкт' );
+           
+          get_template_part('template-parts/content', 'posts');
+}
+}
 wp_reset_postdata();
 die();
 }
