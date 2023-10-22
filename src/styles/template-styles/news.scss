@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.news__title {
+.title {
   margin-bottom: 24px;
 
   @media screen and (min-width: $tablet) {
@@ -12,7 +12,14 @@
   }
 }
 
+.news__list a {
+  @media screen and (min-width: $desktop) {
+    margin-left: 414px;
+  }
+}
+
 .news__list {
+  display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 40px;
@@ -31,9 +38,12 @@
   }
 }
 
-.news__list li {
+.news__item {
   position: relative;
   width: fit-content;
+  background-color: $color-light;
+  border-radius: $border-radius-container;
+
   @media screen and (min-width: $desktop) {
     display: flex;
     align-items: center;
@@ -41,17 +51,10 @@
   }
 }
 
-.news__list .info {
-  @media screen and (min-width: $tablet) {
-    width: 344px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding: 0;
-    width: 558px;
-  }
-}
-
-.news__list .img {
+.news__img {
+  position: relative;
+  border-radius: $border-radius-container;
+  overflow: hidden;
   width: 343px;
   height: 258px;
 
@@ -66,7 +69,49 @@
   }
 }
 
-.news__list .date {
+.news__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $gradient-image;
+}
+
+.news__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    width: 344px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 0;
+    width: 558px;
+  }
+}
+
+.news__date {
+  padding: 3px 8px;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+  align-items: center;
+  border-radius: 8px;
+  background: $color-grey;
+
   @media screen and (min-width: $desktop) {
     position: absolute;
     top: 0;
@@ -74,16 +119,33 @@
   }
 }
 
-.news__list a {
+.news__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  height: 48px;
+
+  @media screen and (min-width: $tablet) {
+    height: 56px;
+  }
+
   @media screen and (min-width: $desktop) {
-    margin-left: 414px;
+    width: 558px;
+    text-align: start;
   }
 }
 
-.news__list.template__posts li h3 {
-  @media screen and (min-width: $desktop) {
-    text-align: start;
-  }
+.news__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  white-space: normal;
+  height: 120px;
 }
 
 .pagination {

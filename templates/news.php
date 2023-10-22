@@ -7,16 +7,43 @@ get_header();
 
 <main class="container">
 
-    <h1 class=" title-main news__title"><?php the_title();?></h1>
+    <h1 class=" title-main title"><?php the_title();?></h1>
 
 
-    <?php       $params = [
-                'type'  => 'news',
-                'class' => 'news__list',
-                'classButton' => 'button--arrow',
-                'text'  => 'Читати більше',
-            ];
-            get_template_part('template-parts/content', 'posts', $params); ?>
+
+    <?php
+if (have_posts()) {
+    global $post;
+    
+    $myposts = get_posts([
+        'post_type' => 'news',
+        'posts_per_page' => 4,
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+    ]);
+     ?>
+
+    <ul class="news__list">
+
+        <?php if ($myposts)
+         { foreach ($myposts as $post) 
+            { setup_postdata($post);
+                
+                set_query_var('type', 'news' );
+                set_query_var('classButton', 'button--arrow' ); 
+                set_query_var('text', 'Читати більше' );
+                
+            get_template_part('template-parts/content', 'posts' );
+     } 
+    } 
+    wp_reset_postdata();
+    ?>
+
+    </ul>
+    <?php
+     } 
+     else { echo 'Новини не знайдено' ; } ?>
+
+
 
     <div class="pagination">
         <?php
