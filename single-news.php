@@ -126,6 +126,8 @@ get_header();
 
 </main><!-- #main -->
 
+<?php get_template_part( 'template-parts/donate-section' ); ?>
+
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
