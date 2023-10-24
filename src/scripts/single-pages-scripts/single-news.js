@@ -11,6 +11,7 @@ const swiper = new Swiper(".swiperOneNews", {
     },
 
     1366: {
+      slidesPerView: 3,
       spaceBetween: 15,
     },
   },

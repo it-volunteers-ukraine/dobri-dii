@@ -121,14 +121,9 @@
     width: 613px;
     height: 124px;
   }
-}
 
-.news-gallery__container.swiper-slide {
-  display: flex;
-  height: 224px;
-
-  @media screen and (min-width: $tablet) {
-    height: 124px;
+  @media screen and (min-width: $desktop) {
+    width: 567px;
   }
 }
 
