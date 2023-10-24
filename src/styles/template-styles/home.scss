@@ -8,7 +8,6 @@
 
   @media screen and (min-width: $tablet) {
     display: flex;
-    justify-content: space-between;
     gap: 26px;
     margin-bottom: 51px;
   }
@@ -16,6 +15,15 @@
   @media screen and (min-width: $desktop) {
     gap: 133px;
     padding-right: 64px;
+  }
+}
+
+.home-info__wrapper {
+  @media screen and (min-width: $tablet) {
+    max-width: 336px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 461px;
   }
 }
 
