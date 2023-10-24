@@ -97,7 +97,7 @@
                         </use>
                     </svg>
                 </a>
-                <a class="button button--transparent" href="<?php echo get_permalink( 7 ); ?>#reports">Звіти</a>
+                <a class="button button--transparent" href="<?php echo get_permalink( 7 ); ?>#aboutReports">Звіти</a>
             </div>
         </div>
 
