@@ -83,6 +83,16 @@ function wp_it_volunteers_scripts() {
     if (is_singular() && locate_template('template-parts/facebook-story-cards.php')) {
     wp_enqueue_style( 'facebook-story-cards-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/facebook-story-cards.css', array('main') );
     }
+
+    if (get_post_type() === 'news' ) { 
+    wp_enqueue_style('single-news-style', get_template_directory_uri() . '/assets/styles/single-pages-styles/single-news.css', array('main') );
+    wp_enqueue_script('single-news-scripts', get_template_directory_uri() . '/assets/scripts/single-pages-scripts/single-news.js', array(), false, true);
+    }
+    
+    if (get_post_type() === 'projects' ) { 
+    wp_enqueue_style('single-projects-style', get_template_directory_uri() . '/assets/styles/single-pages-styles/single-projects.css', array('main') );
+    wp_enqueue_script('single-projects-scripts', get_template_directory_uri() . '/assets/scripts/single-pages-scripts/single-projects.js', array(), false, true);
+    }
  }
 
 /** add fonts */

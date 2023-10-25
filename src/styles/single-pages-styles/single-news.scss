@@ -1,0 +1,232 @@
+@import "../variables.scss";
+
+.one-news__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  padding-bottom: 9px;
+  height: 224px;
+  border-radius: $border-radius-container;
+  overflow: hidden;
+  color: $color-light;
+
+  @media screen and (min-width: $tablet) {
+    width: 704px;
+    height: 280px;
+    margin-bottom: 32px;
+    padding: 0 58px 16px;
+    gap: 12px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 1140px;
+    height: 466px;
+    margin-bottom: 40px;
+    padding: 0 194px 32px;
+    gap: 16px;
+  }
+}
+
+.one-news__wrapper {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 121px;
+  }
+}
+.one-news__article {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.one-news__title {
+  color: $color-primary;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    color: $color-light;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 22px;
+    line-height: 1.27;
+  }
+}
+
+.one-news__hero .one-news__title {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+  }
+}
+
+.one-news__article {
+  @media screen and (min-width: $desktop) {
+    max-width: 665px;
+  }
+}
+
+.one-news__article .one-news__title {
+  display: block;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.one-news__text {
+  margin-bottom: 76px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1365px) {
+    max-width: 584px;
+  }
+}
+
+// Gallery
+
+.swiperOneNews2 {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    margin-bottom: 24px;
+  }
+}
+
+.news-gallery__item2 {
+  position: relative;
+  border-radius: $border-radius-container;
+  overflow: hidden;
+  width: 704px;
+  height: 428px;
+
+  @media screen and (min-width: $desktop) {
+    width: 655px;
+    height: 398px;
+  }
+}
+
+.gallery__wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.swiperOneNews {
+  @media screen and (min-width: $tablet) {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 613px;
+    height: 124px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 567px;
+  }
+}
+
+.news-gallery__item {
+  position: relative;
+  border-radius: $border-radius-container;
+  overflow: hidden;
+  width: 343px;
+  height: 224px;
+
+  @media screen and (min-width: $tablet) {
+    width: 179px;
+    height: 124px;
+  }
+}
+
+.news-gallery__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $gradient-image;
+}
+
+.news-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-next,
+.button-prev {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 43px;
+  width: 44px;
+  height: 44px;
+  z-index: 11;
+  cursor: pointer;
+
+  &.swiper-button-disabled {
+    svg {
+      fill: $color-secondary;
+    }
+  }
+}
+
+.button-next {
+  display: none;
+  right: 0;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.button-prev {
+  display: none;
+  left: 0;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.news__pagination.swiper-pagination-clickable {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.swiperOneNews .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border: 1px solid $color-secondary;
+  background-color: transparent;
+}
+
+.swiperOneNews .swiper-pagination-bullet-active {
+  background-color: $color-secondary;
+}

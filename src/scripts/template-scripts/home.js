@@ -1,5 +1,3 @@
-console.log("home page");
-
 const swiperProjects = new Swiper(".swiperProjects", {
   slidesPerView: 1,
   breakpoints: {
@@ -7,7 +5,7 @@ const swiperProjects = new Swiper(".swiperProjects", {
       slidesPerView: 2,
       spaceBetween: 16,
     },
-    1380: {
+    1366: {
       slidesPerView: 3,
       spaceBetween: 24,
     },
@@ -28,7 +26,7 @@ const swiperNews = new Swiper(".swiperNews", {
       slidesPerView: 2,
       spaceBetween: 16,
     },
-    1380: {
+    1366: {
       slidesPerView: 3,
       spaceBetween: 24,
     },
