@@ -29,6 +29,23 @@
   }
 }
 
+.one-news__wrapper {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 121px;
+  }
+}
+.one-news__article {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
 .one-news__title {
   color: $color-primary;
   text-align: center;
