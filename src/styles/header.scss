@@ -142,11 +142,14 @@
     background-color: $background-submenu;
     padding: 5px;
     width: 127px;
+    z-index: 1;
   }
+
   ul li .sub-menu li {
     padding: 12px 0;
     white-space: nowrap;
   }
+
   ul li .sub-menu li a {
     text-decoration: none;
     color: $color-primary;
@@ -222,7 +225,7 @@
     justify-content: center;
     gap: 12px;
   }
-  
+
   ul li {
     padding: 12px 4px;
   }
