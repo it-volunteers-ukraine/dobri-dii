@@ -127,6 +127,7 @@
       text-decoration: underline;
     }
   }
+
   ul .current_page_item a {
     color: $color-accent;
     text-decoration: underline;
@@ -284,6 +285,7 @@
 
   @media screen and (min-width: $tablet) {
     font-size: 16px;
+    padding: 15px 61px;
   }
 }
 
@@ -297,8 +299,23 @@
   transition: fill 250ms $cubic-bezier;
   cursor: pointer;
 
+  @media screen and (min-width: $tablet) {
+    width: 64px;
+    height: 64px;
+  }
+
   &:hover {
     fill: $color-orange;
+  }
+}
+
+.button-menu svg {
+  width: 48px;
+  height: 48px;
+
+  @media screen and (min-width: $tablet) {
+    width: 64px;
+    height: 64px;
   }
 }
 

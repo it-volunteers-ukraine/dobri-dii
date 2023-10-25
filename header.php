@@ -91,12 +91,12 @@
                             ?>
                     </nav>
 
-                    <a class="button button--blue"
+                    <a class="button button--blue header__button"
                         href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?>
                     </a>
 
                     <button type="button" class="button-menu is-open" aria-controls="menu-container" data-menu-button>
-                        <svg class="social-link-icon" width="48px" height="48px">
+                        <svg class="social-link-icon">
                             <use class="button-menu__burger"
                                 href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#burger">
                             </use>

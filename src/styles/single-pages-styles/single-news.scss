@@ -35,6 +35,7 @@
     gap: 121px;
   }
 }
+
 .one-news__article {
   margin-bottom: 60px;
 
@@ -123,6 +124,13 @@
     width: 655px;
     height: 398px;
   }
+}
+
+.news-gallery__item2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .gallery__wrapper {
