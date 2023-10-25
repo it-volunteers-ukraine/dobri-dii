@@ -96,7 +96,7 @@
                     </a>
 
                     <button type="button" class="button-menu is-open" aria-controls="menu-container" data-menu-button>
-                        <svg class="social-link-icon">
+                        <svg class="social-link-icon" aria-label="Перемикач мобільного меню">
                             <use class="button-menu__burger"
                                 href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#burger">
                             </use>
