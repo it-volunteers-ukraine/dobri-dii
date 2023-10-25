@@ -13,12 +13,14 @@
     <div class="wrapper">
         <header class="header">
             <div class="header__content container">
-
-                <?php 
+                <div class="header__logo">
+                    <?php 
                         if ( has_custom_logo() ) {
                             echo get_custom_logo();
                         }
                     ?>
+                </div>
+
 
 
                 <div class="desktop-menu">
@@ -34,8 +36,6 @@
                                 ] ); 
                             ?>
                     </nav>
-
-
 
                     <ul class="header__socials">
                         <li>
@@ -79,7 +79,7 @@
 
                 <div class="mobile-menu">
 
-                    <nav class="nav-menu">
+                    <nav class="nav-menu__mobile" id="menu-container" data-menu>
                         <?php wp_nav_menu( [
                                 'theme_location'       => 'header',                          
                                 'container'            => false,                           
@@ -91,9 +91,20 @@
                             ?>
                     </nav>
 
-                    <a class="button button--orange"
+                    <a class="button button--blue"
                         href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?>
                     </a>
+
+                    <button type="button" class="button-menu is-open" aria-controls="menu-container" data-menu-button>
+                        <svg class="social-link-icon" width="48px" height="48px">
+                            <use class="button-menu__burger"
+                                href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#burger">
+                            </use>
+                            <use class="button-menu__cros"
+                                href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#cross">
+                            </use>
+                        </svg>
+                    </button>
 
                 </div>
 
