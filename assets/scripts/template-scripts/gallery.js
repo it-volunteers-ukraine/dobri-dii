@@ -1,0 +1,1 @@
+const swiperStories=new Swiper(".swiperGallery",{spaceBetween:32,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".button-next",prevEl:".button-prev"}});

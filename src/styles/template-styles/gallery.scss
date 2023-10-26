@@ -1,0 +1,185 @@
+@import "../variables.scss";
+
+.gallery-page {
+
+  .gallery-card {
+    margin-bottom: 60px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 82px;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  .title-main {
+    margin-bottom: 40px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 64px;
+    }
+  }
+
+  .title-secondary {
+    margin-bottom: 24px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .text-main {
+    @media screen and (max-width: $tablet) {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    @media screen and (max-width: $desktop) and (min-width: $tablet) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .image-gallery {
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-left: 100px;
+      width: 655px;
+    }
+  }
+
+  .title-mobile {
+    display: block;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .title-desktop {
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+
+  .date-mobile {
+    margin-bottom: 16px;
+    font-size: 12px;
+    display: flex;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .date-desktop {
+    margin-bottom: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+  }
+
+  .date-desktop, .date-mobile {
+    align-items: center;
+
+    span {
+      margin-left: 12px;
+    }
+  }
+
+
+  // Image carousel
+  .image-wrapper {
+    width: 100%;
+    min-width: 100%;
+    height: 224px;
+    border-radius: $border-radius-container;
+    overflow: hidden;
+    position: relative;
+    @media screen and (min-width: $tablet) {
+      height: 426px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 372px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+  }
+
+  .swiper-pagination {
+    position: relative;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $color-secondary;
+    background-color: transparent;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-secondary;
+  }
+
+  .button-next, .button-prev {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    content: "";
+    top: calc(50% - 22px);
+    z-index: 11;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color-primary, 0.8);
+    border-radius: 50%;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+
+    svg {
+      fill: $color-light;
+    }
+
+    &.swiper-button-disabled {
+      svg {
+        fill: lighten($color-secondary, 10%);
+      }
+    }
+  }
+
+  .button-next {
+    right: 8px;
+  }
+
+  .button-prev {
+    left: 8px;
+  }
+
+
+}

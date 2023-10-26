@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.about {
+.about-page {
 
   .title-main {
     margin-bottom: 24px;
@@ -403,7 +403,7 @@
 
       &.swiper-button-disabled {
         svg {
-          fill: $color-secondary;
+          fill: lighten($color-secondary, 30%);
         }
       }
     }
