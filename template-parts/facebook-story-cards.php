@@ -6,9 +6,9 @@
                      alt="<?php the_sub_field( 'gallery_card_image_alt' ); ?>">
             </div>
             <div class="stories-card-info">
-                <div class="stories-card-text text-secondary">
+                <p class="stories-card-text text-secondary">
 					<?php the_sub_field( 'gallery_card_text' ); ?>
-                </div>
+                </p>
                 <div class="stories-card-bottom">
                     <a class="button--arrow"
                        href="<?php the_sub_field( 'gallery_card_link' ); ?>">Читати
