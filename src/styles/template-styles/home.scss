@@ -439,6 +439,12 @@
   }
 }
 
+.projects .template__list .info {
+  @media screen and (min-width: $desktop) {
+    padding: 24px;
+  }
+}
+
 .projects__list.template__list li {
   padding: 16px;
 
@@ -598,6 +604,24 @@
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 40px;
+  }
+}
+
+.news__list.template__list {
+  margin-bottom: 22px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 26px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.news__list.template__list .info {
+  @media screen and (min-width: $desktop) {
+    padding-top: 24px;
   }
 }
 
