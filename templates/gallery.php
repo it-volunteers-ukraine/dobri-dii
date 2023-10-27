@@ -10,12 +10,12 @@
         <h1 class="title-main"><?php the_title(); ?></h1>
 
 		<?php
-			$args         = array(
+			$galleryItems = get_posts( [
+				'fields'         => 'ids',
 				'posts_per_page' => 3,
 				'post_type'      => 'gallery',
 				'order'          => 'ASC'
-			);
-			$galleryItems = get_posts( $args );
+			] );
 
 			if ( $galleryItems ) : ?>
 
@@ -29,8 +29,11 @@
 										<?php while ( have_rows( 'gallery' ) ): the_row(); ?>
                                             <div class="swiper-slide">
                                                 <div class="image-wrapper">
-                                                    <img src="<?php the_sub_field( 'img' ); ?>"
-                                                         alt="<?php the_sub_field( 'alt' ); ?>">
+                                                    <a href="<?php the_sub_field( 'img' ); ?>"
+                                                       data-lightbox="<?php the_ID(); ?>">
+                                                        <img src="<?php the_sub_field( 'img' ); ?>"
+                                                             alt="<?php the_sub_field( 'alt' ); ?>">
+                                                    </a>
                                                 </div>
                                             </div>
 										<?php endwhile; ?>

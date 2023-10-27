@@ -9,3 +9,16 @@ const swiperStories = new Swiper(".swiperGallery", {
         prevEl: ".button-prev",
     },
 });
+
+
+function initializeLightbox() {
+    lightbox.option({
+        'resizeDuration': 200,
+        'alwaysShowNavOnTouchDevices': true,
+        "disableScrolling": true,
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    initializeLightbox();
+});

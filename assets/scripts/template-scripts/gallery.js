@@ -1,1 +1,1 @@
-const swiperStories=new Swiper(".swiperGallery",{spaceBetween:32,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".button-next",prevEl:".button-prev"}});
+const swiperStories=new Swiper(".swiperGallery",{spaceBetween:32,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".button-next",prevEl:".button-prev"}});function initializeLightbox(){lightbox.option({resizeDuration:200,alwaysShowNavOnTouchDevices:!0,disableScrolling:!0})}document.addEventListener("DOMContentLoaded",(function(){initializeLightbox()}));
