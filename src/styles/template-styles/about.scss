@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.about {
+.about-page {
 
   .title-main {
     margin-bottom: 24px;
@@ -105,10 +105,6 @@
       overflow: unset;
       -webkit-box-orient: unset;
       -webkit-line-clamp: unset;
-    }
-
-    p {
-      margin-bottom: 10px;
     }
   }
 
@@ -407,7 +403,7 @@
 
       &.swiper-button-disabled {
         svg {
-          fill: $color-secondary;
+          fill: lighten($color-secondary, 30%);
         }
       }
     }

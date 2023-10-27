@@ -100,7 +100,7 @@
     <hr class="line">
 
     <div class="footer-bottom">
-        <p class="copyright container">© <?php echo date( "Y" ); ?> IT Volunteers. All Rights Reserved.</p>
+        <p class="copyright container">© <?php echo date( "Y" ); ?> ГО «Добрі Дії». Всі права захищені.</p>
     </div>
 
 </footer>

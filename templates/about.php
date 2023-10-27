@@ -5,7 +5,7 @@
 	get_header();
 ?>
 
-<main class="about">
+<main class="about-page">
 
     <!--    Hero section -->
     <section class="container" id="aboutStory">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="hero-description">
-                <div class="text-main text-expandable"><?php the_field( 'hero_text' ); ?></div>
+                <p class="text-main text-expandable"><?php the_field( 'hero_text' ); ?></p>
                 <button class="show-more-button" onclick=expandText(this)>Розгорнути</button>
             </div>
         </div>
