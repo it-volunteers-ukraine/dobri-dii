@@ -1,5 +1,5 @@
              <h3 class="title-secondary one-news__title"><?php the_title(); ?></h3>
-             <div class="text-secondary one-news__text"><?php the_field('text'); ?></div>
+             <p class="text-secondary one-news__text"><?php the_field('text'); ?></p>
 
 
 
