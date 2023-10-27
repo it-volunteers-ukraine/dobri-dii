@@ -146,8 +146,8 @@
   }
 
   .button-next, .button-prev {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     position: absolute;
     content: "";
     top: calc(50% - 22px);
@@ -155,7 +155,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    background-color: rgba($color-primary, 0.8);
+    background-color: $color-primary;
     border-radius: 50%;
     display: none;
     @media screen and (min-width: $tablet) {

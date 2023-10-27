@@ -42,12 +42,12 @@
 
                                 <div class="swiper-pagination"></div>
                                 <div class="button-next">
-                                    <svg width="36px" height="36px">
+                                    <svg width="26px" height="26px">
                                         <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-right"></use>
                                     </svg>
                                 </div>
                                 <div class="button-prev">
-                                    <svg width="36px" height="36px">
+                                    <svg width="26px" height="26px">
                                         <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-left"></use>
                                     </svg>
                                 </div>
