@@ -4,11 +4,13 @@ jQuery(document).ready(function ($) {
   let postsPerPage = button.data("posts-per-page");
   let loadingSpinner = $("#loading-spinner");
   let allProjectsLoaded = false;
+  let isButtonClickable = true;
 
   // Функція для показу спінера
   function showSpinner() {
     loadingSpinner.show();
     button.hide();
+    isButtonClickable = false;
   }
 
   // Функція для приховування спінера
@@ -16,11 +18,16 @@ jQuery(document).ready(function ($) {
     loadingSpinner.hide();
     if (!allProjectsLoaded) {
       button.show();
+      isButtonClickable = true;
     }
   }
 
   // Функція для завантаження постів
   function loadPosts() {
+    if (!isButtonClickable) {
+      return; // Вийдіть, якщо кнопку не можна натискати
+    }
+
     showSpinner();
 
     $.ajax({
@@ -66,7 +73,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  loadPosts();
 
   button.on("click", function () {
     loadPosts();
