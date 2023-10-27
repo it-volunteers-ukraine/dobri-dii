@@ -1,8 +1,10 @@
              <h3 class="title-secondary one-news__title"><?php the_title(); ?></h3>
-             <p class="text-secondary one-news__text"><?php the_field('text'); ?></p>
+             <div class="text-secondary one-news__text"><?php the_field('text'); ?></div>
 
+
+
+             <?php if ( have_rows( 'gallery' ) ): ?>
              <div class="gallery">
-                 <?php if ( have_rows( 'gallery' ) ): ?>
                  <div class="swiper swiperOneNews2">
                      <div class="swiper-wrapper">
                          <?php while ( have_rows( 'gallery' ) ): the_row(); ?>
@@ -56,5 +58,5 @@
                      </div>
 
                  </div>
-                 <?php endif; ?>
              </div>
+             <?php endif; ?>

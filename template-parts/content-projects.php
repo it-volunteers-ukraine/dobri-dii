@@ -15,7 +15,7 @@
                     <?php endif; ?>
                 </div>
 
-                <p class="text-secondary project__text"><?php the_field('text'); ?></p>
+                <div class="text-secondary project__text"><?php the_field('text'); ?></div>
             </div>
 
         </div>
