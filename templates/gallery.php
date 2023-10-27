@@ -10,16 +10,22 @@
         <h1 class="title-main"><?php the_title(); ?></h1>
 
 		<?php
-			$galleryItems = get_posts( [
+			$args          = ( [
 				'fields'         => 'ids',
 				'posts_per_page' => 3,
 				'post_type'      => 'gallery',
-				'order'          => 'ASC'
+				'order'          => 'ASC',
+				'paged'          => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
 			] );
+			$gallery_query = new WP_Query( $args );
+			$total_pages   = $gallery_query->max_num_pages;
+			$current_page  = max( 1, get_query_var( 'paged' ) );
 
-			if ( $galleryItems ) : ?>
+			if ( $gallery_query->have_posts() ) {
+				while ( $gallery_query->have_posts() ) {
+					$gallery_query->the_post();
+					?>
 
-				<?php foreach ( $galleryItems as $post ) : setup_postdata( $post ); ?>
                     <article class="gallery-card">
                         <div class="image-gallery">
                             <h3 class="title-secondary title-mobile"><?php the_title(); ?></h3>
@@ -64,15 +70,30 @@
                                 <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/date-line.svg" alt="#">
                                 <span><?php the_field( 'date' ); ?></span>
                             </div>
-
                             <p class="text-main"><?php the_field( 'text' ); ?></p>
                         </div>
-
                     </article>
-				<?php endforeach;
-				wp_reset_postdata(); ?>
-			<?php endif; ?>
+
+					<?php
+				}
+			}
+		?>
+
+        <div class="pagination">
+			<?php
+				echo paginate_links( [
+					'base'      => get_pagenum_link( 1 ) . '%_%',
+					'format'    => '/page/%#%',
+					'current'   => $current_page,
+					'total'     => $total_pages,
+					'prev_text' => __( '<' ),
+					'next_text' => __( '>' ),
+				] );
+			?>
+        </div>
     </div>
+
+	<?php get_template_part( 'template-parts/donate-section' ); ?>
 
 </main>
 

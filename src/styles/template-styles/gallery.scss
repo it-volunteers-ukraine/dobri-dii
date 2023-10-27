@@ -181,5 +181,36 @@
     left: 8px;
   }
 
+  //  Pagination
+  .pagination {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .pagination a,
+  .pagination span {
+    width: 30px;
+    height: 64px;
+    padding: 22px 0;
+    font-size: 18px;
+    line-height: 1.11;
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .pagination span {
+    color: $color-accent;
+    font-weight: 700;
+  }
+
+  .pagination a {
+    color: $color-primary;
+    font-weight: 400;
+  }
 
 }
