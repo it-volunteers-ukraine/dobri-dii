@@ -1,4 +1,4 @@
-    <ul class="<?php print $args['class']; ?> template__list swiper-wrapper">
+    <div class="<?php print $args['class']; ?> template__list swiper-wrapper">
 
         <?php
             global $post;
@@ -12,7 +12,7 @@
               foreach( $myposts as $post ){
                 setup_postdata( $post );
                 ?>
-        <li class="swiper-slide">
+        <div class="swiper-slide">
             <div class="img">
                 <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
             </div>
@@ -31,11 +31,11 @@
                     </svg>
                 </a>
             </div>
-        </li>
+        </div>
         <?php 
             }
             } 
             wp_reset_postdata(); 
             ?>
 
-    </ul>
+    </div>
