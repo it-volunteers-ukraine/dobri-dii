@@ -4,7 +4,7 @@
 	*/
 	get_header();
 ?>
-<main>
+<main class="home-page">
     <h1 class="visually-hidden">ГО Добрі Дії</h1>
     <section class="home-info container">
         <div class="home-info__wrapper">

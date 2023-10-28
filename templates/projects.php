@@ -5,7 +5,7 @@ Template Name: projects
 get_header();
 ?>
 
-<main class="container projects">
+<main class="container projects-page">
 
     <h1 class="visually-hidden">Проєкти</h1>
 
