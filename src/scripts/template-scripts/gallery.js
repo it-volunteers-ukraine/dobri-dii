@@ -5,8 +5,8 @@ const swiperStories = new Swiper(".swiperGallery", {
         clickable: true,
     },
     navigation: {
-        nextEl: ".button-next",
-        prevEl: ".button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
 
