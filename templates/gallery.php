@@ -45,18 +45,9 @@
 										<?php endwhile; ?>
 									<?php endif; ?>
                                 </div>
-
                                 <div class="swiper-pagination"></div>
-                                <div class="button-next">
-                                    <svg width="26px" height="26px">
-                                        <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-right"></use>
-                                    </svg>
-                                </div>
-                                <div class="button-prev">
-                                    <svg width="26px" height="26px">
-                                        <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#chevron-left"></use>
-                                    </svg>
-                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
                             </div>
                         </div>
 

@@ -97,8 +97,7 @@
       margin-left: 12px;
     }
   }
-
-
+  
   // Image carousel
   .image-wrapper {
     width: 100%;
@@ -131,7 +130,6 @@
     @media screen and (min-width: $tablet) {
       display: none;
     }
-
   }
 
   .swiper-pagination-bullet {
@@ -145,40 +143,21 @@
     background-color: $color-secondary;
   }
 
-  .button-next, .button-prev {
+  .swiper-button-next, .swiper-button-prev {
     width: 44px;
     height: 44px;
-    position: absolute;
-    content: "";
-    top: calc(50% - 22px);
-    z-index: 11;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
     background-color: $color-primary;
     border-radius: 50%;
+    color: $color-light;
     display: none;
     @media screen and (min-width: $tablet) {
       display: flex;
     }
 
-    svg {
-      fill: $color-light;
+    &:after {
+      font-size: 18px;
+      font-weight: bold;
     }
-
-    &.swiper-button-disabled {
-      svg {
-        fill: lighten($color-secondary, 10%);
-      }
-    }
-  }
-
-  .button-next {
-    right: 8px;
-  }
-
-  .button-prev {
-    left: 8px;
   }
 
   //  Pagination
