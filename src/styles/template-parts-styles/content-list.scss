@@ -3,7 +3,7 @@
 .template__list {
   display: flex;
 
-  li {
+  & > div {
     background-color: $color-light;
     border-radius: $border-radius-container;
 

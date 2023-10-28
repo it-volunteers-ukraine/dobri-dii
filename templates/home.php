@@ -4,8 +4,8 @@
 	*/
 	get_header();
 ?>
-<main>
-    <h1 class="visually-hidden">ГО Добрі Дії</h1>
+<main class="home-page">
+    <h1 class="visually-hidden">ГО "Добрі Дії"</h1>
     <section class="home-info container">
         <div class="home-info__wrapper">
             <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>

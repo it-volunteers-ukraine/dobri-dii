@@ -5,7 +5,7 @@ Template Name: news
 get_header();
 ?>
 
-<main class="container">
+<main class="container news-page">
 
     <h1 class=" title-main title"><?php the_title();?></h1>
 

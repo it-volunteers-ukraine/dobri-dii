@@ -5,9 +5,9 @@ Template Name: projects
 get_header();
 ?>
 
-<main class="container projects">
+<main class="container projects-page">
 
-    <h1 class="visually-hidden">Проєкти</h1>
+    <h1 class="visually-hidden">Проєкти ГО "Добрі Дії"</h1>
 
     <h2 class=" title-main title"><?php the_field( 'title'); ?></h2>
 
