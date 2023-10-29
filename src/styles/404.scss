@@ -1,0 +1,32 @@
+.not-found__section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 16px;
+  background: $gradient;
+  border-radius: $border-radius-container;
+
+  @media screen and (min-width: $tablet) {
+    gap: 36px;
+    padding: 60px 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 40px;
+  }
+
+  .title-main {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .button.button--transparent {
+    white-space: nowrap;
+
+    @media screen and (max-width: 767px) {
+      padding: 14px 16px;
+    }
+  }
+}
