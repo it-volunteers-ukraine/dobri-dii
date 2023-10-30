@@ -34,11 +34,9 @@ get_header();
       </div>
       <div class="donate__qr">
          <p class="donate__qrtext">QR-код для донату</p>
-         <svg class="donate__qrimg" width="253px" height="248px">
-            <use
-                  href="<?php bloginfo( 'template_url' ); ?>/assets/images/image1.svg">
-            </use>
-         </svg>
+         <img class="donate__qrimg"
+            src="<?php bloginfo( 'template_url' ); ?>/assets/images/image1.svg"
+            alt="#">
       </div>
    </div>
    <div class="donate__pryvat">
@@ -49,7 +47,7 @@ get_header();
    </div>
 </main>
 
-<div class="display-none">
+<div class="not-found__wrapper">
    <?php get_template_part( 'template-parts/donate-section' ); ?>
 </div>
 
