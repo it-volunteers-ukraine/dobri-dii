@@ -4,25 +4,34 @@ Template Name: donate
 */
 get_header();
 ?>
-<main class="container">
+<main class="donate__page">
    <h3 class="donate__subtitle">Підтримати нас можна такими способами:</h3>
-   <h2 class="donate__title">Переказ за банківськими реквізитами</h2>
    <div class="donate__container">
       <div class="donate__payment">
-         <div class="column1__payment">
-            <p>Назва</p>
-            <p>IBAN:</p>
-            <p>Код ЄДРПОУ</p>
-            <p>МФО</p>
-            <p>Призначення</p>
-         </div>
-         <div class="column2__payment">
-            <p>Громадська організація Добрі Дії</p>
-            <p>UA893515330000026008052133515</p>
-            <p>36375097</p>
-            <p>305299</p>
-            <p>Благодійний внесок</p>
-         </div>
+         <p class="donate__title">Переказ за банківськими реквізитами</p>
+         <table class="donate__iban">
+            <tr>
+               <td>Назва</td>
+               <td>Громадська організація Добрі Дії</td>
+            </tr>
+            <tr>
+               <td>IBAN:</td>
+               <td>UA893515330000026008052133515</td>
+            </tr>
+            <tr>
+               <td>Код ЄДРПОУ</td>
+               <td>36375097</td>
+            </tr>
+            <tr>
+               <td>МФО</td>
+               <td>305299</td>
+            </tr>
+            <tr>
+               <td>Призначення</td>
+               <td>Благодійний внесок</td>
+            </tr>
+         </table>
+      </div>
       <div class="donate__qr">
          <p class="donate__qrtext">QR-код для донату</p>
          <svg class="donate__qrimg" width="253px" height="248px">
@@ -31,18 +40,18 @@ get_header();
             </use>
          </svg>
       </div>
-      <div>
-         <p>Посилання на Privat-24</p>
-         <button class="button--blue">
-
-         </button>
-      </div>
-      </div>
+   </div>
+   <div class="donate__pryvat">
+      <p>Посилання на Privat-24</p>
+      <a class="button button--blue">
+         Задонатити
+      </a>
    </div>
 </main>
 
-
-
+<div class="display-none">
+   <?php get_template_part( 'template-parts/donate-section' ); ?>
+</div>
 
 <?php get_footer(); ?>
 
