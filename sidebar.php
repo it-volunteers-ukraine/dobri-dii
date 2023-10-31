@@ -11,24 +11,26 @@
 
 <aside id="secondary" class="sidebar">
 
-    <h3 class=".title-main sidebar__title">Інші новини</h3>
-
+    <h3 class="title-main sidebar__title">Інші новини</h3>
 
     <ul class="sidebar__list">
-
         <?php
-            global $post;
-            $myposts = get_posts([ 
-            'post_type' => 'news',  
-            'posts_per_page' => 2,   
+        global $post;
+        $current_post_id = get_the_ID(); // Отримуємо ID поточної новини
 
-            ]);
+        $args = array(
+            'post_type' => 'news',
+            'posts_per_page' => 2,
+            'post__not_in' => array($current_post_id), // Виключаємо поточну новину
+        );
 
-            if( $myposts ){
-              foreach( $myposts as $post ){
-                setup_postdata( $post );
+        $recent_posts = new WP_Query($args);
+
+        if ($recent_posts->have_posts()) {
+            while ($recent_posts->have_posts()) {
+                $recent_posts->the_post();
                 ?>
-        <li class="">
+        <li>
             <div class="sidebar__img">
                 <img src="<?php the_field('img'); ?>" alt="<?php the_field('alt'); ?>">
             </div>
@@ -38,31 +40,30 @@
                 <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
+                            href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right">
                         </use>
                         <use class="arrow-right"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                            href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
                         </use>
                     </svg>
                 </a>
             </div>
         </li>
-        <?php 
+        <?php
             }
-            } 
-            wp_reset_postdata(); 
-            ?>
-
+            wp_reset_postdata();
+        }
+        ?>
     </ul>
 
-    <a class="button--arrow" href="<?php echo get_permalink( 11); ?>">Усі новини
+    <a class="button--arrow" href="<?php echo get_permalink(11); ?>">Усі новини
         <svg width="24px" height="24px">
             <use class="arrow-up"
-                href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
+                href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right">
             </use>
             <use class="arrow-right"
-                href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
             </use>
         </svg>
     </a>
-</aside><!-- #secondary -->
+</aside>
