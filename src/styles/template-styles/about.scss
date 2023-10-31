@@ -367,10 +367,7 @@
     }
 
     .title-main {
-      @media screen and (max-width: $tablet) {
-        margin-left: unset;
-        text-align: left;
-      }
+      text-align: center;
     }
 
     .carousel-container {
