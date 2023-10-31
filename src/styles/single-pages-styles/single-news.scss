@@ -100,8 +100,11 @@
   @media screen and (min-width: $tablet) and (max-width: 1365px) {
     max-width: 584px;
   }
-}
 
+  @media screen and (min-width: $desktop) {
+    width: 655px;
+  }
+}
 
 // Gallery
 
