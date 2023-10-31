@@ -1,7 +1,10 @@
 .header {
-  position: relative;
-  margin-bottom: 32px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   background: $gradient;
+  z-index: 100;
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 48px;

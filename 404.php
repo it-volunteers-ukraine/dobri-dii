@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main class="container not-found">
+<main class="main container not-found">
 
     <section class="not-found__section">
 
