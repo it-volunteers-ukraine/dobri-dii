@@ -7,7 +7,7 @@
 
     <main class="contact-page">
         <section class="container">
-            <h1 class="title-main"><?php the_title(); ?></h1>
+            <h1 class="title-main"><?php the_field( 'title' ); ?></h1>
 
             <div class="contact-page-wrapper">
                 <div class="map">

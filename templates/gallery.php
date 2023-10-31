@@ -14,7 +14,6 @@
 				'fields'         => 'ids',
 				'posts_per_page' => 3,
 				'post_type'      => 'gallery',
-				'order'          => 'ASC',
 				'paged'          => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
 			] );
 			$gallery_query = new WP_Query( $args );
