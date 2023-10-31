@@ -11,7 +11,8 @@
             <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>
             <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
             <p class="text-main home-info__text"><?php the_field( 'text'); ?></p>
-            <a class="button button--blue home-info__link " href="#"><?php the_field( 'button-text','option' ); ?></a>
+            <a class="button button--blue home-info__link "
+                href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?></a>
 
         </div>
 
