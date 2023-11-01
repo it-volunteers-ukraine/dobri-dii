@@ -97,14 +97,35 @@
 }
 
 .stories-card-bottom {
+  padding-top: 16px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column-reverse;
   justify-self: flex-end;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button--arrow {
+    padding: 4px 0;
+    max-width: fit-content;
+    gap: 6px;
+
+    span {
+      color: $color-primary;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
 }
 
 .stories-card-author {
+  margin-bottom: 8px;
+  text-align: right;
   font-size: 12px;
+  white-space: nowrap;
   @media screen and (min-width: $desktop) {
     font-size: 16px;
   }
