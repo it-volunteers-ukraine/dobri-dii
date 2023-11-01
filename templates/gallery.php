@@ -5,7 +5,7 @@
 	get_header();
 ?>
 
-<main class="gallery-page">
+<main class="gallery-page main">
     <div class="container">
         <h1 class="title-main"><?php the_title(); ?></h1>
 

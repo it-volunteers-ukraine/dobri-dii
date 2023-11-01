@@ -5,7 +5,7 @@
 	get_header();
 ?>
 
-    <main class="contact-page">
+    <main class="contact-page main">
         <section class="container">
             <h1 class="title-main"><?php the_title(); ?></h1>
 
