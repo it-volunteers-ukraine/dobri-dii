@@ -6,9 +6,7 @@
     margin-bottom: 24px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 240px;
     @media screen and (min-width: $tablet) {
-      max-width: unset;
       margin-bottom: 40px;
     }
   }
@@ -26,6 +24,14 @@
     @media screen and (min-width: $desktop) {
       margin-top: -152px;
       padding-top: 152px;
+    }
+
+    .title-main {
+      max-width: 240px;
+      @media screen and (min-width: $tablet) {
+        max-width: unset;
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -468,7 +474,6 @@
       font-weight: 500;
       line-height: 18px;
       letter-spacing: 0.15px;
-      text-transform: uppercase;
       text-align: center;
       word-wrap: break-word;
     }
