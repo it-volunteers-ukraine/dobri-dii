@@ -4,7 +4,7 @@ Template Name: donate
 */
 get_header();
 ?>
-<main class="donate__page">
+<main class="main donate__page">
    <h3 class="donate__subtitle">Підтримати нас можна такими способами:</h3>
    <div class="donate__container">
       <div class="donate__payment">
@@ -12,36 +12,37 @@ get_header();
          <table class="donate__iban">
             <tr>
                <td>Назва</td>
-               <td>Громадська організація Добрі Дії</td>
+               <td><?php the_field('organization'); ?></td>
             </tr>
             <tr>
                <td>IBAN:</td>
-               <td>UA893515330000026008052133515</td>
+               <td><?php the_field('iban'); ?></td>
             </tr>
             <tr>
                <td>Код ЄДРПОУ</td>
-               <td>36375097</td>
+               <td><?php the_field('code'); ?></td>
             </tr>
             <tr>
                <td>МФО</td>
-               <td>305299</td>
+               <td><?php the_field('mfo'); ?></td>
             </tr>
             <tr>
                <td>Призначення</td>
-               <td>Благодійний внесок</td>
+               <td><?php the_field('payment_purpose'); ?></td>
             </tr>
          </table>
       </div>
       <div class="donate__qr">
          <p class="donate__qrtext">QR-код для донату</p>
          <img class="donate__qrimg"
-            src="<?php bloginfo( 'template_url' ); ?>/assets/images/image1.svg"
+            src="<?php the_field('qrcode'); ?>/assets/images/image1.svg"
             alt="#">
       </div>
    </div>
    <div class="donate__pryvat">
       <p>Посилання на Privat-24</p>
-      <a class="button button--blue">
+      <a class="button button--blue" href="https://next.privat24.ua/payments/form/%7B%22token%22%3A%22c10d68f6-97e4-453e-817e-04cdaa092303%22%7D">
+      <?php the_field('privat-24'); ?>
          Задонатити
       </a>
    </div>
