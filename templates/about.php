@@ -8,7 +8,7 @@
 <main class="about-page main">
 
     <!--    Hero section -->
-    <section class="container" id="aboutStory">
+    <section class="hero container" id="aboutStory">
         <h2 class="title-main">
 			<?php the_field( 'hero_title' ); ?>
         </h2>
