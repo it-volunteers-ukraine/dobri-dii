@@ -5,7 +5,7 @@ Template Name: partners
 get_header();
 ?>
 
-<main class="container partners-page">
+<main class="main container partners-page">
     <h1 class="visually-hidden">Партнери ГО "Добрі Дії"</h1>
 
     <section class="partners">

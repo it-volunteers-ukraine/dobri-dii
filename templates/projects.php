@@ -5,7 +5,7 @@ Template Name: projects
 get_header();
 ?>
 
-<main class="container projects-page">
+<main class="main container projects-page">
 
     <h1 class="visually-hidden">Проєкти ГО "Добрі Дії"</h1>
 

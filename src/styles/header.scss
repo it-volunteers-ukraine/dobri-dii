@@ -1,7 +1,10 @@
 .header {
-  position: relative;
-  margin-bottom: 32px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   background: $gradient;
+  z-index: 100;
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 48px;
@@ -15,10 +18,15 @@
 .header__content {
   display: flex;
   align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 
   @media screen and (min-width: $tablet) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: $desktop) {
     padding-top: 18px;
     padding-bottom: 18px;
   }

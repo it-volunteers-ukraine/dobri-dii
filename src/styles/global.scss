@@ -18,6 +18,18 @@
   }
 }
 
+.main {
+  margin-top: 92px;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 132px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 152px;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;

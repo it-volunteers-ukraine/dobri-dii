@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<main class="container project">
+<main class="main container project">
 
     <span class="subtitle project__subtitle">Про проєкт</span>
 
