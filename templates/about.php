@@ -5,7 +5,7 @@
 	get_header();
 ?>
 
-<main class="about-page">
+<main class="about-page main">
 
     <!--    Hero section -->
     <section class="container" id="aboutStory">
