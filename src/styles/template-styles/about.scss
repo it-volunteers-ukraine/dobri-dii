@@ -14,6 +14,21 @@
   }
 
   // Hero section
+  .hero {
+    margin-top: -92px;
+    padding-top: 92px;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: -132px;
+      padding-top: 132px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: -152px;
+      padding-top: 152px;
+    }
+  }
+
   .hero-wrapper {
     margin-bottom: 40px;
 
@@ -232,12 +247,12 @@
 
   // Team section
   .team {
-    padding: 60px 0;
+    padding-top: 60px;
     @media screen and (min-width: $tablet) {
-      padding: 80px 0;
+      padding-top: 80px;
     }
     @media screen and (min-width: $desktop) {
-      padding: 112px 0;
+      padding-top: 112px;
     }
 
     .text-main {
@@ -331,12 +346,12 @@
 
   //  Documents and Reports sections
   .documents {
-    padding-bottom: 60px;
+    padding-top: 60px;
     @media screen and (min-width: $tablet) {
-      padding-bottom: 80px;
+      padding-top: 80px;
     }
     @media screen and (min-width: $desktop) {
-      padding-bottom: 112px;
+      padding-top: 112px;
     }
 
     .text-main {
@@ -358,12 +373,12 @@
   }
 
   .reports {
-    padding-bottom: 60px;
+    padding-top: 60px;
     @media screen and (min-width: $tablet) {
-      padding-bottom: 80px;
+      padding-top: 80px;
     }
     @media screen and (min-width: $desktop) {
-      padding-bottom: 112px;
+      padding-top: 112px;
     }
 
     .title-main {
