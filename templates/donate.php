@@ -35,7 +35,7 @@ get_header();
       <div class="donate__qr">
          <p class="donate__qrtext">QR-код для донату</p>
          <img class="donate__qrimg"
-            src="<?php the_field('qrcode'); ?>/assets/images/image1.svg"
+            src="<?php the_field('qrcode'); ?>"
             alt="#">
       </div>
    </div>
