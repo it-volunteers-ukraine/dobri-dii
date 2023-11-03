@@ -39,6 +39,7 @@
 
    @media screen and (min-width: $desktop) {
       flex-direction: row;
+      margin-top: 64px;
    }
 }
 
@@ -78,7 +79,6 @@
 
    @media screen and (min-width: $desktop) {
       text-transform: uppercase;
-      margin-top: 64px;
       font-weight: 500;
    }
 }
@@ -95,7 +95,6 @@
 
    @media screen and (min-width: $desktop) {
       text-transform: uppercase;
-      margin-top: 64px;
       font-weight: 500;
 }
 }

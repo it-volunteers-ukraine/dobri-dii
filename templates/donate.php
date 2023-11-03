@@ -4,7 +4,7 @@ Template Name: donate
 */
 get_header();
 ?>
-<main class="main donate__page">
+<main class="main donate__page container">
    <h3 class="donate__subtitle">Підтримати нас можна такими способами:</h3>
    <div class="donate__container">
       <div class="donate__payment">
@@ -41,7 +41,7 @@ get_header();
    </div>
    <div class="donate__pryvat">
       <p>Посилання на Privat-24</p>
-      <a class="button button--blue" href=<?php the_field('privat-24'); ?>>
+      <a class="button button--blue" href="<?php the_field('privat-24'); ?>">
          Задонатити
       </a>
    </div>
