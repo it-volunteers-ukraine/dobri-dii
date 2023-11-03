@@ -41,7 +41,7 @@ get_header();
    </div>
    <div class="donate__pryvat">
       <p>Посилання на Privat-24</p>
-      <a class="button button--blue" href="https://next.privat24.ua/payments/form/%7B%22token%22%3A%22c10d68f6-97e4-453e-817e-04cdaa092303%22%7D">
+      <a class="button button--blue">
       <?php the_field('privat-24'); ?>
          Задонатити
       </a>
