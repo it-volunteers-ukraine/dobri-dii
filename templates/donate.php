@@ -41,8 +41,7 @@ get_header();
    </div>
    <div class="donate__pryvat">
       <p>Посилання на Privat-24</p>
-      <a class="button button--blue">
-      <?php the_field('privat-24'); ?>
+      <a class="button button--blue" href=<?php the_field('privat-24'); ?>>
          Задонатити
       </a>
    </div>
