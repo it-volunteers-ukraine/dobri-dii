@@ -10,7 +10,7 @@
 					<?php the_sub_field( 'text' ); ?>
                 </p>
                 <div class="stories-card-bottom">
-                    <a class="button--arrow"
+                    <a class="button--arrow" target="_blank"
                        href="<?php the_sub_field( 'link' ); ?>">
 						<?php the_sub_field( 'link_text' ); ?>
                         <span><?php the_sub_field( 'link_social' ); ?></span>

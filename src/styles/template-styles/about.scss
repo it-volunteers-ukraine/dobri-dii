@@ -249,6 +249,11 @@
     background-color: $color-light;
     border-radius: $border-radius-container;
     font-size: 15px;
+    transition: 250ms $cubic-bezier;
+
+    &:hover {
+      background-color: $color-orange;
+    }
   }
 
   // Team section
