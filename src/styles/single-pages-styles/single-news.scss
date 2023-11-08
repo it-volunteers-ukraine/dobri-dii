@@ -21,7 +21,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    width: 1140px;
+    width: 100%;
     height: 466px;
     margin-bottom: 40px;
     padding: 0 194px 32px;
@@ -78,7 +78,7 @@
 
 .one-news__article {
   @media screen and (min-width: $desktop) {
-    max-width: 665px;
+    max-width: 655px;
   }
 }
 
@@ -121,11 +121,11 @@
   position: relative;
   border-radius: $border-radius-container;
   overflow: hidden;
-  width: 704px;
+  width: 100%;
   height: 428px;
 
   @media screen and (min-width: $desktop) {
-    width: 655px;
+    width: 100%;
     height: 398px;
   }
 }
