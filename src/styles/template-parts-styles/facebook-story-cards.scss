@@ -117,6 +117,11 @@
       color: $color-primary;
       font-size: 15px;
       font-weight: 400;
+      transition: 250ms $cubic-bezier;
+    }
+
+    &:hover > span, &:focus > span {
+      color: $color-orange;
     }
   }
 }
