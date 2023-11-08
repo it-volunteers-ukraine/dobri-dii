@@ -34,6 +34,7 @@ get_header();
       </div>
       <div class="donate__qr">
          <p class="donate__qrtext">QR-код для донату</p>
+         <p class="donate__qrtextmini">Privat-24</p>
          <img class="donate__qrimg"
             src="<?php the_field('qrcode'); ?>"
             alt="#">
@@ -41,7 +42,7 @@ get_header();
    </div>
    <div class="donate__pryvat">
       <p>Посилання на Privat-24</p>
-      <a class="button button--blue" href="<?php the_field('privat-24'); ?>">
+      <a class="button button--blue" href="<?php the_field('privat-24'); ?>" target="_blank">
          Задонатити
       </a>
    </div>

@@ -74,12 +74,12 @@
 
    @media screen and (min-width: $tablet) {
       font-size: 22px;
-      margin-top: 24px;
    }
 
    @media screen and (min-width: $desktop) {
       text-transform: uppercase;
       font-weight: 500;
+      margin-bottom: 30px;
    }
 }
 .donate__qrtext{
@@ -90,7 +90,22 @@
 
    @media screen and (min-width: $tablet) {
       font-size: 22px;
-      margin-top: 24px;
+   }
+
+   @media screen and (min-width: $desktop) {
+      text-transform: uppercase;
+      font-weight: 500;
+}
+}
+.donate__qrtextmini{
+   font-weight: 600;
+   font-size: 18px;
+   margin-top: 20px;
+   text-align: center;
+
+   @media screen and (min-width: $tablet) {
+      font-size: 22px;
+      margin-top: 14px;
    }
 
    @media screen and (min-width: $desktop) {
@@ -104,7 +119,8 @@
    height: 248px;
 
    @media screen and (min-width: $tablet) {
-
+      width: 253px;
+      height: 248px;   
    }
 
    @media screen and (min-width: $desktop) {
