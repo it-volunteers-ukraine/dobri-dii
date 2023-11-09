@@ -127,6 +127,10 @@
   @media screen and (min-width: $tablet) {
     max-width: 344px;
   }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 378px;
+  }
 }
 
 .donate-section__title {
@@ -156,6 +160,7 @@
 
   @media screen and (min-width: $desktop) {
     margin-bottom: 40px;
+    max-width: 354px;
   }
 }
 
