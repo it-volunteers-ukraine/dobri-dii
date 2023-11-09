@@ -47,6 +47,10 @@ if (have_posts()) {
             alt=" Завантаження" width="100px" height="100px">
     </div>
 
+    <?php
+    $projects_count = wp_count_posts('projects')->publish; // Get the total number of 'projects'
+
+    if ($projects_count > 4) { ?>
 
     <button class="button button--arrow" id="load-more-button" data-page="2" data-posts-per-page="4">
         <?php the_field( 'button'); ?>
@@ -59,8 +63,9 @@ if (have_posts()) {
             </use>
         </svg>
     </button>
-
-
+    <?php
+}
+?>
 </main>
 
 <?php get_template_part( 'template-parts/donate-section' ); ?>
