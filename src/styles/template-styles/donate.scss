@@ -1,5 +1,6 @@
 @import "../variables.scss";
 
+
 .donate__page{
    display: flex;
    flex-direction: column;
@@ -32,9 +33,9 @@
    align-items: center;
    text-align: center;
 
+
    @media screen and (min-width: $tablet) {
       flex-direction: row;
-      gap: 64px;
    }
 
    @media screen and (min-width: $desktop) {
@@ -85,7 +86,7 @@
 .donate__qrtext{
    font-weight: 600;
    font-size: 18px;
-   margin-top: 40px;
+   margin-top: 20px;
    text-align: center;
 
    @media screen and (min-width: $tablet) {
@@ -105,7 +106,7 @@
 
    @media screen and (min-width: $tablet) {
       font-size: 22px;
-      margin-top: 14px;
+      margin-top: 10px;
    }
 
    @media screen and (min-width: $desktop) {
@@ -115,17 +116,10 @@
 }
 
 .donate__qrimg{
-   width: 253px;
-   height: 248px;
-
-   @media screen and (min-width: $tablet) {
-      width: 253px;
-      height: 248px;   
-   }
 
    @media screen and (min-width: $desktop) {
-      width: 336px;
-      height: 330px;
+      width: 320px;
+      height: 314px;
    }
 }
 
