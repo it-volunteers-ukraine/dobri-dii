@@ -1,10 +1,10 @@
 .container {
   min-width: 320px;
   margin: 0 auto;
+  padding: 0 16px;
 
   @media screen and (min-width: $mobile) {
     max-width: $mobile;
-    padding: 0 16px;
   }
 
   @media screen and (min-width: $tablet) {
