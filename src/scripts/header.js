@@ -5,16 +5,20 @@ const mobileMenuRef = document.querySelector("[data-menu]");
 
 const expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
 
-const onButtonClick = () => {
+const onToggleMenu = () => {
+  document.body.classList.toggle("is-open");
   menuBtnRef.classList.toggle("is-open");
-  menuBtnRef.setAttribute("aria-expanded", !expanded);
   mobileMenuRef.classList.toggle("is-open");
 };
 
+const onButtonClick = () => {
+  menuBtnRef.setAttribute("aria-expanded", !expanded);
+  onToggleMenu();
+};
+
 const onMenuClick = () => {
-  mobileMenuRef.classList.toggle("is-open");
   menuBtnRef.setAttribute("aria-expanded", expanded);
-  menuBtnRef.classList.toggle("is-open");
+  onToggleMenu();
 };
 
 menuBtnRef.addEventListener("click", onButtonClick);
