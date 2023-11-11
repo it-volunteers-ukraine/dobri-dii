@@ -5,7 +5,9 @@ Template Name: donate
 get_header();
 ?>
 <main class="main donate__page container">
-    <h3 class="donate__subtitle">Підтримати нас можна такими способами:</h3>
+    <h1 class="visually-hidden">Підтримати ГО "Добрі Дії"</h1>
+
+    <h2 class="donate__subtitle"><?php the_field('title'); ?></h2>
     <div class="donate__container">
         <div class="donate__payment">
             <p class="donate__title">Переказ за банківськими реквізитами</p>
@@ -34,14 +36,14 @@ get_header();
         </div>
         <div class=" donate__qr">
             <p class="donate__qrtext">QR-код для донату</p>
-            <p class="donate__qrtextmini">Privat-24</p>
+            <p class="donate__qrtextmini"><?php the_field('bank'); ?></p>
             <img class="donate__qrimg" src="<?php the_field('qrcode'); ?>" alt="QR-код">
         </div>
     </div>
     <div class="donate__pryvat">
-        <p>Посилання на Privat-24</p>
+        <p><?php the_field('text'); ?></p>
         <a class="button button--blue" href="<?php the_field('privat-24'); ?>" target="_blank">
-            Задонатити
+            <?php the_field('button'); ?>
         </a>
     </div>
 </main>
