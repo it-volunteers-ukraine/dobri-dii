@@ -190,7 +190,10 @@ body.is-open {
 .mobile-menu {
   display: flex;
   align-items: center;
-  gap: 22px;
+
+  @media screen and (min-width: $mobile) {
+    gap: 22px;
+  }
 
   @media screen and (min-width: $tablet) {
     gap: 176px;
