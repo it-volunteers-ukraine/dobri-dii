@@ -1,3 +1,7 @@
+body.is-open {
+  overflow: hidden;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -186,7 +190,10 @@
 .mobile-menu {
   display: flex;
   align-items: center;
-  gap: 22px;
+
+  @media screen and (min-width: $mobile) {
+    gap: 22px;
+  }
 
   @media screen and (min-width: $tablet) {
     gap: 176px;
@@ -217,9 +224,11 @@
   }
 
   &.is-open {
+    max-height: 100vh;
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
+    overflow-y: auto;
   }
 
   ul {
