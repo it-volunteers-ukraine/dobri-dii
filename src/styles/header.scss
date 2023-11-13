@@ -242,10 +242,6 @@ body.is-open {
     gap: 12px;
   }
 
-  ul li {
-    padding: 12px 4px;
-  }
-
   ul li:first-child {
     display: flex;
     flex-direction: column;
@@ -255,6 +251,8 @@ body.is-open {
   }
 
   ul li a {
+    display: block;
+    padding: 12px 4px;
     color: $color-primary;
     font-size: 22px;
     font-weight: 600;
@@ -274,10 +272,13 @@ body.is-open {
   }
 
   ul ul li a {
+    display: block;
+    padding: 12px 4px;
     color: $color-secondary;
     font-size: 18px;
     font-weight: 600;
     line-height: 1.33;
+
     transition: color 250ms $cubic-bezier;
 
     @media screen and (min-width: $tablet) {
