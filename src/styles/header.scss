@@ -30,7 +30,11 @@ body.is-open {
 }
 
 .header__logo {
-  margin-right: 22px;
+  margin-right: 16px;
+
+  @media screen and (min-width: $mobile) {
+    margin-right: 22px;
+  }
 
   @media screen and (min-width: $tablet) {
     margin-right: 86px;
@@ -190,6 +194,7 @@ body.is-open {
 .mobile-menu {
   display: flex;
   align-items: center;
+  gap: 10px;
 
   @media screen and (min-width: $mobile) {
     gap: 22px;
