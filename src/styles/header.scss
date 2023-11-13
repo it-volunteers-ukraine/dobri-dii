@@ -30,7 +30,11 @@ body.is-open {
 }
 
 .header__logo {
-  margin-right: 22px;
+  margin-right: 16px;
+
+  @media screen and (min-width: $mobile) {
+    margin-right: 22px;
+  }
 
   @media screen and (min-width: $tablet) {
     margin-right: 86px;
@@ -190,6 +194,7 @@ body.is-open {
 .mobile-menu {
   display: flex;
   align-items: center;
+  gap: 10px;
 
   @media screen and (min-width: $mobile) {
     gap: 22px;
@@ -212,22 +217,25 @@ body.is-open {
   padding: 40px 0 84px;
   background-color: $color-light;
   z-index: 2;
-
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition: transform 250ms $cubic-bezier, opacity 250ms $cubic-bezier,
+    visibility 250ms $cubic-bezier;
 
   @media screen and (min-width: $tablet) {
     top: 84px;
-    padding: 32px 0;
   }
 
   &.is-open {
-    max-height: 100vh;
+    height: calc(100vh - 80px);
     pointer-events: auto;
     opacity: 1;
     visibility: visible;
+    transform: scaleX(1);
     overflow-y: auto;
   }
 
@@ -239,10 +247,6 @@ body.is-open {
     gap: 12px;
   }
 
-  ul li {
-    padding: 12px 4px;
-  }
-
   ul li:first-child {
     display: flex;
     flex-direction: column;
@@ -252,6 +256,8 @@ body.is-open {
   }
 
   ul li a {
+    display: block;
+    padding: 12px 4px;
     color: $color-primary;
     font-size: 22px;
     font-weight: 600;
@@ -271,10 +277,13 @@ body.is-open {
   }
 
   ul ul li a {
+    display: block;
+    padding: 12px 4px;
     color: $color-secondary;
     font-size: 18px;
     font-weight: 600;
     line-height: 1.33;
+
     transition: color 250ms $cubic-bezier;
 
     @media screen and (min-width: $tablet) {
