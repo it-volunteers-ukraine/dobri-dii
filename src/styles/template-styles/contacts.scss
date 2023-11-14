@@ -74,6 +74,7 @@
   .contact-link {
     display: flex;
     align-items: center;
+    width: fit-content;
 
     &:hover, &:focus {
       .contact-link-icon {
