@@ -44,7 +44,7 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'about-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/about.js', array(), false, true );
   }
 
-  if ( is_page_template('templates/projects.php') ) {
+  if ( is_page_template('templates/projects.php') || is_page_template('templates/training.php') ) {
     wp_enqueue_style( 'projects-style', get_template_directory_uri() . '/assets/styles/template-styles/projects.css', array('main') );
     wp_enqueue_script( 'projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true );
   }
@@ -145,9 +145,10 @@ if( function_exists('acf_add_options_page') ) {
 function load_more_projects() {
     $page = $_POST['page'];
     $posts_per_page = $_POST['posts_per_page'];
+    $post_type = $_POST['postType'];
 
     $args = array(
-        'post_type' => 'projects',
+        'post_type' => $post_type,
         'posts_per_page' => $posts_per_page,
         'paged' => $page,
     );

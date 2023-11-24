@@ -52,7 +52,7 @@ if (have_posts()) {
 
     if ($projects_count > 4) { ?>
 
-    <button class="button button--arrow" id="load-more-button" data-page="2" data-posts-per-page="4">
+    <button class="button button--arrow" id="load-more-button" data-post-type="projects" data-page="2" data-posts-per-page="4">
         <?php the_field( 'button'); ?>
         <svg width="24px" height="24px">
             <use class="arrow-up"

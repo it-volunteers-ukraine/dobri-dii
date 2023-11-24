@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
   let button = $("#load-more-button");
+  let postType = button.data("post-type");
   let page = button.data("page");
   let postsPerPage = button.data("posts-per-page");
   let loadingSpinner = $("#loading-spinner");
@@ -37,6 +38,7 @@ jQuery(document).ready(function ($) {
         action: "load_more_projects",
         page: page,
         postsPerPage: postsPerPage,
+        postType: postType,
       },
       success: function (response) {
         $("#projects-container").append(response);
@@ -48,7 +50,7 @@ jQuery(document).ready(function ($) {
           type: "POST",
           data: {
             action: "get_total_pages",
-            postType: "projects",
+            postType: postType,
             postsPerPage: postsPerPage,
           },
           success: function (totalPages) {
