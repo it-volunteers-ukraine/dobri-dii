@@ -6,7 +6,7 @@
 ?>
 
     <!--    This page uses styles from projects.scss and scripts from projects.js-->
-    <main class="main container training-page">
+    <main class="main container projects-page training-page">
         <h1 class="visually-hidden">Навчання ГО "Добрі Дії"</h1>
         <h2 class=" title-main title"><?php the_field( 'title' ); ?></h2>
 

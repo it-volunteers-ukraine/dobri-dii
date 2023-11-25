@@ -1,6 +1,12 @@
 @import "../variables.scss";
 
-.projects-page, .training-page {
+.training-page.projects-page {
+  .projects__item {
+    background-color: lighten($color-light-blue, 3%);
+  }
+}
+
+.projects-page {
   .title {
     margin-bottom: 24px;
 
