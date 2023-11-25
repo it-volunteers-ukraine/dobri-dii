@@ -161,7 +161,7 @@ function load_more_projects() {
 
           set_query_var('type', 'projects' );
           set_query_var('classButton', 'button button--transparent' );
-          set_query_var('text', 'Детальніше про проєкт' );
+          set_query_var('text', $post_type === 'projects' ? 'Детальніше про проєкт' : 'Читати більше' );
 
           get_template_part('template-parts/content', 'posts');
 }
