@@ -358,17 +358,17 @@
   // Training section - similar to "projects" from homepage
   .projects {
     padding: 24px 0 64px;
-    margin-bottom: 60px;
+    margin-top: 40px;
     background: $gradient-section;
 
     @media screen and (min-width: $tablet) {
       padding: 32px 0;
-      margin-bottom: 80px;
+      margin-top: 60px;
     }
 
     @media screen and (min-width: $desktop) {
       padding: 40px 0;
-      margin-bottom: 112px;
+      margin-top: 80px;
     }
 
     .title-main {
