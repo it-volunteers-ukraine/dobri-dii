@@ -12,7 +12,7 @@
 
     <!--    This page uses styles from single-projects.scss and scripts from single-projects.js-->
     <main class="main container project">
-        <span class="subtitle project__subtitle">Наше навчання</span>
+        <span class="subtitle project__subtitle">Про навчання</span>
 
         <section class="project__article">
 			<?php

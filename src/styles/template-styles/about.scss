@@ -355,6 +355,96 @@
     margin-bottom: 8px;
   }
 
+  // Training section - similar to "projects" from homepage
+  .projects {
+    padding: 24px 0 64px;
+    margin-top: 40px;
+    background: $gradient-section;
+
+    @media screen and (min-width: $tablet) {
+      padding: 32px 0;
+      margin-top: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 40px 0;
+      margin-top: 80px;
+    }
+
+    .title-main {
+      margin-left: unset;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .projects__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .projects__list {
+    margin-bottom: 30px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 26px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  .projects .template__list .info {
+    @media screen and (min-width: $desktop) {
+      padding: 24px;
+    }
+  }
+
+  .projects__list.template__list > div {
+    padding: 16px;
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
+  }
+
+  .projects__list .img {
+    width: 311px;
+    height: 184px;
+
+    @media screen and (min-width: $tablet) {
+      width: 312px;
+      height: 224px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 364px;
+      height: 258px;
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $color-secondary;
+    background-color: transparent;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-secondary;
+  }
+
   //  Documents and Reports sections
   .documents {
     padding-top: 60px;
