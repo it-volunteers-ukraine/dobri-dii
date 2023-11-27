@@ -98,6 +98,37 @@
         </div>
     </section>
 
+    <!--    Training section -->
+    <section class="projects">
+        <div class="projects__container container">
+            <div class="projects__head">
+                <h2 class="title-main"><?php the_field( 'projects_title' ); ?></h2>
+
+                <a class="button--arrow"
+                   href="<?php echo get_permalink( 515 ); ?>"><?php the_field( 'projects_button' ); ?>
+                    <svg width="24px" height="24px">
+                        <use class="arrow-up"
+                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
+                        </use>
+                        <use class="arrow-right"
+                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                        </use>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="swiper swiperProjects">
+				<?php
+					$params = [ 'type' => 'training', 'class' => 'projects__list' ];
+					get_template_part( 'template-parts/content', 'list', $params );
+				?>
+
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
+
     <!--    Documents section -->
     <section class="documents" id="aboutDocuments">
         <div class="container">
