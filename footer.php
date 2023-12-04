@@ -74,12 +74,12 @@
                         </a>
                     </li>
                     <li>
-                        <a class="social-link" href="<?php the_field( 'telegram', 17 ); ?>" target="_blank"
-                           aria-label="Зв'язатись за допомогою мессенджера Телеграм">
-                            <svg class="social-link-icon">
-                                <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#telegram"></use>
+                        <a class="social-link" href="<?php the_field( 'youtube', 17 ); ?>" target="_blank"
+                           aria-label="Перейти на канал в Ютуб">
+                            <svg class="social-link-icon" >
+                                <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#youtube"></use>
                             </svg>
-                            <span class="social-link-text">Telegram</span>
+                            <span class="social-link-text">YouTube</span>
                         </a>
                     </li>
                     <li>
