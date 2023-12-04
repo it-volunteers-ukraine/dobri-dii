@@ -62,12 +62,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="contact-link" href="<?php the_field( 'telegram' ); ?>" target="_blank"
-                                   aria-label="Зв'язатись за допомогою мессенджера Телеграм">
+                                <a class="contact-link" href="<?php the_field( 'youtube' ); ?>" target="_blank"
+                                   aria-label="Перейти на канал в Ютуб">
                                     <svg class="contact-link-icon" width="24" height="24">
-                                        <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#telegram"></use>
+                                        <use href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#youtube"></use>
                                     </svg>
-                                    <span class="contact-link-text">Telegram</span>
+                                    <span class="contact-link-text">YouTube</span>
                                 </a>
                             </li>
                             <li>

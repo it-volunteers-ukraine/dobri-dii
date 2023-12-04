@@ -59,11 +59,11 @@
                             </a>
                         </li>
                         <li>
-                            <a class="header-social__link" href="<?php the_field( 'telegram', 17 ); ?>" target="_blank"
-                                aria-label="Зв'язатись за допомогою мессенджера Телеграм">
+                            <a class="header-social__link" href="<?php the_field( 'youtube', 17 ); ?>" target="_blank"
+                               aria-label="Перейти на канал в Ютуб">
                                 <svg class="header-social__icon" width="24px" height="24px">
                                     <use
-                                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#telegram">
+                                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#youtube">
                                     </use>
                                 </svg>
                             </a>
