@@ -99,7 +99,7 @@
     </section>
 
     <!--    Training section -->
-    <section class="projects">
+    <section class="projects" id="aboutTraining">
         <div class="projects__container container">
             <div class="projects__head">
                 <h2 class="title-main"><?php the_field( 'projects_title' ); ?></h2>
