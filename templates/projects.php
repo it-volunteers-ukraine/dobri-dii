@@ -18,7 +18,7 @@ if (have_posts()) {
     
     $myposts = get_posts([
         'post_type' => 'projects',
-        'posts_per_page' => 4,
+        'posts_per_page' => 50,
         'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
     ]);
      ?>
@@ -50,7 +50,7 @@ if (have_posts()) {
     <?php
     $projects_count = wp_count_posts('projects')->publish; // Get the total number of 'projects'
 
-    if ($projects_count > 4) { ?>
+    if ($projects_count > 50) { ?>
 
     <button class="button button--arrow" id="load-more-button" data-post-type="projects" data-page="2" data-posts-per-page="4">
         <?php the_field( 'button'); ?>
