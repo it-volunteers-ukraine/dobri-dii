@@ -170,7 +170,7 @@
     </section>
 
     <section class="work container">
-        <h3 class="subtitle work__subtitle">НАПРЯМКИ</h3>
+        <h3 class="subtitle work__subtitle">НАПРЯМИ</h3>
         <h2 class="title-main work__title"><?php the_field( 'title_work'); ?></h2>
 
         <ul class="work__list">
