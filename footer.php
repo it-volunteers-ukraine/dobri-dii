@@ -96,6 +96,29 @@
         </div>
 
     </div>
+    <div class="footer-project">
+        <div class="container">
+            <div>
+                <p><?php the_field('project_text', 'option'); ?></p>
+            </div>
+            
+            <?php  $project_logos = get_field('project_logos', 'option');
+            if ($project_logos) { ?>
+                <div class="footer-project_logos">
+                    <?php 
+                        foreach ($project_logos as $logo) { ?>
+                            <div class="footer-project_logo_item">
+                                <img src="<?php echo $logo["project_logo"]['url']?>" alt="logo">
+                            </div>
+                            
+                        <?php }
+                    
+                    ?>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+   
 
     <hr class="line">
 
