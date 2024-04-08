@@ -1,0 +1,189 @@
+@import "../variables.scss";
+
+.documents {
+  display: flex;
+  gap: 104px;
+  margin: 72px auto 80px;
+  flex-direction: column-reverse;
+  @media screen and (min-width: $tablet) {
+    gap: 110px;
+    margin: 40px auto 112px;
+  }
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+  .content-wrapper {
+    max-width: 100%;
+    @media screen and (min-width: $desktop) {
+      max-width: 558px;
+    }
+
+    & > p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 40px;
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 91px;
+      }
+    }
+  }
+  .image-wrapper {
+    position: relative;
+    margin: 0 auto;
+    @media screen and (max-width: $tablet) {
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      top: -47px;
+      z-index: -1;
+      background-image: url("../../images/reports-bg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 340px;
+      height: 243px;
+      @media screen and (min-width: $tablet) {
+        right: -90px;
+        top: -80px;
+        width: 646px;
+        height: 457px;
+      }
+    }
+    .image-container {
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 234px;
+      height: 164px;
+
+      @media screen and (min-width: $tablet) {
+        max-width: 437px;
+        height: 305px;
+      }
+      @media screen and (mib-width: $desktop) {
+        max-width: 437px;
+        height: 305px;
+      }
+    }
+  }
+  .documents-list {
+    display: grid;
+    row-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (min-width: $tablet) {
+      row-gap: 24px;
+      grid-template-columns: minmax(max-content, 1fr) 1fr 1fr minmax(
+          max-content,
+          1fr
+        );
+    }
+  }
+  .document-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .link {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background-color: $color-light-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 120%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 24px;
+      max-width: 80px;
+    }
+  }
+}
+
+.reports-container {
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+.reports {
+  border-radius: 12px;
+  padding: 42px 40px 56px 40px;
+  background: $gradient;
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: $tablet) {
+    padding: 42px 32px 56px 32px;
+    gap: 40px;
+    border-radius: 0;
+  }
+  @media screen and (max-width: 376px) {
+    padding: 32px 16px;
+    gap: 36px;
+  }
+
+  .reports-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 76px;
+    width: 100%;
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
+      gap: 40px;
+    }
+  }
+
+  .report-item {
+    width: 208px;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    &.visible-on-mobile {
+      display: flex;
+    }
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+    .link {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background-color: $color-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      text-align: center;
+      max-width: 80px;
+    }
+  }
+  .reports-btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 171%;
+    background-color: inherit;
+    border: none;
+    color: $color-accent;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+  .hide-report-btn {
+    display: none;
+  }
+}
