@@ -17,9 +17,4 @@ $class = isset($args['class']) ? $args['class'] : "";
     <?php endif; ?>
 
     <p><?php the_field('title'); ?></p>
-
-    <?php if($type === 'report'): ?>
-    <p><?php the_field('date'); ?></p>
-    <?php endif; ?>
-
 </li>

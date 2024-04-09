@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <main class="main ">
-    <section class="container">
+    <section class="container title-wrapper">
         <h1 class="visually-hidden">Проєкти ГО "Добрі Дії"</h1>
         <h2 class=" title-main title"><?php the_field( 'title'); ?></h2>
     </section>
