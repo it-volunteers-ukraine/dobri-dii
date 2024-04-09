@@ -1,17 +1,23 @@
 @import "../variables.scss";
-
+.title-wrapper {
+  .title {
+    text-align: left;
+  }
+}
 .documents {
   display: flex;
-  gap: 104px;
-  margin: 72px auto 80px;
+  gap: 52px;
+  margin: 44px auto 60px;
   flex-direction: column-reverse;
   @media screen and (min-width: $tablet) {
     gap: 110px;
-    margin: 40px auto 112px;
+    margin: 72px auto 80px;
   }
   @media screen and (min-width: $desktop) {
     flex-direction: row;
+    margin: 40px auto 112px;
   }
+
   .content-wrapper {
     max-width: 100%;
     @media screen and (min-width: $desktop) {
@@ -169,7 +175,6 @@
       line-height: 150%;
       letter-spacing: 0.01em;
       text-align: center;
-      max-width: 80px;
     }
   }
   .reports-btn {
@@ -179,6 +184,7 @@
     background-color: inherit;
     border: none;
     color: $color-accent;
+    cursor: pointer;
     @media screen and (min-width: $tablet) {
       display: none;
     }
