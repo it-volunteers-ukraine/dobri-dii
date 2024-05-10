@@ -60,7 +60,7 @@
                         </li>
                         <li>
                             <a class="header-social__link" href="<?php the_field( 'youtube', 17 ); ?>" target="_blank"
-                               aria-label="Перейти на канал в Ютуб">
+                                aria-label="Перейти на канал в Ютуб">
                                 <svg class="header-social__icon" width="24px" height="24px">
                                     <use
                                         href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#youtube">
@@ -71,7 +71,7 @@
                     </ul>
 
                     <a class="button button--orange"
-                        href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?>
+                        href="<?php the_field( 'button-link','option' ); ?>"><?php the_field( 'button-text','option' ); ?>
                     </a>
 
 
@@ -90,6 +90,7 @@
                                 ] ); 
                             ?>
                     </nav>
+
 
                     <a class="button button--blue header__button"
                         href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?>

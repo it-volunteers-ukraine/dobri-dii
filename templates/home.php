@@ -12,7 +12,7 @@
             <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
             <p class="text-main home-info__text"><?php the_field( 'text'); ?></p>
             <a class="button button--blue home-info__link "
-                href="<?php echo get_permalink( 19 ); ?>"><?php the_field( 'button-text','option' ); ?></a>
+                href="<?php the_field( 'button-link','option' ); ?>"><?php the_field( 'button-text','option' ); ?></a>
 
         </div>
 
@@ -84,11 +84,12 @@
         </div>
 
         <div class="about__wrapp">
-            <h3 class="subtitle">Про нас</h3>
+            <h3 class="subtitle"><?php the_field( 'section_name_about'); ?></h3>
             <h2 class="title-main about__title"><?php the_field( 'title_about'); ?></h2>
             <p class="text-main about__text"><?php the_field( 'text_about'); ?></p>
             <div class="about__buttons">
-                <a class="button--arrow" href="<?php echo get_permalink( 7 ); ?>">Читати більше
+                <a class="button--arrow"
+                    href="<?php echo the_field( 'button_link_about'); ?>"><?php the_field( 'button_about'); ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
@@ -145,7 +146,8 @@
             <div class="projects__head">
                 <h2 class="title-main"><?php the_field('title_projects'); ?></h2>
 
-                <a class="button--arrow" href="<?php echo get_permalink( 9 ); ?>"><?php the_field('button_projects'); ?>
+                <a class="button--arrow"
+                    href="<?php echo the_field( 'button_link_projects'); ?>"><?php the_field('button_projects'); ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
@@ -170,7 +172,7 @@
     </section>
 
     <section class="work container">
-        <h3 class="subtitle work__subtitle">НАПРЯМИ</h3>
+        <h3 class="subtitle work__subtitle"><?php the_field( 'section_name_work'); ?></h3>
         <h2 class="title-main work__title"><?php the_field( 'title_work'); ?></h2>
 
         <ul class="work__list">
@@ -209,7 +211,8 @@
     <section class="news container">
         <div class="news__head">
             <h2 class="title-main"><?php the_field('title_news'); ?></h2>
-            <a class="button--arrow" href="<?php echo get_permalink( 11 ); ?>"><?php the_field('button_news'); ?>
+            <a class="button--arrow"
+                href="<?php echo the_field( 'button_link_news'); ?>"><?php the_field('button_news'); ?>
                 <svg width="24px" height="24px">
                     <use class="arrow-up"
                         href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
@@ -235,7 +238,8 @@
 
         <div class="partners__head">
             <h2 class="title-main"><?php the_field('title_partners'); ?></h2>
-            <a class="button--arrow" href="<?php echo get_permalink( 13 ); ?>"><?php the_field('button_partners'); ?>
+            <a class="button--arrow"
+                href="<?php echo the_field( 'button_link_partners'); ?>"><?php the_field('button_partners'); ?>
                 <svg width="24px" height="24px">
                     <use class="arrow-up"
                         href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
