@@ -82,7 +82,7 @@ get_header();
                 <?php endif; ?>
             </ul>
 
-            <button class="reports-btn">Показати більше</button>
+            <button class="reports-btn"><?php the_field( 'show_more_btn'); ?></button>
 
         </section>
     </div>

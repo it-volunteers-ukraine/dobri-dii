@@ -11,7 +11,7 @@ get_header();
 ?>
 <main class="main container project">
 
-    <span class="subtitle project__subtitle">Про проєкт</span>
+    <span class="subtitle project__subtitle"><?php the_field( 'project_subtitle', 'option'); ?></span>
 
     <section class="project__article">
         <?php
@@ -25,7 +25,8 @@ get_header();
 
 
     <div class="project__link">
-        <a class="button--arrow" href="<?php the_field( 'facebook', 17 ); ?>" target="_blank">Читати більше у
+        <a class="button--arrow" href="<?php the_field( 'facebook', 17 ); ?>"
+            target="_blank"><?php the_field( 'project_btn_text', 'option'); ?>
             <span>Facebook</span>
             <svg width="24px" height="24px">
                 <use class="arrow-up"

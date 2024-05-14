@@ -11,7 +11,9 @@
                     <span class="project__date"><?php the_field('date'); ?></span>
                     <?php $sum = get_field('sum'); ?>
                     <?php if (!empty($sum)) : ?>
-                    <p class="project__budget">Бюджет <span><?php echo $sum; ?></span></p>
+                    <p class="project__budget"><?php the_field( 'budget', 'option'); ?>
+                        <span><?php echo $sum; ?></span>
+                    </p>
                     <?php endif; ?>
                 </div>
 

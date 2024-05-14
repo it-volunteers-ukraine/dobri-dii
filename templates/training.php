@@ -26,7 +26,6 @@
 							setup_postdata( $post );
 							set_query_var( 'type', 'projects' ); // set to 'projects' to inherit css styles
 							set_query_var( 'classButton', 'button button--transparent' );
-							set_query_var( 'text', 'Читати більше' );
 
 							get_template_part( 'template-parts/content', 'posts' );
 						}

@@ -20,7 +20,8 @@
                 <span class="date"><?php the_field('date'); ?></span>
                 <h3 class="title-secondary title"><?php the_title(); ?></h3>
                 <p class="text-secondary text"><?php the_field('text'); ?></p>
-                <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше
+                <a class="button--arrow"
+                    href="<?php the_permalink(); ?>"><?php the_field( 'read_more_btn', 'option'); ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
                             href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
