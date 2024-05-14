@@ -1,7 +1,7 @@
 <?php
 $type = get_query_var('type');
 $classButton = get_query_var('classButton');
-$text = get_query_var('text');
+$text = get_field('read_more_btn', 'option');
 ?>
 
 

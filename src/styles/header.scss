@@ -357,3 +357,47 @@ body.is-open {
 .button-menu.is-open .button-menu__burger {
   display: block;
 }
+.nav-menu .pll-parent-menu-item {
+  @media (min-width: $desktop) {
+    padding: 12px 7px;
+  }
+}
+.pll-parent-menu-item {
+  position: relative;
+  display: flex;
+  @media (min-width: $desktop) {
+    margin-left: 20px;
+  }
+
+  &:hover {
+    .sub-menu {
+      display: flex;
+    }
+  }
+}
+.nav-menu .pll-parent-menu-item .sub-menu {
+  width: fit-content;
+  padding: 7px;
+  border-radius: 8px;
+  & li {
+    width: 45px;
+    padding: 7px 0;
+  }
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.pll-parent-menu-item > a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu__mobile .pll-parent-menu-item a {
+  display: flex;
+  align-items: center;
+}

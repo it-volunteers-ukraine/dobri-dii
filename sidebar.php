@@ -11,7 +11,7 @@
 
 <aside id="secondary" class="sidebar">
 
-    <h3 class="title-main sidebar__title">Інші новини</h3>
+    <h3 class="title-main sidebar__title"><?php the_field('sidebar_title', 'options'); ?></h3>
 
     <ul class="sidebar__list">
         <?php
@@ -37,7 +37,7 @@
             <div class="sidebar__info">
                 <span class="sidebar__date"><?php the_field('date'); ?></span>
                 <h3 class="title-secondary sidebar__subtitle"><?php the_title(); ?></h3>
-                <a class="button--arrow" href="<?php the_permalink(); ?>">Читати більше
+                <a class="button--arrow" href="<?php the_permalink(); ?>"><?php the_field('read_more_btn', 'option') ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
                             href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right">
@@ -56,7 +56,8 @@
         ?>
     </ul>
 
-    <a class="button--arrow" href="<?php echo get_permalink(11); ?>">Усі новини
+    <a class="button--arrow"
+        href="<?php echo the_field('btn_link', 'options'); ?>"><?php the_field('btn_text', 'options'); ?>
         <svg width="24px" height="24px">
             <use class="arrow-up"
                 href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right">

@@ -30,7 +30,6 @@ if (have_posts()) {
                 
                 set_query_var('type', 'news' );
                 set_query_var('classButton', 'button--arrow' ); 
-                set_query_var('text', 'Читати більше' );
                 
             get_template_part('template-parts/content', 'posts' );
      } 
