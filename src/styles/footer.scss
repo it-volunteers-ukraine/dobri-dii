@@ -91,7 +91,7 @@
 
   //desktop nav menu block
   .menu {
-    display: none;
+    // display: none;
     @media screen and (min-width: $desktop) {
       display: block;
     }
@@ -102,8 +102,8 @@
     }
 
     li {
-      margin-bottom: 24px;
-      margin-right: 35px;
+      margin-bottom: 15px;
+      margin-right: 10px;
       font-size: 15px;
       line-height: 20px;
       color: $color-secondary;
@@ -111,6 +111,11 @@
       &:hover {
         color: $color-accent;
         text-decoration: underline;
+      }
+
+      @media screen and (min-width: $desktop) {
+        margin-bottom: 24px;
+        margin-right: 35px;
       }
     }
   }
