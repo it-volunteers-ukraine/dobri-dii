@@ -33,3 +33,17 @@ const swiperOneNews2 = new Swiper(".swiperOneNews2", {
     swiper: swiper,
   },
 });
+
+function initializeLightbox() {
+  lightbox.option({
+    resizeDuration: 200,
+    alwaysShowNavOnTouchDevices: true,
+    disableScrolling: true,
+    wrapAround: true,
+    albumLabel: "Слайд %1 з %2",
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initializeLightbox();
+});

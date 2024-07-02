@@ -31,12 +31,14 @@
                     <?php while ( have_rows( 'gallery' ) ): the_row(); ?>
                     <?php
 							$image = get_sub_field( 'img' );
-							$alt   = get_sub_field( 'alt' );
+							$description   = get_sub_field( 'description' );
 							?>
 
-                    <div class=" project-gallery__item swiper-slide">
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $alt; ?>" />
-                    </div>
+                    <a class=" project-gallery__item swiper-slide" href="<?php echo esc_url( $image['url'] ); ?>"
+                        data-lightbox="projectsImages" data-title="<?php echo $description; ?>"
+                        data-alt=" <?php echo $image['alt']; ?>">
+                        <img src=" <?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    </a>
 
                     <?php endwhile; ?>
                 </div>
