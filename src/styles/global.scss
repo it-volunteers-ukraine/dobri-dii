@@ -113,3 +113,14 @@
     margin-bottom: 24px;
   }
 }
+
+.lb-dataContainer .lb-data .lb-caption {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 14px;
+}
+.lb-dataContainer .lb-data .lb-number {
+  padding-top: 5px;
+}
