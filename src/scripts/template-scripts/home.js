@@ -55,3 +55,51 @@ const swiperPartners = new Swiper(".swiperPartners", {
     },
   },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const activityItems = document.querySelectorAll(".activities-item");
+
+  activityItems.forEach((item) => {
+    const description = item.querySelector(
+      ".activities-item_description-wrapper"
+    );
+    const container = item.querySelector(".hovered-description-container");
+    const iconWrapper = item.querySelector(".icon-container");
+
+    if (description && container && iconWrapper) {
+      description.style.opacity = "0";
+      description.style.transition = "opacity 0.3s ease-in-out";
+
+      item.addEventListener("mouseenter", () => {
+        description.style.opacity = "1";
+      });
+
+      item.addEventListener("mouseleave", () => {
+        description.style.opacity = "0";
+      });
+    }
+  });
+});
+
+const swiper = new Swiper(".values-swiper", {
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 24,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+function showSwiper() {
+  const section = document.querySelector(".values-swiper");
+  if (section) {
+    if (window.innerWidth <= 769) {
+      swiper.init();
+    } else {
+      swiper.destroy();
+    }
+  }
+}
+
+window.addEventListener("resize", showSwiper);
