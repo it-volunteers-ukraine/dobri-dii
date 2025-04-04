@@ -3,14 +3,27 @@
 	Template Name: home
 	*/
 	get_header();
+    $hero_content = get_field('hero_content');
+    $activities_title = get_field('activities_title');
+    $activities_image = get_field('activities_image');
+    $activities_list = get_field('activities_list');
+    $values_title = get_field('values_title');
+    $values_list = get_field('values_list');
 ?>
+
+<?php if ($hero_content): ?>
+<?php endif; ?>
+
 <main class="main home-page">
     <h1 class="visually-hidden">ГО "Добрі Дії"</h1>
     <section class="home-info container">
         <div class="home-info__wrapper">
-            <h2 class="title-main home-info__title"><?php the_field( 'title'); ?></h2>
-            <h2 class="title-main home-info__title--blue"><?php the_field( 'title-eng'); ?></h2>
-            <p class="text-main home-info__text"><?php the_field( 'text'); ?></p>
+            <?php if ($hero_content): ?>
+            <div class="home-info__content">
+                <?php echo $hero_content ?>
+            </div>
+            <?php endif; ?>
+
             <a class="button button--blue home-info__link "
                 href="<?php the_field( 'button-link','option' ); ?>"><?php the_field( 'button-text','option' ); ?></a>
 
@@ -77,31 +90,76 @@
         </div>
     </section>
 
-    <section class="about container">
-        <div class="about__img">
-            <img src="<?php the_field( 'img_about'); ?>" width="295px" height="333px" alt="Волонтер">
-            <span class="about__info"> <?php the_field( 'info_about'); ?></span>
+    <section class="activities container">
+        <?php if ($activities_title): ?>
+        <h2 class="title-main"><?php echo $activities_title?></h2>
+        <?php endif; ?>
+
+        <div class="image-wrapper">
+            <?php if ($activities_image): ?>
+            <img src="<?php echo esc_url($activities_image['url']); ?>"
+                alt="<?php echo esc_attr($activities_image['alt']); ?>" />
+            <?php endif; ?>
         </div>
 
-        <div class="about__wrapp">
-            <h3 class="subtitle"><?php the_field( 'section_name_about'); ?></h3>
-            <h2 class="title-main about__title"><?php the_field( 'title_about'); ?></h2>
-            <p class="text-main about__text"><?php the_field( 'text_about'); ?></p>
-            <div class="about__buttons">
-                <a class="button--arrow"
-                    href="<?php echo the_field( 'button_link_about'); ?>"><?php the_field( 'button_about'); ?>
-                    <svg width="24px" height="24px">
-                        <use class="arrow-up"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
-                        </use>
-                        <use class="arrow-right"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
-                        </use>
-                    </svg>
-                </a>
-            </div>
-        </div>
 
+        <?php if ($activities_list): ?>
+        <ul class="activities-list">
+            <?php foreach ($activities_list as $list_row): ?>
+            <?php $icon = $list_row['logo']; ?>
+            <?php $color = $list_row['color_picker']; ?>
+            <?php $title = $list_row['title']; ?>
+            <?php $description = $list_row['description']; ?>
+
+            <li class="activities-item ">
+
+                <div class="hovered-description-container">
+                    <?php if ($icon): ?>
+                    <div class="icon-container">
+                        <div class="icon-wrapper <?php echo $color;?>">
+                            <?php echo wp_get_attachment_image($icon['id'], 'full_hd', null); ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if ($description): ?>
+                    <div class="activities-item_description-wrapper">
+                        <div class="activities-item_description <?php echo $color;?>">
+                            <p><?php echo $description?></p>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+
+                <?php if ($title): ?>
+                <h3><?php echo $title?></h3>
+                <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
+    </section>
+
+    <section class="values container">
+        <?php if ($values_title): ?>
+        <h2 class="title-main"><?php echo $values_title?></h2>
+        <?php endif; ?>
+
+        <?php if ($values_list): ?>
+        <ul class="values-list">
+            <?php foreach ($values_list as $values_row): ?>
+            <?php  get_template_part('template-parts/values-card', null, array('card' => $values_row)); ?>
+            <?php endforeach; ?>
+        </ul>
+
+        <div class="values-swiper">
+            <ul class="swiper-wrapper">
+                <?php foreach ($values_list as $values_row): ?>
+                <?php  get_template_part('template-parts/values-card', null, array('isSliderCard' => true, 'card' => $values_row)); ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
     </section>
 
     <section class="results container">
@@ -171,42 +229,6 @@
         </div>
     </section>
 
-    <section class="work container">
-        <h3 class="subtitle work__subtitle"><?php the_field( 'section_name_work'); ?></h3>
-        <h2 class="title-main work__title"><?php the_field( 'title_work'); ?></h2>
-
-        <ul class="work__list">
-            <li class="work__item">
-                <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon5.svg" alt="Пісочний годинник">
-                </div>
-                <span><?php the_field( 'work_1'); ?></span>
-                <p class="text-secondary"><?php the_field( 'info_1'); ?></p>
-            </li>
-            <li class="work__item">
-                <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon6.svg" alt="Лист паперу">
-                </div>
-                <span><?php the_field( 'work_2'); ?></span>
-                <p class="text-secondary"><?php the_field( 'info_2'); ?></p>
-            </li>
-            <li class="work__item">
-                <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon7.svg" alt="Сердечко">
-                </div>
-                <span><?php the_field( 'work_3'); ?></span>
-                <p class="text-secondary"><?php the_field( 'info_3'); ?></p>
-            </li>
-            <li class="work__item">
-                <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon8.svg" alt="Грошовий  знак">
-                </div>
-                <span><?php the_field( 'work_4'); ?></span>
-                <p class="text-secondary"><?php the_field( 'info_4'); ?></p>
-            </li>
-        </ul>
-
-    </section>
 
     <section class="news container">
         <div class="news__head">
