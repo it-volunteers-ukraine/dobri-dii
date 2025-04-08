@@ -70,7 +70,7 @@
                         </li>
                     </ul>
 
-                    <a class="button button--orange"
+                    <a class="button button--blue header__button"
                         href="<?php the_field( 'button-link','option' ); ?>"><?php the_field( 'button-text','option' ); ?>
                     </a>
 
