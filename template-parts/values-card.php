@@ -6,7 +6,7 @@ $description = $card['description'];
 $isSliderCard = $args['isSliderCard'] ?? false;
 ?>
 
-<li class="card <?php echo( $isSliderCard ? 'swiper-slide' : '' ); ?>">
+<div class="card <?php echo( $isSliderCard ? 'swiper-slide' : '' ); ?>">
     <div class="icon-wrapper">
         <?php echo wp_get_attachment_image($icon['id'], 'full_hd', null); ?>
     </div>
@@ -20,4 +20,4 @@ $isSliderCard = $args['isSliderCard'] ?? false;
         <p><?php echo $description?></p>
     </div>
     <?php endif; ?>
-</li>
+</div>

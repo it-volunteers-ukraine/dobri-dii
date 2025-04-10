@@ -146,18 +146,19 @@
         <?php endif; ?>
 
         <?php if ($values_list): ?>
-        <ul class="values-list">
+        <div class="values-list">
             <?php foreach ($values_list as $values_row): ?>
             <?php  get_template_part('template-parts/values-card', null, array('card' => $values_row)); ?>
             <?php endforeach; ?>
-        </ul>
+        </div>
 
-        <div class="values-swiper">
-            <ul class="swiper-wrapper">
+        <div class="swiper values-swiper">
+            <div class="swiper-wrapper">
                 <?php foreach ($values_list as $values_row): ?>
                 <?php  get_template_part('template-parts/values-card', null, array('isSliderCard' => true, 'card' => $values_row)); ?>
                 <?php endforeach; ?>
-            </ul>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
         <?php endif; ?>
     </section>
