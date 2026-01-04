@@ -111,8 +111,7 @@
             <?php $title = $list_row['title']; ?>
             <?php $description = $list_row['description']; ?>
 
-            <li class="activities-item test">
-
+            <li class="activities-item">
                 <div class="hovered-description-container">
                     <?php if ($icon): ?>
                     <div class="icon-container">
