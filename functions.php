@@ -192,3 +192,13 @@ wp_die();
 
 add_action('wp_ajax_get_total_pages', 'get_total_pages');
 add_action('wp_ajax_nopriv_get_total_pages', 'get_total_pages');
+
+add_filter( 'get_the_archive_title', 'modify_archive_title', 10, 1 );
+
+function modify_archive_title( $title ) {
+        
+    $var = "1";
+
+    return $var . $title;
+
+}
