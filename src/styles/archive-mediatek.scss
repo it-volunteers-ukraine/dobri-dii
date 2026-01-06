@@ -1,0 +1,61 @@
+.mediatek-page {
+  .title-main {
+    margin-bottom: 40px;
+  }
+}
+
+.mediatek-list {
+  display: flex;
+  gap: 24px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -13%;
+    top: 25%;
+    width: 376px;
+    height: 376px;
+    background-image: url(../../assets/images/fon-square.png);
+    display: none;
+    z-index: -1;
+
+    @media screen and (min-width: $desktop) {
+      display: block;
+    }
+  }
+
+  .mediatek-list-item {
+    padding: 40px;
+    border-radius: 12px;
+    background-color: $color-yellow;
+
+    .image-wrapper {
+      border-radius: 12px;
+      width: 478px;
+      height: 274px;
+      overflow: hidden;
+      margin-bottom: 24px;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+
+    .title {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 38px;
+    }
+
+    .excerpt {
+      line-height: 1.5;
+    }
+
+    .button {
+      margin: 52px auto 0;
+    }
+  }
+}

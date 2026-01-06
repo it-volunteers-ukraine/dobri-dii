@@ -16,6 +16,7 @@ get_header();
     'post_type' => 'mediatek',
     'posts_per_page' => 12,
     'post_status' => 'publish',
+    'order' => 'ASC',
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1
     );
 
