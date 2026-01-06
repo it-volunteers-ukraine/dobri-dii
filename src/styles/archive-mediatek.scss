@@ -5,9 +5,18 @@
 }
 
 .mediatek-list {
-  display: flex;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   position: relative;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    flex-direction: row;
+  }
 
   &::after {
     content: "";
@@ -26,21 +35,30 @@
   }
 
   .mediatek-list-item {
-    padding: 40px;
+    padding: 16px;
     border-radius: 12px;
     background-color: $color-yellow;
 
+    @media screen and (min-width: $desktop) {
+      padding: 40px;
+    }
+
     .image-wrapper {
       border-radius: 12px;
-      width: 478px;
-      height: 274px;
+      width: 312px;
+      height: 200px;
       overflow: hidden;
       margin-bottom: 24px;
 
+      @media screen and (min-width: $desktop) {
+        width: 478px;
+        height: 274px;
+      }
+
       img {
         width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
