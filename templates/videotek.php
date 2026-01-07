@@ -18,7 +18,7 @@ if( get_query_var('page') ) {
 }
 
 $row              = 0;
-$videos_per_page  = 6; 
+$videos_per_page  = 2; 
 $videos           = get_field( 'video_list' );
 $total            = count( $videos );
 $pages            = ceil( $total / $videos_per_page );
@@ -36,8 +36,11 @@ if( have_rows( 'video_list' ) ) : ?>
 
         <?php $thumbnail_image = get_sub_field( 'thumbnail_image' ); ?>
         <?php $video_link = get_sub_field( 'video_link' ); ?>
-        <a href="<?php echo $video_link; ?>" data-lightbox="roadtrip">
-            <img src="<?php echo $thumbnail_image['sizes']['thumbnail']; ?>" alt="">
+        <?php $title = get_sub_field( 'title' ); ?>
+
+        <a href="<?php echo esc_attr($video_link); ?>" data-fancybox="videos" data-aspect-ratio="2 / 1"
+            data-caption="<?php echo $title; ?>">
+            <img src=" <?php echo $thumbnail_image['sizes']['large']; ?>" alt="">
         </a>
 
         <?php endwhile;
