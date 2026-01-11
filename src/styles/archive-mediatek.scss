@@ -70,6 +70,10 @@
 
     .excerpt {
       line-height: 1.5;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
     }
 
     .button {
@@ -78,51 +82,311 @@
   }
 }
 
-.lightbox {
-  .lb {
-    &-outerContainer {
-      video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        width: 100%;
-        height: auto;
-        opacity: 1;
-        transition: opacity 300ms ease-in-out;
-        border: none;
-        outline: none;
-        &:hover,
-        &:focus {
-          border: none;
-          outline: none;
-        }
-      }
-      &.animating {
-        video {
-          opacity: 0;
-        }
-      }
+.videoteka-page {
+  .video-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    @media screen and (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      flex-direction: row;
     }
-    &-container {
-      position: relative;
-      .lb-image {
-        border: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -13%;
+      top: 14%;
+      width: 376px;
+      height: 376px;
+      background-image: url(../../assets/images/fon-square.png);
+      display: none;
+      z-index: -1;
+
+      @media screen and (min-width: $desktop) {
+        display: block;
       }
     }
   }
+  .video-list-item {
+    border: 1px solid $color-accent;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: $color-light;
+
+    @media screen and (min-width: $desktop) {
+      padding: 40px;
+    }
+  }
+  .image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    width: 312px;
+    height: 200px;
+    margin-bottom: 16px;
+    background-color: #858585;
+
+    @media screen and (min-width: $desktop) {
+      width: 478px;
+      height: 274px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 24px;
+    }
+
+    .play-button {
+      position: absolute;
+      width: 58px;
+      height: 42px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets/images/play-btn.svg);
+        background-repeat: no-repeat;
+        transition: all 0.3s ease 0s;
+      }
+      &:hover::after {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
 }
 
-.lb-media {
-  width: 100%;
-}
-.lb-media iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border: 0;
-}
-.lb-media video {
-  width: 100%;
-  height: auto;
+.photo-gallert-page {
+  .hero-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    @media screen and (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 16px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @media screen and (min-width: $desktop) {
+      grid-template-columns: 558px 1fr;
+      grid-column-gap: 111px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(../../assets/images/purple-square.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: none;
+      z-index: -1;
+
+      @media screen and (min-width: $tablet) {
+        display: block;
+        left: 35%;
+        top: -29%;
+        width: 400px;
+        height: 400px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        left: 43%;
+        top: -36%;
+        width: 600px;
+        height: 600px;
+      }
+    }
+
+    .title-description-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      h2 {
+        margin-bottom: 8;
+        text-align: center;
+
+        @media screen and (min-width: $tablet) {
+          margin-bottom: 24px;
+          text-align: left;
+        }
+      }
+    }
+
+    .image-wrapper {
+      border-radius: 12px;
+      width: 312px;
+      height: 200px;
+      overflow: hidden;
+      display: none;
+
+      @media screen and (min-width: $tablet) {
+        width: 343px;
+        height: 364px;
+        display: block;
+      }
+
+      @media screen and (min-width: $desktop) {
+        width: 461px;
+        height: 436px;
+        display: block;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .gallery-list {
+    margin-top: 60px;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 80px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 112px;
+    }
+
+    .gallery-list-item {
+      position: relative;
+      .title-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 12px;
+
+        @media screen and (min-width: $tablet) {
+          width: 560px;
+          margin-bottom: 24px;
+        }
+
+        h2 {
+          margin-bottom: 0;
+
+          @media screen and (min-width: $tablet) {
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      .button {
+        margin: 22px auto 0;
+
+        @media (min-width: $desktop) {
+          margin: 40px auto 0;
+        }
+      }
+
+      .photogallery {
+        margin: 16px auto 0;
+
+        @media (min-width: $tablet) {
+          margin: 24px auto 0;
+        }
+
+        .photogallery-sizer {
+          width: 106px;
+          height: 192px;
+        }
+        @media (min-width: $tablet) {
+          .photogallery-sizer {
+            width: 180px;
+            height: 317px;
+          }
+        }
+
+        .photogallery-item {
+          margin-bottom: 12px;
+          height: 192px;
+
+          @media (min-width: $tablet) {
+            height: 317px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .photogallery-item.is-hidden {
+          position: absolute !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+      }
+    }
+
+    & > :not(:first-child) {
+      padding-top: 60px;
+
+      @media screen and (min-width: $tablet) {
+        padding-top: 108px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        padding-top: 148px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        width: 100%;
+        height: 29px;
+        background-image: url("data:image/svg+xml,%3Csvg width='117' height='29' viewBox='0 0 117 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='14.1426' width='20' height='20' transform='rotate(45 14.1426 0)' fill='%23D6E4EC'/%3E%3Crect x='58.4258' width='20' height='20' transform='rotate(45 58.4258 0)' fill='%23D6E4EC'/%3E%3Crect x='102.711' width='20' height='20' transform='rotate(45 102.711 0)' fill='%23D6E4EC'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @media screen and (min-width: $tablet) {
+          top: 40px;
+          background-image: url("data:image/svg+xml,%3Csvg width='704' height='28' viewBox='0 0 704 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='11.3145' y='2.68555' width='16' height='16' transform='rotate(45 11.3145 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='49.9414' y='2.68555' width='16' height='16' transform='rotate(45 49.9414 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='88.5684' y='2.68555' width='16' height='16' transform='rotate(45 88.5684 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='304.814' y='2.68555' width='16' height='16' transform='rotate(45 304.814 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='343.441' y='2.68555' width='16' height='16' transform='rotate(45 343.441 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='382.068' y='2.68555' width='16' height='16' transform='rotate(45 382.068 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='598.314' y='2.68555' width='16' height='16' transform='rotate(45 598.314 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='636.941' y='2.68555' width='16' height='16' transform='rotate(45 636.941 2.68555)' fill='%23D6E4EC'/%3E%3Crect x='675.568' y='2.68555' width='16' height='16' transform='rotate(45 675.568 2.68555)' fill='%23D6E4EC'/%3E%3C/svg%3E%0A");
+        }
+
+        @media screen and (min-width: $desktop) {
+          top: 60px;
+          background-image: url("data:image/svg+xml,%3Csvg width='1140' height='29' viewBox='0 0 1140 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='178.643' width='20' height='20' transform='rotate(45 178.643 0)' fill='%23D6E4EC'/%3E%3Crect x='222.926' width='20' height='20' transform='rotate(45 222.926 0)' fill='%23D6E4EC'/%3E%3Crect x='267.211' width='20' height='20' transform='rotate(45 267.211 0)' fill='%23D6E4EC'/%3E%3Crect x='525.643' width='20' height='20' transform='rotate(45 525.643 0)' fill='%23D6E4EC'/%3E%3Crect x='569.926' width='20' height='20' transform='rotate(45 569.926 0)' fill='%23D6E4EC'/%3E%3Crect x='614.211' width='20' height='20' transform='rotate(45 614.211 0)' fill='%23D6E4EC'/%3E%3Crect x='872.643' width='20' height='20' transform='rotate(45 872.643 0)' fill='%23D6E4EC'/%3E%3Crect x='916.926' width='20' height='20' transform='rotate(45 916.926 0)' fill='%23D6E4EC'/%3E%3Crect x='961.211' width='20' height='20' transform='rotate(45 961.211 0)' fill='%23D6E4EC'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+  }
 }
