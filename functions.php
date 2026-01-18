@@ -248,3 +248,153 @@ add_action('wp_enqueue_scripts', function () {
     });
   ");
 });
+
+function enqueue_video_pagination_scripts()
+{
+  // Only enqueue if we are on the page that needs it (optional, but good practice)
+  // You might want to check for a specific page template or ID here.
+  wp_enqueue_script('video-pagination', get_template_directory_uri() . '/assets/scripts/template-scripts/video-pagination.js', array('jquery'), null, true);
+  wp_localize_script('video-pagination', 'videoPaginationAjax', array(
+    'ajax_url' => admin_url('admin-ajax.php'),
+    'post_id'  => get_the_ID(), // Pass the current post ID
+    'nonce'    => wp_create_nonce('video_pagination_nonce'), // Security nonce
+  ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_video_pagination_scripts');
+
+function handle_load_more_videos()
+{
+  // Check nonce for security
+  if (! isset($_POST['security']) || ! wp_verify_nonce($_POST['security'], 'video_pagination_nonce')) {
+    wp_send_json_error('Nonce verification failed.');
+  }
+
+  $page        = isset($_POST['page']) ? intval($_POST['page']) : 1;
+  $post_id     = isset($_POST['post_id']) ? intval($_POST['post_id']) : 0;
+  $videos_per_page = 6; // Must match the value in your template
+
+  if ($post_id <= 0) {
+    wp_send_json_error('Invalid post ID.');
+  }
+
+  // Set up post data so get_field works correctly
+  $post = get_post($post_id);
+  if (! $post) {
+    wp_send_json_error('Post not found.');
+  }
+  setup_postdata($post); // Important for get_field to work in context
+
+  $all_videos = get_field('video_list', $post_id); // Get repeater field for the specific post
+
+  // Always clean up post data after setup_postdata() usage
+  wp_reset_postdata();
+
+  $html_output      = '';
+  $pagination_output = '';
+  $success          = false;
+
+  if ($all_videos) {
+    $total_videos = count($all_videos);
+    $total_pages  = ceil($total_videos / $videos_per_page);
+    $offset       = ($page - 1) * $videos_per_page;
+    $paged_videos = array_slice($all_videos, $offset, $videos_per_page);
+
+    ob_start(); // Start output buffering
+
+    if (! empty($paged_videos)) {
+      foreach ($paged_videos as $video_item) {
+        $thumbnail_image = $video_item['thumbnail_image'];
+        $video_link      = $video_item['video_link'];
+        $title           = $video_item['title'];
+        $description     = $video_item['description'];
+        if ($thumbnail_image || $title || $video_link || $description) {
+?>
+          <li class="video-list-item">
+            <?php if ($video_link) : ?>
+              <div class="image-wrapper">
+                <?php if ($thumbnail_image) : ?>
+                  <img src=" <?php echo esc_url($thumbnail_image['sizes']['large']); ?>" alt="<?php echo esc_attr($title); ?>">
+                <?php endif; ?>
+                <a href="<?php echo esc_url($video_link); ?>" data-fancybox="videos" data-aspect-ratio="2 / 1"
+                  data-caption="<?php echo esc_attr($title); ?>" class="play-button">
+                </a>
+              </div>
+            <?php endif; ?>
+            <?php if ($title) : ?>
+              <h3 class="title"><?php echo esc_html($title); ?></h3>
+            <?php endif; ?>
+            <?php if ($description) : ?>
+              <p class="description"><?php echo esc_html($description); ?></p>
+            <?php endif; ?>
+          </li>
+        <?php
+        }
+      }
+    } else {
+      echo '<p>No videos found for this page.</p>';
+    }
+
+    $html_output = ob_get_clean(); // Get the buffered output
+
+    ob_start(); // Start buffering for pagination
+
+    if ($total_pages > 1) {
+      $range = 2; // How many pages to show around the current page
+
+      // Previous button
+      if ($page > 1) : ?>
+        <button class="pagination-button nav-button prev-page" data-page="<?php echo $page - 1; ?>"></button>
+        <?php endif;
+
+      // Loop for page numbers
+      for ($i = 1; $i <= $total_pages; $i++) :
+        // Always show first page
+        if ($i == 1) : ?>
+          <button class="pagination-button page-number <?php echo ($i == $page) ? 'active' : ''; ?>"
+            data-page="<?php echo $i; ?>"><?php echo $i; ?></button>
+        <?php
+        // Show ellipsis if there's a gap between page 1 and the current page's range
+        elseif ($i == $page - $range - 1 && $page - $range > 2) : ?>
+          <span class="pagination-ellipsis">...</span>
+        <?php
+        // Show pages within the sliding range around the current page
+        elseif ($i >= $page - $range && $i <= $page + $range) : ?>
+          <button class="pagination-button page-number <?php echo ($i == $page) ? 'active' : ''; ?>"
+            data-page="<?php echo $i; ?>"><?php echo $i; ?></button>
+        <?php
+        // Show ellipsis if there's a gap between the current page's range and the last page
+        elseif ($i == $page + $range + 1 && $page + $range < $total_pages - 1) : ?>
+          <span class="pagination-ellipsis">...</span>
+        <?php
+        // Always show last page
+        elseif ($i == $total_pages) : ?>
+          <button class="pagination-button page-number <?php echo ($i == $page) ? 'active' : ''; ?>"
+            data-page="<?php echo $i; ?>"><?php echo $i; ?></button>
+        <?php endif;
+      endfor;
+
+      // Next button
+      if ($page < $total_pages) : ?>
+        <button class="pagination-button nav-button next-page" data-page="<?php echo $page + 1; ?>"></button>
+      <?php endif; ?>
+<?php
+    }
+    $pagination_output = ob_get_clean();
+    $success = true;
+  } else {
+    $html_output = '<p>No videos found.</p>';
+  }
+
+  // Send JSON response
+  wp_send_json_success(array(
+    'html'       => $html_output,
+    'pagination' => $pagination_output,
+    'page'       => $page, // For debugging
+    'total_pages' => $total_pages, // For debugging
+  ));
+
+  // Always exit once you've sent the JSON response
+  die();
+}
+add_action('wp_ajax_load_more_videos', 'handle_load_more_videos');        // For logged-in users
+add_action('wp_ajax_nopriv_load_more_videos', 'handle_load_more_videos'); // For non-logged-in users

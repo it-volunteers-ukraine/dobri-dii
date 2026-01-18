@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setBtnText(btn, expanded, btn.dataset.more, btn.dataset.less);
     const msnry = new Masonry(gallery, {
-      columnWidth: ".photogallery-sizer",
+      // columnWidth: ".photogallery-sizer",
       itemSelector: ".photogallery-item",
       gutter: 12,
-      fitWidth: true,
+      // fitWidth: true,
+      percentPosition: true,
     });
     imagesLoaded(gallery, () => {
       msnry.layout();
@@ -63,4 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function setBtnText(buttonElement, isExpanded, moreText, lessText) {
     buttonElement.textContent = isExpanded ? lessText : moreText;
   }
+});
+
+function initializeLightbox() {
+  lightbox.option({
+    resizeDuration: 200,
+    alwaysShowNavOnTouchDevices: true,
+    disableScrolling: true,
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initializeLightbox();
 });

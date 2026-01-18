@@ -27,30 +27,45 @@ $gallery_list = get_field('gallery_list');
         <?php endif ?>
 
 
-
         <?php if (have_rows('gallery_list')) : ?>
             <ul class="gallery-list">
-                <?php while (have_rows('gallery_list')): the_row(); ?>
-                    <?php $gallery_title = get_sub_field('gallery_title'); ?>
-                    <?php $photogallery = get_sub_field('photogallery'); ?>
+                <?php
+                $row_counter = 0;
+                while (have_rows('gallery_list')): the_row();
+                    $row_counter++;
 
+                    $gallery_title = get_sub_field('gallery_title');
+                    $photogallery = get_sub_field('photogallery');
+                ?>
                     <li class="gallery-list-item">
                         <?php if ($gallery_title): ?>
                             <div class="title-wrapper">
-                                <?php echo $gallery_title ?>
+                                <?php echo $gallery_title; ?>
                             </div>
                         <?php endif ?>
 
                         <?php if ($photogallery): ?>
+                            <?php
+                            $unique_lightbox_group = 'gallery-group-' . get_the_ID() . '-' . $row_counter;
+                            ?>
                             <div class="photogallery">
-                                <div class="photogallery-sizer"></div>
                                 <?php foreach ($photogallery as $image): ?>
                                     <div class="photogallery-item">
-                                        <?php echo wp_get_attachment_image($image['id'], 'medium_large', false, array('class' => '')); ?>
+                                        <a href="<?php echo esc_url($image['url']); ?>"
+                                            data-lightbox="<?php echo esc_attr($unique_lightbox_group); ?>"
+                                            data-title="<?php echo esc_attr($image['caption']); ?>">
+                                            <?php
+                                            echo wp_get_attachment_image(
+                                                $image['id'],
+                                                'medium_large',
+                                                false,
+                                                array('class' => 'photogallery-image', 'alt' => esc_attr($image['alt']))
+                                            );
+                                            ?>
+                                        </a>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-
                             <div class="button button--transparent load-all"
                                 data-more="<?php esc_attr_e('Дивитись всі фото у розділі ', 'wp-dobri-dii'); ?>"
                                 data-less="<?php esc_attr_e('Згорнути', 'wp-dobri-dii'); ?>">
@@ -58,7 +73,6 @@ $gallery_list = get_field('gallery_list');
                             </div>
                         <?php endif; ?>
                     </li>
-
                 <?php endwhile; ?>
             </ul>
         <?php endif; ?>
