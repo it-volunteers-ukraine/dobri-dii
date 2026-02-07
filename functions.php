@@ -310,11 +310,21 @@ function handle_load_more_videos()
         if ($thumbnail_image || $title || $video_link || $description) {
 ?>
           <li class="video-list-item">
-            <?php if ($video_link) : ?>
+            <?php
+            if ($video_link) :
+              if (!$thumbnail_image) {
+                preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $video_link, $match);
+                $youtube_id = $match[1] ?? null;
+                $fallback_thumb = $youtube_id ? "https://img.youtube.com/vi/$youtube_id/hqdefault.jpg" : "";
+              }
+            ?>
               <div class="image-wrapper">
                 <?php if ($thumbnail_image) : ?>
-                  <img src=" <?php echo esc_url($thumbnail_image['sizes']['large']); ?>" alt="<?php echo esc_attr($title); ?>">
+                  <img src="<?php echo esc_url($thumbnail_image['sizes']['large']); ?>" alt="<?php echo esc_attr($title); ?>">
+                <?php elseif (!empty($fallback_thumb)) : ?>
+                  <img src="<?php echo esc_url($fallback_thumb); ?>" alt="<?php echo esc_attr($title); ?>">
                 <?php endif; ?>
+
                 <a href="<?php echo esc_url($video_link); ?>" data-fancybox="videos" data-aspect-ratio="2 / 1"
                   data-caption="<?php echo esc_attr($title); ?>" class="play-button">
                 </a>
