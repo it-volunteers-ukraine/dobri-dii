@@ -408,3 +408,11 @@ function handle_load_more_videos()
 }
 add_action('wp_ajax_load_more_videos', 'handle_load_more_videos');        // For logged-in users
 add_action('wp_ajax_nopriv_load_more_videos', 'handle_load_more_videos'); // For non-logged-in users
+
+add_action('init', function () {
+  // pll_register_string('Context', 'Ukrainian phrase', 'Group');
+  pll_register_string('Main UI', 'Переглянути', 'dobri-dii');
+  pll_register_string('Main UI', 'Дивитись всі фото у розділі', 'dobri-dii');
+  pll_register_string('Main UI', 'Згорнути', 'dobri-dii');
+  pll_register_string('Archive Title', 'Медіатека', 'dobri-dii');
+});

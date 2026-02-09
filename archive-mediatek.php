@@ -9,7 +9,8 @@ get_header();
 
     <h1 class="visually-hidden">Медіатека ГО "Добрі Дії"</h1>
 
-    <h2 class=" title-main title"><?php echo post_type_archive_title('', false); ?></h2>
+    <?php $archite_title = post_type_archive_title('', false); ?>
+    <h2 class=" title-main title"><?php pll_e($archite_title); ?></h2>
 
     <?php
     $args = array(
