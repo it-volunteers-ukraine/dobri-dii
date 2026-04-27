@@ -5,6 +5,7 @@ const uglify = require("gulp-uglify-es").default;
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
+const sourcemaps = require("gulp-sourcemaps");
 
 function images() {
   return src("src/images/*.*")
@@ -43,8 +44,10 @@ function styles() {
 
 function scripts() {
   return src(["src/scripts/*.js"])
+    .pipe(sourcemaps.init())
     .pipe(concat("main.js"))
     .pipe(uglify())
+    .pipe(sourcemaps.write("."))
     .pipe(dest("assets/scripts"));
 }
 

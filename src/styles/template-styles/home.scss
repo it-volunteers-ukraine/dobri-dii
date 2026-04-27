@@ -260,33 +260,42 @@
       flex-direction: column;
       row-gap: 52px;
       justify-items: center;
+
       @media screen and (min-width: $tablet) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         justify-content: center;
         justify-items: stretch;
-        row-gap: 72px;
+        row-gap: 48px;
       }
 
       @media screen and (min-width: $desktop) {
-        padding: 0 84px;
-        row-gap: 186px;
-      }
-    }
-    .activities-list li:last-child {
-      grid-column: 1 / -1;
-      justify-self: center;
-      @media screen and (min-width: $tablet) {
-        margin-top: -46px;
-      }
-      @media screen and (min-width: $desktop) {
-        margin-top: -180px;
+        row-gap: 80px;
       }
     }
 
-    .activities-list li:nth-child(2),
-    .activities-list li:nth-child(4) {
+    .activities-list li:nth-child(even) {
       margin-left: auto;
+    }
+
+    @media screen and (min-width: $tablet) {
+      .activities-list li:nth-child(5) {
+        margin-left: 64px;
+      }
+
+      .activities-list li:nth-child(6) {
+        margin-right: 64px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      .activities-list li:nth-child(1) {
+        margin-left: 64px;
+      }
+
+      .activities-list li:nth-child(2) {
+        margin-right: 64px;
+      }
     }
 
     .activities-item {
