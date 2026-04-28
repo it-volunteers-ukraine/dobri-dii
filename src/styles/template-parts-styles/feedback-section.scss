@@ -1,0 +1,36 @@
+@import "../variables.scss";
+.feedback-section {
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 112px;
+    gap: 120px;
+  }
+
+  .left-column {
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+    }
+  }
+
+  .right-column {
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 40%;
+    }
+  }
+}

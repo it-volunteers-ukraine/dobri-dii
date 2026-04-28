@@ -29,6 +29,7 @@ function wp_it_volunteers_scripts()
   wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array('main'));
   wp_enqueue_style('lightbox2-style', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css', array('main'));
   wp_enqueue_style('donate-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/donate-section.css', array('main'));
+  wp_enqueue_style('feedback-section-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/feedback-section.css', array('main'));
 
   wp_enqueue_script('wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true);
   wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), false, true);
@@ -387,7 +388,7 @@ function handle_load_more_videos()
       if ($page < $total_pages) : ?>
         <button class="pagination-button nav-button next-page" data-page="<?php echo $page + 1; ?>"></button>
       <?php endif; ?>
-<?php
+  <?php
     }
     $pagination_output = ob_get_clean();
     $success = true;
@@ -415,4 +416,63 @@ add_action('init', function () {
   pll_register_string('Main UI', 'Дивитись всі фото у розділі', 'dobri-dii');
   pll_register_string('Main UI', 'Згорнути', 'dobri-dii');
   pll_register_string('Archive Title', 'Медіатека', 'dobri-dii');
+});
+
+// 1. Inject the Dropdown via JavaScript (DEBUGGING VERSION)
+add_action('admin_footer', function () {
+  $screen = get_current_screen();
+
+  if (!$screen || strpos($screen->id, 'flamingo') === false) {
+    return;
+  }
+
+  $current = isset($_GET['reason_filter']) ? esc_js($_GET['reason_filter']) : '';
+
+  ?>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      // 2nd Debug: Log the container we are looking for
+      const actionWrap = document.querySelector('.tablenav.top .actions:not(.bulkactions)');
+
+      if (actionWrap) {
+        const filterHtml = `
+                <select name="reason_filter" id="reason_filter" style="float:left; margin-right: 5px;">
+                    <option value="">Всі причини</option>
+                    <option value="Подяка" ${'Подяка' === '<?php echo $current; ?>' ? 'selected' : ''}>Подяка</option>
+                    <option value="Скарга" ${'Скарга' === '<?php echo $current; ?>' ? 'selected' : ''}>Скарга</option>
+                    <option value="Інше" ${'Інше' === '<?php echo $current; ?>' ? 'selected' : ''}>Інше</option>
+                </select>
+            `;
+        actionWrap.insertAdjacentHTML('afterbegin', filterHtml);
+      } else {
+        console.error("JS check -> FAILED: Could not find the HTML container (.tablenav.top .actions:not(.bulkactions))");
+      }
+    });
+  </script>
+<?php
+});
+
+// 2. The PHP logic to filter the actual database query (UPDATED)
+add_action('pre_get_posts', function ($query) {
+  if (!is_admin()) return;
+
+  // Safely check the post_type (WordPress sometimes passes it as an array)
+  $post_type = $query->get('post_type');
+  $is_flamingo = (is_string($post_type) && $post_type === 'flamingo_inbound') ||
+    (is_array($post_type) && in_array('flamingo_inbound', $post_type));
+
+  // If we are on Flamingo and a filter is selected
+  if ($is_flamingo && !empty($_GET['reason_filter'])) {
+    $meta_query = (array) $query->get('meta_query');
+
+    // Using just the sanitized text with LIKE covers both strings and arrays natively
+    $meta_query[] = array(
+      'key'     => '_field_your-reason',
+      'value'   => sanitize_text_field($_GET['reason_filter']),
+      'compare' => 'LIKE'
+    );
+
+    $query->set('meta_query', $meta_query);
+  }
 });
