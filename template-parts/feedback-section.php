@@ -33,7 +33,6 @@ $form_id = get_field('feedback_form_id', 'option'); ?>
                     </div>
                 <?php endif; ?>
 
-
                 <?php if ($form_id): ?>
                     <div class="right-column">
                         <?php echo do_shortcode('[contact-form-7 id="' . $form_id . '" title="false" ajax="true"]');
@@ -42,7 +41,6 @@ $form_id = get_field('feedback_form_id', 'option'); ?>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
-
 
     </section>
 <?php endif; ?>
