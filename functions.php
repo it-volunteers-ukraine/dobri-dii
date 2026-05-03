@@ -476,3 +476,19 @@ add_action('pre_get_posts', function ($query) {
     $query->set('meta_query', $meta_query);
   }
 });
+
+add_filter('wpcf7_validate_tel', 'custom_tel_confirmation_validation_filter', 20, 2);
+
+function custom_tel_confirmation_validation_filter($result, $tag)
+{
+  if ('your-phone' == $tag->name) {
+    $tel = isset($_POST['your-phone']) ? trim($_POST['your-phone']) : '';
+
+    $pattern = '/^\(\d{3}\)\d{3}-\d{2}-\d{2}$/';
+
+    if (! preg_match($pattern, $tel)) {
+      $result->invalidate($tag, "Please use the format: (067)333-44-55");
+    }
+  }
+  return $result;
+}
