@@ -123,6 +123,8 @@ get_header();
         <?php endif; ?>
     </section>
     <?php get_template_part('template-parts/donate-section'); ?>
+    <?php get_template_part('template-parts/feedback-section'); ?>
+
 </main>
 
 <?php get_footer(); ?>

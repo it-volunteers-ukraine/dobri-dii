@@ -82,7 +82,7 @@ get_header();
     </div>
 
     <?php get_template_part('template-parts/donate-section'); ?>
-
+    <?php get_template_part('template-parts/feedback-section'); ?>
 </main>
 
 

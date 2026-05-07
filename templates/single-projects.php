@@ -39,6 +39,6 @@ get_header();
 </main>
 
 <?php get_template_part('template-parts/donate-section'); ?>
-
+<?php get_template_part('template-parts/feedback-section'); ?>
 
 <?php get_footer(); ?>

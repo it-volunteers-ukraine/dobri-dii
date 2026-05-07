@@ -50,6 +50,7 @@ get_header();
 
 <div class="not-found__wrapper">
     <?php get_template_part('template-parts/donate-section'); ?>
+    <?php get_template_part('template-parts/feedback-section'); ?>
 </div>
 
 <?php get_footer(); ?>

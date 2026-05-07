@@ -1,14 +1,14 @@
 <?php
-	/*
+/*
 	Template Name: home
 	*/
-	get_header();
-    $hero_content = get_field('hero_content');
-    $activities_title = get_field('activities_title');
-    $activities_image = get_field('activities_image');
-    $activities_list = get_field('activities_list');
-    $values_title = get_field('values_title');
-    $values_list = get_field('values_list');
+get_header();
+$hero_content = get_field('hero_content');
+$activities_title = get_field('activities_title');
+$activities_image = get_field('activities_image');
+$activities_list = get_field('activities_list');
+$values_title = get_field('values_title');
+$values_list = get_field('values_list');
 ?>
 
 <?php if ($hero_content): ?>
@@ -19,13 +19,13 @@
     <section class="home-info container">
         <div class="home-info__wrapper">
             <?php if ($hero_content): ?>
-            <div class="home-info__content">
-                <?php echo $hero_content ?>
-            </div>
+                <div class="home-info__content">
+                    <?php echo $hero_content ?>
+                </div>
             <?php endif; ?>
 
             <a class="button button--blue home-info__link "
-                href="<?php the_field( 'button-link','option' ); ?>"><?php the_field( 'button-text','option' ); ?></a>
+                href="<?php the_field('button-link', 'option'); ?>"><?php the_field('button-text', 'option'); ?></a>
 
         </div>
 
@@ -41,7 +41,7 @@
                             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image1" transform="matrix(0.00104167 0 0 0.00162308 0 -0.53877)" />
                             </pattern>
-                            <image id="image1" width="960" height="1280" xlink:href="<?php the_field( 'img_1'); ?>" />
+                            <image id="image1" width="960" height="1280" xlink:href="<?php the_field('img_1'); ?>" />
                         </defs>
                     </svg>
 
@@ -54,7 +54,7 @@
                             <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image2" transform="matrix(0.00104167 0 0 0.00109457 0 -0.200524)" />
                             </pattern>
-                            <image id="image2" width="960" height="1280" xlink:href="<?php the_field( 'img_2'); ?>" />
+                            <image id="image2" width="960" height="1280" xlink:href="<?php the_field('img_2'); ?>" />
                         </defs>
                     </svg>
                 </div>
@@ -69,7 +69,7 @@
                             <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image3" transform="matrix(0.00104167 0 0 0.00135024 0 -0.364152)" />
                             </pattern>
-                            <image id="image3" width="960" height="1280" xlink:href="<?php the_field( 'img_3'); ?>" />
+                            <image id="image3" width="960" height="1280" xlink:href="<?php the_field('img_3'); ?>" />
                         </defs>
                     </svg>
 
@@ -82,7 +82,7 @@
                             <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image4" transform="matrix(0.00138889 0 0 0.00138315 0 -0.163913)" />
                             </pattern>
-                            <image id="image4" width="720" height="960" xlink:href="<?php the_field( 'img_4'); ?>" />
+                            <image id="image4" width="720" height="960" xlink:href="<?php the_field('img_4'); ?>" />
                         </defs>
                     </svg>
                 </div>
@@ -92,111 +92,111 @@
 
     <section class="activities container">
         <?php if ($activities_title): ?>
-        <h2 class="title-main"><?php echo $activities_title?></h2>
+            <h2 class="title-main"><?php echo $activities_title ?></h2>
         <?php endif; ?>
 
         <div class="image-wrapper">
             <?php if ($activities_image): ?>
-            <img src="<?php echo esc_url($activities_image['url']); ?>"
-                alt="<?php echo esc_attr($activities_image['alt']); ?>" />
+                <img src="<?php echo esc_url($activities_image['url']); ?>"
+                    alt="<?php echo esc_attr($activities_image['alt']); ?>" />
             <?php endif; ?>
         </div>
 
 
         <?php if ($activities_list): ?>
-        <ul class="activities-list">
-            <?php foreach ($activities_list as $list_row): ?>
-            <?php $icon = $list_row['logo']; ?>
-            <?php $color = $list_row['color_picker']; ?>
-            <?php $title = $list_row['title']; ?>
-            <?php $description = $list_row['description']; ?>
+            <ul class="activities-list">
+                <?php foreach ($activities_list as $list_row): ?>
+                    <?php $icon = $list_row['logo']; ?>
+                    <?php $color = $list_row['color_picker']; ?>
+                    <?php $title = $list_row['title']; ?>
+                    <?php $description = $list_row['description']; ?>
 
-            <li class="activities-item">
-                <div class="hovered-description-container">
-                    <?php if ($icon): ?>
-                    <div class="icon-container">
-                        <div class="icon-wrapper <?php echo $color;?>">
-                            <?php echo wp_get_attachment_image($icon['id'], 'full_hd', null); ?>
+                    <li class="activities-item">
+                        <div class="hovered-description-container">
+                            <?php if ($icon): ?>
+                                <div class="icon-container">
+                                    <div class="icon-wrapper <?php echo $color; ?>">
+                                        <?php echo wp_get_attachment_image($icon['id'], 'full_hd', null); ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if ($description): ?>
+                                <div class="activities-item_description-wrapper">
+                                    <div class="activities-item_description <?php echo $color; ?>">
+                                        <p><?php echo $description ?></p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                    </div>
-                    <?php endif; ?>
 
-                    <?php if ($description): ?>
-                    <div class="activities-item_description-wrapper">
-                        <div class="activities-item_description <?php echo $color;?>">
-                            <p><?php echo $description?></p>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                </div>
-
-                <?php if ($title): ?>
-                <h3><?php echo $title?></h3>
-                <?php endif; ?>
-            </li>
-            <?php endforeach; ?>
-        </ul>
+                        <?php if ($title): ?>
+                            <h3><?php echo $title ?></h3>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         <?php endif; ?>
     </section>
 
     <section class="values container">
         <?php if ($values_title): ?>
-        <h2 class="title-main"><?php echo $values_title?></h2>
+            <h2 class="title-main"><?php echo $values_title ?></h2>
         <?php endif; ?>
 
         <?php if ($values_list): ?>
-        <div class="values-list">
-            <?php foreach ($values_list as $values_row): ?>
-            <?php  get_template_part('template-parts/values-card', null, array('card' => $values_row)); ?>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="swiper values-swiper">
-            <div class="swiper-wrapper">
+            <div class="values-list">
                 <?php foreach ($values_list as $values_row): ?>
-                <?php  get_template_part('template-parts/values-card', null, array('isSliderCard' => true, 'card' => $values_row)); ?>
+                    <?php get_template_part('template-parts/values-card', null, array('card' => $values_row)); ?>
                 <?php endforeach; ?>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
+
+            <div class="swiper values-swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($values_list as $values_row): ?>
+                        <?php get_template_part('template-parts/values-card', null, array('isSliderCard' => true, 'card' => $values_row)); ?>
+                    <?php endforeach; ?>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         <?php endif; ?>
     </section>
 
     <section class="results container">
-        <h2 class="title-main results__title"><?php the_field( 'title_results'); ?></h2>
+        <h2 class="title-main results__title"><?php the_field('title_results'); ?></h2>
 
         <ul class="results__list">
             <li class="results__item">
                 <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon1.svg" alt="Пісочний годинник">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon1.svg" alt="Пісочний годинник">
                 </div>
-                <span><?php the_field( 'index_1'); ?></span>
-                <p class="text-secondary"><?php the_field( 'description_1'); ?></p>
+                <span><?php the_field('index_1'); ?></span>
+                <p class="text-secondary"><?php the_field('description_1'); ?></p>
             </li>
             <li class="results__item">
                 <div class="results__icon2">
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon2.svg" alt="Лист паперу">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon2.svg" alt="Лист паперу">
                 </div>
-                <span><?php the_field( 'index_2'); ?></span>
-                <p class="text-secondary"><?php the_field( 'description_2'); ?></p>
+                <span><?php the_field('index_2'); ?></span>
+                <p class="text-secondary"><?php the_field('description_2'); ?></p>
             </li>
             <li class="results__item">
                 <div class="results__icon3">
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon3.svg" alt="Сердечко">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon3.svg" alt="Сердечко">
                 </div>
-                <span><?php the_field( 'index_3'); ?></span>
-                <p class="text-secondary"><?php the_field( 'description_3'); ?></p>
+                <span><?php the_field('index_3'); ?></span>
+                <p class="text-secondary"><?php the_field('description_3'); ?></p>
             </li>
             <li class="results__item">
                 <div>
-                    <img src="<?php bloginfo( 'template_url' ); ?>/assets/images/icon4.svg" alt="Грошовий  знак">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/icon4.svg" alt="Грошовий  знак">
                 </div>
-                <span><?php the_field( 'index_4'); ?></span>
-                <p class="text-secondary"><?php the_field( 'description_4'); ?></p>
+                <span><?php the_field('index_4'); ?></span>
+                <p class="text-secondary"><?php the_field('description_4'); ?></p>
             </li>
         </ul>
 
-        <span class="results__info"><?php the_field( 'index_info'); ?></span>
+        <span class="results__info"><?php the_field('index_info'); ?></span>
     </section>
 
     <section class="projects">
@@ -205,23 +205,23 @@
                 <h2 class="title-main"><?php the_field('title_projects'); ?></h2>
 
                 <a class="button--arrow"
-                    href="<?php echo the_field( 'button_link_projects'); ?>"><?php the_field('button_projects'); ?>
+                    href="<?php echo the_field('button_link_projects'); ?>"><?php the_field('button_projects'); ?>
                     <svg width="24px" height="24px">
                         <use class="arrow-up"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right">
+                            href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right">
                         </use>
                         <use class="arrow-right"
-                            href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                            href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
                         </use>
                     </svg>
                 </a>
             </div>
 
             <div class="swiper swiperProjects">
-                <?php	
-            $params = [ 'type' => 'projects', 'class' => 'projects__list'];
-            get_template_part( 'template-parts/content', 'list',  $params  );
-           ?>
+                <?php
+                $params = ['type' => 'projects', 'class' => 'projects__list'];
+                get_template_part('template-parts/content', 'list',  $params);
+                ?>
 
                 <div class="swiper-pagination"></div>
             </div>
@@ -234,12 +234,12 @@
         <div class="news__head">
             <h2 class="title-main"><?php the_field('title_news'); ?></h2>
             <a class="button--arrow"
-                href="<?php echo the_field( 'button_link_news'); ?>"><?php the_field('button_news'); ?>
+                href="<?php echo the_field('button_link_news'); ?>"><?php the_field('button_news'); ?>
                 <svg width="24px" height="24px">
                     <use class="arrow-up"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                     <use class="arrow-right"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                        href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
                     </use>
                 </svg>
             </a>
@@ -247,10 +247,10 @@
 
         <div class="swiper swiperNews">
 
-            <?php	
-            $params = [ 'type' => 'news', 'class' => 'news__list'];
-            get_template_part( 'template-parts/content', 'list',  $params  );
-           ?>
+            <?php
+            $params = ['type' => 'news', 'class' => 'news__list'];
+            get_template_part('template-parts/content', 'list',  $params);
+            ?>
             <div class="swiper-pagination"></div>
         </div>
 
@@ -261,12 +261,12 @@
         <div class="partners__head">
             <h2 class="title-main"><?php the_field('title_partners'); ?></h2>
             <a class="button--arrow"
-                href="<?php echo the_field( 'button_link_partners'); ?>"><?php the_field('button_partners'); ?>
+                href="<?php echo the_field('button_link_partners'); ?>"><?php the_field('button_partners'); ?>
                 <svg width="24px" height="24px">
                     <use class="arrow-up"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
+                        href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#arrow-up-right"></use>
                     <use class="arrow-right"
-                        href="<?php bloginfo( 'template_url' ); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
+                        href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-arrow-right">
                     </use>
                 </svg>
             </a>
@@ -277,46 +277,46 @@
             <div class="partners__list swiper-wrapper">
 
                 <?php
-            $other_page_id = 13;
-            $repeater_fields = get_field('partners', $other_page_id);
+                $other_page_id = 13;
+                $repeater_fields = get_field('partners', $other_page_id);
 
-            if ($repeater_fields) {
-                $count = 0;
+                if ($repeater_fields) {
+                    $count = 0;
 
-                foreach ($repeater_fields as $repeater_field) {
-                    $logo = $repeater_field['logo'];
-                    $name = $repeater_field['name'];
-                    $link = $repeater_field['link'];
+                    foreach ($repeater_fields as $repeater_field) {
+                        $logo = $repeater_field['logo'];
+                        $name = $repeater_field['name'];
+                        $link = $repeater_field['link'];
 
-                    if ($count < 6) { ?>
-                <div class="partners__item swiper-slide">
-                    <?php
-                        if ($link && $logo) {
-                            ?>
-                    <a href="<?php echo $link; ?>" target="_blanc">
-                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
-                    </a>
-                    <?php
-                        } elseif (!$link && $logo) {
-                            ?>
-                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
-                    <?php
-                        } else {
-                            ?>
-                    <p class="partners__name"><?php echo $name; ?></p>
-                    <?php
-                        }?>
-                </div>
+                        if ($count < 6) { ?>
+                            <div class="partners__item swiper-slide">
+                                <?php
+                                if ($link && $logo) {
+                                ?>
+                                    <a href="<?php echo $link; ?>" target="_blanc">
+                                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                                    </a>
+                                <?php
+                                } elseif (!$link && $logo) {
+                                ?>
+                                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $name; ?>" loading="lazy" />
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="partners__name"><?php echo $name; ?></p>
+                                <?php
+                                } ?>
+                            </div>
                 <?php
-                        $count++;  
-                    } else {
-                        break;  
+                            $count++;
+                        } else {
+                            break;
+                        }
                     }
+                } else {
+                    echo 'Партнерів не знайдено';
                 }
-            } else {
-                echo 'Партнерів не знайдено';
-            }
-            ?>
+                ?>
 
 
             </div>
@@ -326,6 +326,7 @@
     </section>
 
 </main>
-<?php get_template_part( 'template-parts/donate-section' ); ?>
+<?php get_template_part('template-parts/donate-section'); ?>
+<?php get_template_part('template-parts/feedback-section'); ?>
 
 <?php get_footer(); ?>
