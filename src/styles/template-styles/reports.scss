@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.documents {
+.documents-title {
   display: flex;
   gap: 52px;
   margin: 44px auto 60px;
@@ -72,13 +72,24 @@
       }
     }
   }
+}
+.documents {
   .documents-list {
+    margin-bottom: 60px;
     display: grid;
     gap: 24px;
     grid-template-columns: 1fr 1fr;
 
     @media screen and (min-width: $tablet) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 0 0 80px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      justify-content: center;
+      margin: 0 36px 112px;
     }
   }
   .document-item {

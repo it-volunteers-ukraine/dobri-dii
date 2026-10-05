@@ -9,7 +9,7 @@ get_header();
     <section class="container title-wrapper">
         <h1 class="visually-hidden">Проєкти ГО "Добрі Дії"</h1>
     </section>
-    <section class="documents container">
+    <section class="documents-title container">
         <div class="content-wrapper">
             <h2 class="title-main title"><?php the_field('title'); ?></h2>
             <?php the_field('text'); ?>
