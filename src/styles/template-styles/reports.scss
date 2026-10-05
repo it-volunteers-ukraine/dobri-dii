@@ -1,9 +1,5 @@
 @import "../variables.scss";
-.title-wrapper {
-  .title {
-    text-align: left;
-  }
-}
+
 .documents {
   display: flex;
   gap: 52px;
@@ -17,7 +13,10 @@
     flex-direction: row;
     margin: 40px auto 112px;
   }
-
+  .title {
+    text-align: left;
+    margin-bottom: 40px;
+  }
   .content-wrapper {
     max-width: 100%;
     @media screen and (min-width: $desktop) {
@@ -75,15 +74,11 @@
   }
   .documents-list {
     display: grid;
-    row-gap: 24px;
+    gap: 24px;
     grid-template-columns: 1fr 1fr;
 
     @media screen and (min-width: $tablet) {
-      row-gap: 24px;
-      grid-template-columns: minmax(max-content, 1fr) 1fr 1fr minmax(
-          max-content,
-          1fr
-        );
+      grid-template-columns: repeat(5, 1fr);
     }
   }
   .document-item {
