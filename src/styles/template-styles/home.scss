@@ -198,6 +198,7 @@
   .activities {
     position: relative;
     margin-bottom: 60px;
+    overflow: hidden;
     @media screen and (min-width: $tablet) {
       margin-bottom: 80px;
     }
@@ -851,5 +852,185 @@
     font-style: normal;
     font-weight: 500;
     line-height: 1.71;
+  }
+}
+
+.budget-statistics {
+  margin-bottom: 60px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 112px;
+  }
+
+  .title-main {
+    text-align: center;
+    margin-bottom: 32px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 40px;
+    }
+  }
+  .chart-container {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    height: 316px;
+    justify-content: left;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #98b4c672 #eee;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {
+      height: 524px;
+      gap: 12px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+      width: fit-content;
+      justify-content: center;
+    }
+    .chart-column-wrapper {
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 4px;
+      flex-shrink: 0;
+      @media screen and (min-width: $tablet) {
+        width: 56px;
+      }
+      @media screen and (min-width: $desktop) {
+        flex-shrink: 1;
+        width: 72px;
+      }
+
+      .chart-bar {
+        min-height: 2px;
+        border-radius: 8px;
+        background-color: $color-accent;
+        border: 2px solid $color-accent;
+      }
+
+      .chart-year {
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.29;
+        @media screen and (min-width: $tablet) {
+          font-weight: 700;
+        }
+      }
+
+      .chart-amount {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        span {
+          display: none;
+          @media screen and (min-width: $desktop) {
+            display: block;
+          }
+        }
+      }
+
+      &.is-projected {
+        .chart-amount {
+          display: none;
+        }
+
+        .chart-bar {
+          border: 2px dashed $color-accent;
+          background-color: transparent;
+        }
+        .chart-year {
+          color: #d0cbcb;
+        }
+      }
+    }
+  }
+
+  .section-content {
+    position: relative;
+    &:after {
+      content: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      z-index: -1;
+      background-image: url("../../images/baget-bg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 282px;
+      height: 340px;
+      @media screen and (min-width: $tablet) {
+        content: "";
+      }
+      @media screen and (min-width: $desktop) {
+        top: 0;
+        height: 508px;
+        width: 400px;
+      }
+    }
+  }
+  .description {
+    box-shadow:
+      0 0 0 0 rgba(0, 0, 0, 0.1),
+      3px 1px 7px 0 rgba(0, 0, 0, 0.1),
+      10px 6px 12px 0 rgba(0, 0, 0, 0.09),
+      24px 12px 16px 0 rgba(0, 0, 0, 0.05),
+      42px 22px 19px 0 rgba(0, 0, 0, 0.01),
+      66px 34px 21px 0 rgba(0, 0, 0, 0);
+    background: $color-light;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.71;
+    margin-bottom: 32px;
+    top: 0;
+
+    @media screen and (min-width: $tablet) {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      width: 342px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $desktop) {
+      top: 0;
+      left: 0;
+      width: 348px;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    &.hide-on-mobile {
+      display: none;
+      @media screen and (min-width: $tablet) {
+        display: block;
+      }
+    }
+    &.show-on-mobile {
+      @media screen and (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .note-for-mobile {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: center;
+    margin-top: 24px;
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
   }
 }

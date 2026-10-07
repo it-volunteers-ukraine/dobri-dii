@@ -1,10 +1,6 @@
 @import "../variables.scss";
-.title-wrapper {
-  .title {
-    text-align: left;
-  }
-}
-.documents {
+
+.documents-title {
   display: flex;
   gap: 52px;
   margin: 44px auto 60px;
@@ -17,7 +13,10 @@
     flex-direction: row;
     margin: 40px auto 112px;
   }
-
+  .title {
+    text-align: left;
+    margin-bottom: 40px;
+  }
   .content-wrapper {
     max-width: 100%;
     @media screen and (min-width: $desktop) {
@@ -73,17 +72,24 @@
       }
     }
   }
+}
+.documents {
   .documents-list {
+    margin-bottom: 60px;
     display: grid;
-    row-gap: 24px;
+    gap: 24px;
     grid-template-columns: 1fr 1fr;
 
     @media screen and (min-width: $tablet) {
-      row-gap: 24px;
-      grid-template-columns: minmax(max-content, 1fr) 1fr 1fr minmax(
-          max-content,
-          1fr
-        );
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 0 0 80px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      justify-content: center;
+      margin: 0 36px 112px;
     }
   }
   .document-item {
